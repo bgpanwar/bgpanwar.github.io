@@ -7,7 +7,7 @@ featured: ''
 featuredalt: ''
 featuredpath: ''
 linktitle: ''
-slug: first-blog-rmd
+slug: Bootstrap
 tags: []
 categories: []
 ---
