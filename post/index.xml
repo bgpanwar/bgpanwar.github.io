@@ -2,30 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Statistical Spice</title>
-    <link>https://bgpanwar.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Statistical Spice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://bgpanwar.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>first_blog.rmd</title>
-      <link>https://bgpanwar.github.io/post/first-blog-rmd/</link>
+      <title>How does the Bootstrap method work?</title>
+      <link>/post/first-blog-rmd/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/first-blog-rmd/</guid>
-      <description></description>
+      <guid>/post/first-blog-rmd/</guid>
+      <description>Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
+set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &amp;lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
+hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
     </item>
     
     <item>
       <title>Hello R Markdown</title>
-      <link>https://bgpanwar.github.io/post/2015-07-23-r-rmarkdown/</link>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
