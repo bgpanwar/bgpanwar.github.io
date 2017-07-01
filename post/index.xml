@@ -2,42 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Data Pond</title>
-    <link>/post/</link>
+    <link>https://bgpanwar.github.io/post/</link>
     <description>Recent content in Posts on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bgpanwar.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How does the Bootstrap method work?</title>
-      <link>/post/bootstrap/</link>
+      <link>https://bgpanwar.github.io/post/bootstrap/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/bootstrap/</guid>
+      <guid>https://bgpanwar.github.io/post/bootstrap/</guid>
       <description>Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
 set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &amp;lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
 hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
-    </item>
-    
-    <item>
-      <title>Testing R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdownsummary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00fit &amp;lt;- lm(dist ~ speed, data = cars)fit## ## Call:## lm(formula = dist ~ speed, data = cars)## ## Coefficients:## (Intercept) speed ## -17.</description>
-    </item>
-    
-    <item>
-      <title>Testing R Markdown</title>
-      <link>/post/2017-06-01-r-rmarkdown/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2017-06-01-r-rmarkdown/</guid>
-      <description>R Markdownsummary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00fit &amp;lt;- lm(dist ~ speed, data = cars)fit## ## Call:## lm(formula = dist ~ speed, data = cars)## ## Coefficients:## (Intercept) speed ## -17.</description>
     </item>
     
   </channel>
