@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>ANN</title>
+      <link>https://bgpanwar.github.io/post/ann-rmd/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bgpanwar.github.io/post/ann-rmd/</guid>
+      <description>Neural Networks Algorithm is used on Concrete dataset. Neural Networks are considered a black box process. ANNs are based on complex mathematical systems. But not a zero node NN is an alternative representation of the simimple linear regression model.
+ANNs are versatile learners that can be applied to nearly any learning task: classification, numeric prediction, and even unsupervised pattern recognition.
+ANNs are best applied to problems where the input data and the output data are well-understood or at least fairly simple, yet the process that relates the input to the output is extremely complex.</description>
+    </item>
+    
+    <item>
       <title>Scatter</title>
       <link>https://bgpanwar.github.io/post/scatter/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
