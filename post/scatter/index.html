@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>How does the Bootstrap method work?</title>
+                <title>Scatter</title>
             
         
 
@@ -29,24 +29,32 @@
 
 
 
-<meta name="twitter:text:title" content="How does the Bootstrap method work?"/>
-<meta name="twitter:title" content="How does the Bootstrap method work?"/>
-<meta name="twitter:description" content="Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
-set.seed(1)srs &lt;- rnorm(25, mean=3)resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
-hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now."/>
+<meta name="twitter:text:title" content="Scatter"/>
+<meta name="twitter:title" content="Scatter"/>
+<meta name="twitter:description" content="Load the data.
+subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
+plot(subscribers$Subscribers)Default plot with type explicity specified.
+plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
-        <meta property="og:title" content="How does the Bootstrap method work?" />
-<meta property="og:description" content="Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
-set.seed(1)srs &lt;- rnorm(25, mean=3)resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
-hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now." />
+        <meta property="og:title" content="Scatter" />
+<meta property="og:description" content="Load the data.
+subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
+plot(subscribers$Subscribers)Default plot with type explicity specified.
+plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bgpanwar.github.io/post/bootstrap/" />
+<meta property="og:url" content="https://bgpanwar.github.io/post/scatter/" />
 
 
 
-<meta property="article:published_time" content="2017-06-11T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-06-11T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2017-07-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-01T00:00:00&#43;00:00"/>
 
 
 
@@ -59,14 +67,18 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
 
 
         
-<meta itemprop="name" content="How does the Bootstrap method work?">
-<meta itemprop="description" content="Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
-set.seed(1)srs &lt;- rnorm(25, mean=3)resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
-hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.">
+<meta itemprop="name" content="Scatter">
+<meta itemprop="description" content="Load the data.
+subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
+plot(subscribers$Subscribers)Default plot with type explicity specified.
+plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website.">
 
 
-<meta itemprop="dateModified" content="2017-06-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="114">
+<meta itemprop="dateModified" content="2017-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="64">
 
 
 
@@ -237,43 +249,43 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&text=How%20does%20the%20Bootstrap%20method%20work%3f&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&text=Scatter&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -290,7 +302,7 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
     <header>
     <div class="title">
         
-            <h1><a href="https://bgpanwar.github.io/post/bootstrap/">How does the Bootstrap method work?</a></h1>
+            <h1><a href="https://bgpanwar.github.io/post/scatter/">Scatter</a></h1>
             
         
         
@@ -301,8 +313,8 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
         
 
         <time class="published"
-            datetime='2017-06-11'>
-            June 11, 2017</time>
+            datetime='2017-07-01'>
+            July 1, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
             <p>1 minute read</p>
@@ -317,43 +329,43 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&text=How%20does%20the%20Bootstrap%20method%20work%3f&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&text=Scatter&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -363,28 +375,28 @@ hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) 
     
 
     <div id="content">
-        <div id="question-of-the-day" class="section level2">
-<h2>Question of the day?</h2>
-<p>Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?</p>
-<pre class="r"><code>set.seed(1)
-srs &lt;- rnorm(25, mean=3)
-resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)
-x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)</code></pre>
-<p>Let’s create a histogram here and fit normal curve.</p>
-<pre class="r"><code>hist(x_bar_star, breaks = 40, prob = TRUE)
-curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
-<p><img src="/post/2017-06-11-Bootstrap_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>We can calculate the difference now.</p>
-<pre class="r"><code>mean(x_bar_star)</code></pre>
-<pre><code>## [1] 3.167102</code></pre>
-<pre class="r"><code>mean(srs)</code></pre>
-<pre><code>## [1] 3.168665</code></pre>
-<pre class="r"><code>mean(x_bar_star) - mean(srs)</code></pre>
-<pre><code>## [1] -0.001562762</code></pre>
-<p>Now we observe the standard error of the mean x_bar_star with the sample standard deviation of the resample statistics.</p>
-<pre class="r"><code>sd(x_bar_star)</code></pre>
-<pre><code>## [1] 0.1826719</code></pre>
-</div>
+        <p>Load the data.</p>
+<pre class="r"><code>subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+
+View(subscribers)</code></pre>
+<p>Default plot with points.</p>
+<pre class="r"><code>plot(subscribers$Subscribers)</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Default plot with type explicity specified.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Draw vertical lines.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Draw points with above lines.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))
+points(subscribers$Subscribers)</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Edits with colors and labels.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)
+points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) </code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Reference:The data was downloaded from the following website <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470944889.html">website</a>.</p>
 
     </div>
 
@@ -405,10 +417,10 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
 </article>
 <ul class="actions pagination">
     
-
-    
         <li><a href="https://bgpanwar.github.io/post/times-series/"
-                class="button big next">Times Series</a></li>
+                class="button big previous">Times Series</a></li>
+    
+
     
 </ul>
 
@@ -419,9 +431,9 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/bootstrap\/';
-    var disqus_title = 'How does the Bootstrap method work?';
-    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/bootstrap\/';
+    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/scatter\/';
+    var disqus_title = 'Scatter';
+    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/scatter\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

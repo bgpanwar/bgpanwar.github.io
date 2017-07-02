@@ -187,11 +187,11 @@
 
                 
                     <li>
-                        <a href="https://bgpanwar.github.io/post/times-series/"><p>Times Series</p></a>
+                        <a href="https://bgpanwar.github.io/post/scatter/"><p>Scatter</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://bgpanwar.github.io/post/bootstrap/"><p>How does the Bootstrap method work?</p></a>
+                        <a href="https://bgpanwar.github.io/post/times-series/"><p>Times Series</p></a>
                     </li>
                 
             </ul>
@@ -208,7 +208,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h2>
+            <h2><a href="https://bgpanwar.github.io/post/scatter/">Scatter</a></h2>
         
         
     </div>
@@ -234,43 +234,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&text=Scatter&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -280,16 +280,28 @@
     
 
     <div id="content">
-        <pre class="r"><code># Load data
-population &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+        <p>Load the data.</p>
+<pre class="r"><code>subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)
 
-# Default plot
-plot(population$Year, population$Population, type=&quot;l&quot;)</code></pre>
-<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code># Adjust axis
-plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)</code></pre>
-<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<p>Reference: world_population.csv was obtained from Flowdata.com</p>
+View(subscribers)</code></pre>
+<p>Default plot with points.</p>
+<pre class="r"><code>plot(subscribers$Subscribers)</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Default plot with type explicity specified.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Draw vertical lines.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Draw points with above lines.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))
+points(subscribers$Subscribers)</code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Edits with colors and labels.</p>
+<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)
+points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) </code></pre>
+<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Reference:The data was downloaded from the following website <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470944889.html">website</a>.</p>
 
     </div>
 
@@ -310,8 +322,8 @@ plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 70000
 </article>
 <ul class="actions pagination">
     
-        <li><a href="https://bgpanwar.github.io/post/bootstrap/"
-                class="button big previous">How does the Bootstrap method work?</a></li>
+        <li><a href="https://bgpanwar.github.io/post/times-series/"
+                class="button big previous">Times Series</a></li>
     
 
     
@@ -324,9 +336,9 @@ plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 70000
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
-    var disqus_title = 'Times Series';
-    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
+    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/scatter\/';
+    var disqus_title = 'Scatter';
+    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/scatter\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -350,43 +362,43 @@ plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 70000
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&text=Scatter&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fscatter%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -502,7 +514,7 @@ plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 70000
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h3>
+                                <h3><a href="https://bgpanwar.github.io/post/scatter/">Scatter</a></h3>
                                 
                                     
                                 
@@ -516,13 +528,13 @@ plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 70000
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://bgpanwar.github.io/post/bootstrap/">How does the Bootstrap method work?</a></h3>
+                                <h3><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-06-11'>
-                                    June 11, 2017</time>
+                                    '2017-07-01'>
+                                    July 1, 2017</time>
                             </header>
                         </article>
                     </li>

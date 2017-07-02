@@ -1,0 +1,57 @@
+---
+title: Scatter
+author: Bhawna G. Panwar
+date: '2017-07-01'
+slug: scatter
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+
+Load the data.
+
+```{r}
+subscribers <- read.csv("C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv", sep=",", header=TRUE)
+
+View(subscribers)
+```
+
+Default plot with points.
+
+```{r}
+plot(subscribers$Subscribers)
+```
+
+Default plot with type explicity specified.
+
+```{r}
+plot(subscribers$Subscribers, type="p", ylim=c(0, 30000))
+
+```
+
+Draw vertical lines.
+
+```{r}
+plot(subscribers$Subscribers, type="h", ylim=c(0, 30000))
+```
+
+Draw points with above lines.
+
+```{r}
+plot(subscribers$Subscribers, type="h", ylim=c(0, 30000))
+points(subscribers$Subscribers)
+```
+
+Edits with colors and labels.
+
+```{r}
+plot(subscribers$Subscribers, type="h", ylim=c(0, 30000), xlab="Day", ylab="Subscribers")
+points(subscribers$Subscribers, pch=19, col="blue") 
+```
+
+Reference:The data was downloaded from the following website [website](http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470944889.html).

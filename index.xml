@@ -22,6 +22,21 @@ Thanks for reading!</description>
     </item>
     
     <item>
+      <title>Scatter</title>
+      <link>https://bgpanwar.github.io/post/scatter/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bgpanwar.github.io/post/scatter/</guid>
+      <description>Load the data.
+subscribers &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&amp;quot;, sep=&amp;quot;,&amp;quot;, header=TRUE)View(subscribers)Default plot with points.
+plot(subscribers$Subscribers)Default plot with type explicity specified.
+plot(subscribers$Subscribers, type=&amp;quot;p&amp;quot;, ylim=c(0, 30000))Draw vertical lines.
+plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000))Draw points with above lines.
+plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
+plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab=&amp;quot;Day&amp;quot;, ylab=&amp;quot;Subscribers&amp;quot;)points(subscribers$Subscribers, pch=19, col=&amp;quot;blue&amp;quot;) Reference:The data was downloaded from the following website website.</description>
+    </item>
+    
+    <item>
       <title>Times Series</title>
       <link>https://bgpanwar.github.io/post/times-series/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
