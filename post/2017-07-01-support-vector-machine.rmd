@@ -11,8 +11,7 @@ featuredalt: ''
 featuredpath: ''
 linktitle: ''
 ---
-
-SVM- The main purpose of this method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
+The main purpose of the Support Vector Machine(SVM) method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
 
 
 Plot below help visualize overall way to visualize SVM technques.The hyperplane is a multidimensional surface, but it's easiest to think of it as a straight line between two linearly separable groups of examples.
@@ -25,10 +24,10 @@ knitr::opts_chunk$set(echo = TRUE)
 Support vector Machine algorithm was used to analyze optical character recognition dataset.
 
 ```{r}
-##### Part 2: Support Vector Machines -------------------
-## Example: Optical Character Recognition ----
+##### Part 2: Support Vector Machines 
+## Example: Optical Character Recognition 
 
-## Step 2: Exploring and preparing the data ----
+## Step 2: Exploring and preparing the data
 # read in data and examine structure
 letters <- read.csv("C:/Users/Bhawna/Documents/blog/data/letterdata.csv")
 str(letters)

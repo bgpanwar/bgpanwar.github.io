@@ -31,11 +31,13 @@
 
 <meta name="twitter:text:title" content="Spam Filter"/>
 <meta name="twitter:title" content="Spam Filter"/>
-<meta name="twitter:description" content="Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &lt;- read."/>
+<meta name="twitter:description" content="Perform the SMS spam filtering analysis.
+Step 1: Load dataStep 2: Exploring and preparing the data# read the sms data into the sms data framesms_raw &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&quot;, stringsAsFactors = FALSE)# examine the structure of the sms datastr(sms_raw)## &#39;data.frame&#39;: 5559 obs. of 2 variables:## $ type: chr &quot;ham&quot; &quot;ham&quot; &quot;ham&quot; &quot;spam&quot; ...## $ text: chr &quot;Hope you are having a good week. Just checking in&quot; &quot;K."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
         <meta property="og:title" content="Spam Filter" />
-<meta property="og:description" content="Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &lt;- read." />
+<meta property="og:description" content="Perform the SMS spam filtering analysis.
+Step 1: Load dataStep 2: Exploring and preparing the data# read the sms data into the sms data framesms_raw &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&quot;, stringsAsFactors = FALSE)# examine the structure of the sms datastr(sms_raw)## &#39;data.frame&#39;: 5559 obs. of 2 variables:## $ type: chr &quot;ham&quot; &quot;ham&quot; &quot;ham&quot; &quot;spam&quot; ...## $ text: chr &quot;Hope you are having a good week. Just checking in&quot; &quot;K." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/spam-filter/" />
 
@@ -56,11 +58,12 @@
 
         
 <meta itemprop="name" content="Spam Filter">
-<meta itemprop="description" content="Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &lt;- read.">
+<meta itemprop="description" content="Perform the SMS spam filtering analysis.
+Step 1: Load dataStep 2: Exploring and preparing the data# read the sms data into the sms data framesms_raw &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&quot;, stringsAsFactors = FALSE)# examine the structure of the sms datastr(sms_raw)## &#39;data.frame&#39;: 5559 obs. of 2 variables:## $ type: chr &quot;ham&quot; &quot;ham&quot; &quot;ham&quot; &quot;spam&quot; ...## $ text: chr &quot;Hope you are having a good week. Just checking in&quot; &quot;K.">
 
 
 <meta itemprop="dateModified" content="2017-07-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3550">
+<meta itemprop="wordCount" content="3051">
 
 
 
@@ -201,15 +204,15 @@
                     </li>
                 
                     <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/ann-rmd/"><p>Artificial Neural Networks</p></a>
                     </li>
                 
                     <li>
                         <a href="/post/scatter/"><p>Scatter</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/spam-filter/"><p>Spam Filter</p></a>
                     </li>
                 
             </ul>
@@ -296,7 +299,7 @@
             July 1, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>17 minute read</p>
+            <p>15 minute read</p>
         
         
     </div>
@@ -306,14 +309,12 @@
     
 
     <div id="content">
-        <ol style="list-style-type: decimal">
-<li>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.</li>
-<li>Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.</li>
-</ol>
-<div id="problem1-filtering-spam-sms-messages" class="section level1">
-<h1>Problem#1: Filtering spam SMS messages</h1>
-<div id="step-2-exploring-and-preparing-the-data--" class="section level2">
-<h2>Step 2: Exploring and preparing the data —-</h2>
+        <p>Perform the SMS spam filtering analysis.</p>
+<div id="step-1-load-data" class="section level2">
+<h2>Step 1: Load data</h2>
+</div>
+<div id="step-2-exploring-and-preparing-the-data" class="section level2">
+<h2>Step 2: Exploring and preparing the data</h2>
 <pre class="r"><code># read the sms data into the sms data frame
 sms_raw &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&quot;, stringsAsFactors = FALSE)
 
@@ -961,78 +962,6 @@ CrossTable(sms_test_pred2, sms_test_labels,
 ## -------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
-<p>Problem#2 Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes. The HouseVotes84 data was used from the mlbench package.</p>
-<pre class="r"><code>library (e1071)
-
-## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984
-# Note refusals to vote have been treated as missing values!
-
-data (HouseVotes84, package=&quot;mlbench&quot;) 
-model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) 
-head(HouseVotes84)</code></pre>
-<pre><code>##        Class   V1 V2 V3   V4   V5 V6 V7 V8 V9 V10  V11  V12 V13 V14 V15
-## 1 republican    n  y  n    y    y  y  n  n  n   y &lt;NA&gt;    y   y   y   n
-## 2 republican    n  y  n    y    y  y  n  n  n   n    n    y   y   y   n
-## 3   democrat &lt;NA&gt;  y  y &lt;NA&gt;    y  y  n  n  n   n    y    n   y   y   n
-## 4   democrat    n  y  y    n &lt;NA&gt;  y  n  n  n   n    y    n   y   n   n
-## 5   democrat    y  y  y    n    y  y  n  n  n   n    y &lt;NA&gt;   y   y   y
-## 6   democrat    n  y  y    n    y  y  n  n  n   n    n    n   y   y   y
-##    V16
-## 1    y
-## 2 &lt;NA&gt;
-## 3    n
-## 4    y
-## 5    y
-## 6    y</code></pre>
-<pre class="r"><code># predict the outcome of the first 20 records
-predict(model, HouseVotes84[1:20,-1]) </code></pre>
-<pre><code>##  [1] republican republican republican democrat   democrat   democrat  
-##  [7] republican republican republican democrat   republican republican
-## [13] democrat   democrat   republican republican democrat   democrat  
-## [19] republican democrat  
-## Levels: democrat republican</code></pre>
-<pre class="r"><code># same but displaying posteriors
-predict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;) </code></pre>
-<pre><code>##           democrat   republican
-##  [1,] 1.029209e-07 9.999999e-01
-##  [2,] 5.820415e-08 9.999999e-01
-##  [3,] 5.684937e-03 9.943151e-01
-##  [4,] 9.985798e-01 1.420152e-03
-##  [5,] 9.666720e-01 3.332802e-02
-##  [6,] 8.121430e-01 1.878570e-01
-##  [7,] 1.751512e-04 9.998248e-01
-##  [8,] 8.300100e-06 9.999917e-01
-##  [9,] 8.277705e-08 9.999999e-01
-## [10,] 1.000000e+00 5.029425e-11
-## [11,] 1.122180e-06 9.999989e-01
-## [12,] 5.922777e-06 9.999941e-01
-## [13,] 1.000000e+00 5.040020e-09
-## [14,] 1.000000e+00 6.242221e-10
-## [15,] 4.846577e-07 9.999995e-01
-## [16,] 1.154563e-07 9.999999e-01
-## [17,] 9.999975e-01 2.524185e-06
-## [18,] 1.000000e+00 7.477385e-11
-## [19,] 6.641180e-08 9.999999e-01
-## [20,] 1.000000e+00 7.400151e-13</code></pre>
-<pre class="r"><code># now all of them: this is the resubstituion error
-pred &lt;- predict(model, HouseVotes84[,-1])
-
-# form and display confusion matrix &amp; overall accuracy
-tab &lt;- table(pred, HouseVotes84$Class) 
-tab</code></pre>
-<pre><code>##             
-## pred         democrat republican
-##   democrat        238         13
-##   republican       29        155</code></pre>
-<pre class="r"><code>sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
-<pre><code>## [1] 0.9034483</code></pre>
-<pre class="r"><code>## using Laplace smoothing: 
-model &lt;- naiveBayes(Class ~ ., data = HouseVotes84, laplace = 3)
-pred &lt;- predict(model, HouseVotes84[,-1]) 
-tab &lt;- table(pred, HouseVotes84$Class) 
-sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
-<pre><code>## [1] 0.9034483</code></pre>
-</div>
 </div>
 
     </div>
@@ -1218,6 +1147,20 @@ sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/ann-rmd/">Artificial Neural Networks</a></h3>
                                 
                                     
@@ -1233,20 +1176,6 @@ sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
                         <article>
                             <header>
                                 <h3><a href="/post/scatter/">Scatter</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-01'>
-                                    July 1, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/spam-filter/">Spam Filter</a></h3>
                                 
                                     
                                 

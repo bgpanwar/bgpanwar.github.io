@@ -29,16 +29,12 @@
 
 <meta name="twitter:text:title" content="Association Rules"/>
 <meta name="twitter:title" content="Association Rules"/>
-<meta name="twitter:description" content="ASSOCIATION RULES
-
-Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
+<meta name="twitter:description" content="Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
 The typical grocery store offers a huge variety of items."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
         <meta property="og:title" content="Association Rules" />
-<meta property="og:description" content="ASSOCIATION RULES
-
-Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
+<meta property="og:description" content="Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
 The typical grocery store offers a huge variety of items." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/association-rules-rmd/" />
@@ -60,14 +56,12 @@ The typical grocery store offers a huge variety of items." />
 
         
 <meta itemprop="name" content="Association Rules">
-<meta itemprop="description" content="ASSOCIATION RULES
-
-Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
+<meta itemprop="description" content="Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
 The typical grocery store offers a huge variety of items.">
 
 
 <meta itemprop="dateModified" content="2017-07-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1220">
+<meta itemprop="wordCount" content="1218">
 
 
 
@@ -208,15 +202,15 @@ The typical grocery store offers a huge variety of items.">
                     </li>
                 
                     <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/ann-rmd/"><p>Artificial Neural Networks</p></a>
                     </li>
                 
                     <li>
                         <a href="/post/scatter/"><p>Scatter</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/spam-filter/"><p>Spam Filter</p></a>
                     </li>
                 
             </ul>
@@ -313,13 +307,7 @@ The typical grocery store offers a huge variety of items.">
     
 
     <div id="content">
-        <div id="section" class="section level47">
-<p></p>
-<p>ASSOCIATION RULES</p>
-</div>
-<div id="section-1" class="section level47">
-<p></p>
-<p>Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.</p>
+        <p>Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.</p>
 <p>The typical grocery store offers a huge variety of items. There might be five brands of milk, a dozen different types of laundry detergent, and three brands of coffee. Given the moderate size of the retailer, we will assume that they are not terribly concerned with finding rules that apply only to a specific brand of milk or detergent. With this in mind, all brand names can be removed from the purchases. This reduces the number of groceries to a more manageable 169 types, using broad categories such as chicken, frozen meals, margarine, and soda.</p>
 <p>Since we’re loading the transactional data, we cannot simply use the read.csv() function used previously. Instead, arules provides a read.transactions() function that is similar to read.csv() with the exception that it results in a sparse matrix suitable for transactional data. The sep = “,” parameter specifies that items in the input file are separated by a comma. To read the groceries.csv data into a sparse matrix named groceries, type the following line:</p>
 <pre class="r"><code>##### Chapter 8: Association Rules 
@@ -445,7 +433,7 @@ groceryrules &lt;- apriori(groceries, parameter = list(support =
 ## set transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].
 ## sorting and recoding items ... [109 item(s)] done [0.00s].
 ## creating transaction tree ... done [0.00s].
-## checking subsets of size 1 2 3 4 done [0.00s].
+## checking subsets of size 1 2 3 4 done [0.02s].
 ## writing ... [463 rule(s)] done [0.00s].
 ## creating S4 object  ... done [0.00s].</code></pre>
 <pre class="r"><code>groceryrules</code></pre>
@@ -505,7 +493,6 @@ inspect(berryrules)</code></pre>
 <p>Summary</p>
 <p>Association rules are frequently used to find provide useful insights in the massive transaction databases of large retailers. The Apriori algorithm, which we studied in this chapter, does so by setting minimum thresholds of uniqueness, and reporting only the associations meeting these criteria.</p>
 <p>Reference: Machine Learning with R - Second Edition - Jul 31, 2015 by Brett Lantz</p>
-</div>
 
     </div>
 
@@ -687,6 +674,20 @@ inspect(berryrules)</code></pre>
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/ann-rmd/">Artificial Neural Networks</a></h3>
                                 
                                     
@@ -702,20 +703,6 @@ inspect(berryrules)</code></pre>
                         <article>
                             <header>
                                 <h3><a href="/post/scatter/">Scatter</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-01'>
-                                    July 1, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/spam-filter/">Spam Filter</a></h3>
                                 
                                     
                                 

@@ -17,9 +17,7 @@
       <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/association-rules-rmd/</guid>
-      <description>ASSOCIATION RULES
-
-Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
+      <description>Association Rules-identifying frequently purchased groceries with association rules. market basket analysis will utilize the purchase data collected from one month of operation at a real-world grocery store. The data contains 9,835 transactions or about 327 transactions per day (roughly 30 transactions per hour in a 12-hour business day), suggesting that the retailer is not particularly large, nor is it particularly small.
 The typical grocery store offers a huge variety of items.</description>
     </item>
     
@@ -29,10 +27,18 @@ The typical grocery store offers a huge variety of items.</description>
       <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/clustering-analysis/</guid>
-      <description>CLUSTERING ANALYSIS
-
-The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+      <description>The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
 SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006.</description>
+    </item>
+    
+    <item>
+      <title>Naive Bayes</title>
+      <link>/post/naive-bayes/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/naive-bayes/</guid>
+      <description>The HouseVotes84 dataset was used for applying the naive Bayes algorithm.
+library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984# Note refusals to vote have been treated as missing values!data (HouseVotes84, package=&amp;quot;mlbench&amp;quot;) model &amp;lt;- naiveBayes(Class ~ ., data = HouseVotes84) head(HouseVotes84)## Class V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15## 1 republican n y n y y y n n n y &amp;lt;NA&amp;gt; y y y n## 2 republican n y n y y y n n n n n y y y n## 3 democrat &amp;lt;NA&amp;gt; y y &amp;lt;NA&amp;gt; y y n n n n y n y y n## 4 democrat n y y n &amp;lt;NA&amp;gt; y n n n n y n y n n## 5 democrat y y y n y y n n n n y &amp;lt;NA&amp;gt; y y y## 6 democrat n y y n y y n n n n n n y y y## V16## 1 y## 2 &amp;lt;NA&amp;gt;## 3 n## 4 y## 5 y## 6 y# predict the outcome of the first 20 recordspredict(model, HouseVotes84[1:20,-1]) ## [1] republican republican republican democrat democrat democrat ## [7] republican republican republican democrat republican republican## [13] democrat democrat republican republican democrat democrat ## [19] republican democrat ## Levels: democrat republican# same but displaying posteriorspredict(model, HouseVotes84[1:20,-1], type = &amp;quot;raw&amp;quot;) ## democrat republican## [1,] 1.</description>
     </item>
     
     <item>
@@ -67,7 +73,8 @@ plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/spam-filter/</guid>
-      <description>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &amp;lt;- read.</description>
+      <description>Perform the SMS spam filtering analysis.
+Step 1: Load dataStep 2: Exploring and preparing the data# read the sms data into the sms data framesms_raw &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&amp;quot;, stringsAsFactors = FALSE)# examine the structure of the sms datastr(sms_raw)## &amp;#39;data.frame&amp;#39;: 5559 obs. of 2 variables:## $ type: chr &amp;quot;ham&amp;quot; &amp;quot;ham&amp;quot; &amp;quot;ham&amp;quot; &amp;quot;spam&amp;quot; ...## $ text: chr &amp;quot;Hope you are having a good week. Just checking in&amp;quot; &amp;quot;K.</description>
     </item>
     
     <item>
@@ -76,7 +83,7 @@ plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/support-vector-machine/</guid>
-      <description>SVM- The main purpose of this method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
+      <description>The main purpose of the Support Vector Machine(SVM) method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
 Plot below help visualize overall way to visualize SVM technques.The hyperplane is a multidimensional surface, but it’s easiest to think of it as a straight line between two linearly separable groups of examples.</description>
     </item>
     

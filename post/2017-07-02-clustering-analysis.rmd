@@ -11,14 +11,6 @@ featuredalt: ''
 featuredpath: ''
 linktitle: ''
 ---
-
-
-###############################################
-
-CLUSTERING ANALYSIS
-  
-###############################################
-
 The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
 
 SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006. To protect the users' anonymity, the SNS will remain unnamed. However, at the time the data was collected, the SNS was a popular web destination for US teenagers. Therefore, it is reasonable to assume that the profiles represent a fairly wide cross section of American adolescents in 2006.

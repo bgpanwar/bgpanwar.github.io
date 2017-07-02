@@ -11,16 +11,10 @@ featuredalt: ''
 featuredpath: ''
 linktitle: ''
 ---
-1. Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings.
-        Organize you report using the Five Steps.
-            Show the prediction that the algorithm produced.
-            Give the Accuracy of the predictions.
-            Include the confusion matrix.
-2. Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes. 
+Perform the SMS spam filtering analysis.
 
-#Problem#1: Filtering spam SMS messages
-
-## Step 2: Exploring and preparing the data ---- 
+## Step 1: Load data
+## Step 2: Exploring and preparing the data 
 
 ```{r}
 
@@ -193,34 +187,4 @@ CrossTable(sms_test_pred2, sms_test_labels,
            prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE,
            dnn = c('predicted', 'actual'))
 ```
-Problem#2 Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes. The HouseVotes84 data was used from the mlbench package.
-```{r}
-library (e1071)
 
-## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984
-# Note refusals to vote have been treated as missing values!
-
-data (HouseVotes84, package="mlbench") 
-model <- naiveBayes(Class ~ ., data = HouseVotes84) 
-head(HouseVotes84)
-
-# predict the outcome of the first 20 records
-predict(model, HouseVotes84[1:20,-1]) 
-
-# same but displaying posteriors
-predict(model, HouseVotes84[1:20,-1], type = "raw") 
-
-# now all of them: this is the resubstituion error
-pred <- predict(model, HouseVotes84[,-1])
-
-# form and display confusion matrix & overall accuracy
-tab <- table(pred, HouseVotes84$Class) 
-tab
-sum(tab[row(tab)==col(tab)])/sum(tab)
-
-## using Laplace smoothing: 
-model <- naiveBayes(Class ~ ., data = HouseVotes84, laplace = 3)
-pred <- predict(model, HouseVotes84[,-1]) 
-tab <- table(pred, HouseVotes84$Class) 
-sum(tab[row(tab)==col(tab)])/sum(tab)
-```
