@@ -53,6 +53,16 @@ url=&amp;quot;http://freakonometrics.free.fr/german_credit.csv&amp;quot;credit=
     </item>
     
     <item>
+      <title>Statistical Analysis-Examples</title>
+      <link>/post/statistical-analysis-examples/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/statistical-analysis-examples/</guid>
+      <description>Statistical Analysis consists of code from the Chapter Lab Sections 4.6.1 and 4.6.2(Induction to Statitical book)
+library (ISLR)## Warning: package &amp;#39;ISLR&amp;#39; was built under R version 3.3.3names(Smarket )## [1] &amp;quot;Year&amp;quot; &amp;quot;Lag1&amp;quot; &amp;quot;Lag2&amp;quot; &amp;quot;Lag3&amp;quot; &amp;quot;Lag4&amp;quot; &amp;quot;Lag5&amp;quot; ## [7] &amp;quot;Volume&amp;quot; &amp;quot;Today&amp;quot; &amp;quot;Direction&amp;quot;dim(Smarket )## [1] 1250 9summary (Smarket )## Year Lag1 Lag2 ## Min. :2001 Min. :-4.922000 Min. :-4.922000 ## 1st Qu.:2002 1st Qu.:-0.639500 1st Qu.:-0.639500 ## Median :2003 Median : 0.</description>
+    </item>
+    
+    <item>
       <title>Artificial Neural Networks</title>
       <link>/post/ann-rmd/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
