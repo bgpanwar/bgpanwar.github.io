@@ -33,6 +33,11 @@ So y(x)=f(???ni=1wixi)
 The activation function
 
 The activation function in the biological sense simply adds up the weighted inputs, and if that exceeds a threshold, the neuron fires. This is simply a step function from y = 0 to y = 1:
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 ```{r}
 ##### Part 1: Neural Networks Algorithm is used to 
 ## Example: Modeling the Strength of Concrete  ----

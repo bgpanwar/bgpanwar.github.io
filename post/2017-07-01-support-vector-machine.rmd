@@ -1,0 +1,86 @@
+---
+title: Support Vector Machine
+author: Bhawna G. Panwar
+date: '2017-07-01'
+slug: support-vector-machine
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+SVM- The main purpose of this method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
+
+
+Plot below help visualize overall way to visualize SVM technques.The hyperplane is a multidimensional surface, but it's easiest to think of it as a straight line between two linearly separable groups of examples.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Support vector Machine algorithm was used to analyze optical character recognition dataset.
+
+```{r}
+##### Part 2: Support Vector Machines -------------------
+## Example: Optical Character Recognition ----
+
+## Step 2: Exploring and preparing the data ----
+# read in data and examine structure
+letters <- read.csv("C:/Users/Bhawna/Documents/blog/data/letterdata.csv")
+str(letters)
+
+
+```
+
+```{r}
+# divide into training and test data
+letters_train <- letters[1:16000, ]
+letters_test  <- letters[16001:20000, ]
+
+
+```
+```{r}
+## Step 3: Training a model on the data ----
+# begin by training a simple linear SVM
+library(kernlab)
+letter_classifier <- ksvm(letter ~ ., data = letters_train,
+                          kernel = "vanilladot")
+
+# look at basic information about the model
+letter_classifier
+
+
+```
+```{r}
+## Step 4: Evaluating model performance ----
+# predictions on testing dataset
+letter_predictions <- predict(letter_classifier, letters_test)
+
+head(letter_predictions)
+
+table(letter_predictions, letters_test$letter)
+
+# look only at agreement vs. non-agreement
+# construct a vector of TRUE/FALSE indicating correct/incorrect predictions
+agreement <- letter_predictions == letters_test$letter
+table(agreement)
+prop.table(table(agreement))
+
+
+```
+```{r}
+## Step 5: Improving model performance ----
+set.seed(12345)
+letter_classifier_rbf <- ksvm(letter ~ ., data = letters_train, kernel = "rbfdot")
+letter_predictions_rbf <- predict(letter_classifier_rbf, letters_test)
+
+agreement_rbf <- letter_predictions_rbf == letters_test$letter
+table(agreement_rbf)
+prop.table(table(agreement_rbf))
+```
+Results shows 93% accuracy which is pretty good.
+Summary: By simply changing the kernel function, we were able to increase the accuracy of our character recognition model from 84 percent to 93 percent. If this level of performance is still unsatisfactory for the OCR program, other kernels could be tested, or the cost of constraints parameter C could be varied to modify the width of the decision boundary. As an exercise, you should experiment with these parameters to see how they impact the success of the final model.
