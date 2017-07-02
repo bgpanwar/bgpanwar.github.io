@@ -6,10 +6,20 @@
     <description>Recent content on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bgpanwar.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Data Pond</title>
+      <link>https://bgpanwar.github.io/about/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bgpanwar.github.io/about/</guid>
+      <description>My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data. That was the start of my love for applied statistics.
+Thanks for reading!</description>
+    </item>
     
     <item>
       <title>How does the Bootstrap method work?</title>
@@ -20,19 +30,6 @@
       <description>Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
 set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &amp;lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
 hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
-    </item>
-    
-    <item>
-      <title>About Hugo</title>
-      <link>https://bgpanwar.github.io/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://bgpanwar.github.io/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
-Setup Some fun facts about Hugo:
- Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
     </item>
     
   </channel>
