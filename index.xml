@@ -37,6 +37,15 @@ plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab
     </item>
     
     <item>
+      <title>Spam Filter</title>
+      <link>https://bgpanwar.github.io/post/spam-filter/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bgpanwar.github.io/post/spam-filter/</guid>
+      <description>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &amp;lt;- read.</description>
+    </item>
+    
+    <item>
       <title>Times Series</title>
       <link>https://bgpanwar.github.io/post/times-series/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
@@ -54,15 +63,6 @@ plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab
       <description>Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
 set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &amp;lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
 hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
-    </item>
-    
-    <item>
-      <title>Spam Filter</title>
-      <link>https://bgpanwar.github.io/post/spam-filter/</link>
-      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://bgpanwar.github.io/post/spam-filter/</guid>
-      <description>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &amp;lt;- read.</description>
     </item>
     
   </channel>
