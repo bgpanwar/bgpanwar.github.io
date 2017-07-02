@@ -187,11 +187,11 @@
 
                 
                     <li>
-                        <a href="https://bgpanwar.github.io/post/bootstrap/"><p>How does the Bootstrap method work?</p></a>
+                        <a href="https://bgpanwar.github.io/post/times-series/"><p>Times Series</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://bgpanwar.github.io/post/"><p>Posts</p></a>
+                        <a href="https://bgpanwar.github.io/post/bootstrap/"><p>How does the Bootstrap method work?</p></a>
                     </li>
                 
             </ul>
@@ -208,7 +208,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="https://bgpanwar.github.io/post/bootstrap/">How does the Bootstrap method work?</a></h2>
+            <h2><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h2>
         
         
     </div>
@@ -218,8 +218,8 @@
         
 
         <time class="published"
-            datetime='2017-06-11'>
-            June 11, 2017</time>
+            datetime='2017-07-01'>
+            July 1, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
             <p>1 minute read</p>
@@ -234,43 +234,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&text=How%20does%20the%20Bootstrap%20method%20work%3f&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -280,28 +280,16 @@
     
 
     <div id="content">
-        <div id="question-of-the-day" class="section level2">
-<h2>Question of the day?</h2>
-<p>Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?</p>
-<pre class="r"><code>set.seed(1)
-srs &lt;- rnorm(25, mean=3)
-resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)
-x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)</code></pre>
-<p>Let’s create a histogram here and fit normal curve.</p>
-<pre class="r"><code>hist(x_bar_star, breaks = 40, prob = TRUE)
-curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
-<p><img src="/post/2017-06-11-Bootstrap_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>We can calculate the difference now.</p>
-<pre class="r"><code>mean(x_bar_star)</code></pre>
-<pre><code>## [1] 3.167102</code></pre>
-<pre class="r"><code>mean(srs)</code></pre>
-<pre><code>## [1] 3.168665</code></pre>
-<pre class="r"><code>mean(x_bar_star) - mean(srs)</code></pre>
-<pre><code>## [1] -0.001562762</code></pre>
-<p>Now we observe the standard error of the mean x_bar_star with the sample standard deviation of the resample statistics.</p>
-<pre class="r"><code>sd(x_bar_star)</code></pre>
-<pre><code>## [1] 0.1826719</code></pre>
-</div>
+        <pre class="r"><code># Load data
+population &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+
+# Default plot
+plot(population$Year, population$Population, type=&quot;l&quot;)</code></pre>
+<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code># Adjust axis
+plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)</code></pre>
+<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p>Reference: world_population.csv was obtained from Flowdata.com</p>
 
     </div>
 
@@ -322,6 +310,9 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
 </article>
 <ul class="actions pagination">
     
+        <li><a href="https://bgpanwar.github.io/post/bootstrap/"
+                class="button big previous">How does the Bootstrap method work?</a></li>
+    
 
     
 </ul>
@@ -333,9 +324,9 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/bootstrap\/';
-    var disqus_title = 'How does the Bootstrap method work?';
-    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/bootstrap\/';
+    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
+    var disqus_title = 'Times Series';
+    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -359,43 +350,43 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&text=How%20does%20the%20Bootstrap%20method%20work%3f&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f&title=How%20does%20the%20Bootstrap%20method%20work%3f" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2fbootstrap%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -511,13 +502,13 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://bgpanwar.github.io/post/bootstrap/">How does the Bootstrap method work?</a></h3>
+                                <h3><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-06-11'>
-                                    June 11, 2017</time>
+                                    '2017-07-01'>
+                                    July 1, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -525,7 +516,7 @@ curve(dnorm(x, 3, 0.2), add = TRUE) </code></pre>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://bgpanwar.github.io/post/">Posts</a></h3>
+                                <h3><a href="https://bgpanwar.github.io/post/bootstrap/">How does the Bootstrap method work?</a></h3>
                                 
                                     
                                 

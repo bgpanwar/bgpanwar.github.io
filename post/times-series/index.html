@@ -1,17 +1,11 @@
-
-
-
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>About Data Pond - Data Pond</title>
+            
+                <title>Times Series</title>
+            
         
 
         <meta charset="utf-8" />
@@ -20,6 +14,8 @@
         
 
 
+        
+            <meta name="author" content="Bhawna G. Panwar">
         
         
             
@@ -33,17 +29,15 @@
 
 
 
-<meta name="twitter:text:title" content="About Data Pond"/>
-<meta name="twitter:title" content="About Data Pond"/>
-<meta name="twitter:description" content="My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data. That was the start of my love for applied statistics.
-Thanks for reading!"/>
+<meta name="twitter:text:title" content="Times Series"/>
+<meta name="twitter:title" content="Times Series"/>
+<meta name="twitter:description" content="# Load datapopulation &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)# Default plotplot(population$Year, population$Population, type=&quot;l&quot;)# Adjust axisplot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)Reference: world_population.csv was obtained from Flowdata.com"/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
-        <meta property="og:title" content="About Data Pond" />
-<meta property="og:description" content="My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data. That was the start of my love for applied statistics.
-Thanks for reading!" />
+        <meta property="og:title" content="Times Series" />
+<meta property="og:description" content="# Load datapopulation &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)# Default plotplot(population$Year, population$Population, type=&quot;l&quot;)# Adjust axisplot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)Reference: world_population.csv was obtained from Flowdata.com" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bgpanwar.github.io/about/" />
+<meta property="og:url" content="https://bgpanwar.github.io/post/times-series/" />
 
 
 
@@ -61,13 +55,12 @@ Thanks for reading!" />
 
 
         
-<meta itemprop="name" content="About Data Pond">
-<meta itemprop="description" content="My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data. That was the start of my love for applied statistics.
-Thanks for reading!">
+<meta itemprop="name" content="Times Series">
+<meta itemprop="description" content="# Load datapopulation &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)# Default plotplot(population$Year, population$Population, type=&quot;l&quot;)# Adjust axisplot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)Reference: world_population.csv was obtained from Flowdata.com">
 
 
 <meta itemprop="dateModified" content="2017-07-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="42">
+<meta itemprop="wordCount" content="30">
 
 
 
@@ -105,6 +98,7 @@ Thanks for reading!">
         <div id="wrapper">
 
     
+    
 <header id="header">
     
         <h2><a href="/">Data Pond</i></a></h2>
@@ -136,6 +130,10 @@ Thanks for reading!">
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -224,27 +222,201 @@ Thanks for reading!">
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
+        
+        
         <article class="post">
-            
-            <header>
+    <header>
     <div class="title">
         
-            <h1><a href="https://bgpanwar.github.io/about/">About Data Pond</a></h1>
+            <h1><a href="https://bgpanwar.github.io/post/times-series/">Times Series</a></h1>
             
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-01'>
+            July 1, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>1 minute read</p>
         
         
     </div>
 </header>
 
-            <div id="content">
-                <p>My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data.  That was the start of my love for applied statistics.</p>
 
-<p>Thanks for reading!</p>
+    <section id="social-share">
+        <ul class="icons">
+            
 
-            </div>
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&text=Times%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f&title=Times%20Series" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=https%3a%2f%2fbgpanwar.github.io%2fpost%2ftimes-series%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    <div id="content">
+        <pre class="r"><code># Load data
+population &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+
+# Default plot
+plot(population$Year, population$Population, type=&quot;l&quot;)</code></pre>
+<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code># Adjust axis
+plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)</code></pre>
+<p><img src="/post/2017-07-01-times-series_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p>Reference: world_population.csv was obtained from Flowdata.com</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://bgpanwar.github.io/post/bootstrap/"
+                class="button big previous">How does the Bootstrap method work?</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
+    var disqus_title = 'Times Series';
+    var disqus_url = 'https:\/\/bgpanwar.github.io\/post\/times-series\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
+    
+
+
     </div>
     
 <section id="sidebar">

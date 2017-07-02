@@ -1,0 +1,33 @@
+---
+title: Times Series
+author: Bhawna G. Panwar
+date: '2017-07-01'
+slug: times-series
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Load data
+population <- read.csv("C:/Users/Bhawna/Documents/blog/data/world-population.csv", sep=",", header=TRUE)
+
+# Default plot
+plot(population$Year, population$Population, type="l")
+
+# Adjust axis
+plot(population$Year, population$Population, type="l", ylim=c(0, 7000000000), xlab="Year", ylab="Population")
+```
+
+Reference: world_population.csv was obtained from Flowdata.com
+
