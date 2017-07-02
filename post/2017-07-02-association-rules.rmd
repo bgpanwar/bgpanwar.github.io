@@ -97,4 +97,4 @@ Summary
 
 Association rules are frequently used to find provide useful insights in the massive transaction databases of large retailers. The Apriori algorithm, which we studied in this chapter, does so by setting minimum thresholds of uniqueness, and reporting only the associations meeting these criteria.
 
-Reference: Machine Learning with R
+Reference: Machine Learning with R - Second Edition - Jul 31, 2015 by Brett Lantz

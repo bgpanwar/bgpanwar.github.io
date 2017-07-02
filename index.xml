@@ -24,6 +24,18 @@ The typical grocery store offers a huge variety of items.</description>
     </item>
     
     <item>
+      <title>Clustering Analysis</title>
+      <link>/post/clustering-analysis/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clustering-analysis/</guid>
+      <description>CLUSTERING ANALYSIS
+
+The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006.</description>
+    </item>
+    
+    <item>
       <title>About Data Pond</title>
       <link>/about/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>

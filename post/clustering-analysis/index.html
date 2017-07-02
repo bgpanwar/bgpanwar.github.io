@@ -1,0 +1,833 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Clustering Analysis</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.21" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="Clustering Analysis"/>
+<meta name="twitter:title" content="Clustering Analysis"/>
+<meta name="twitter:description" content="CLUSTERING ANALYSIS
+
+The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006."/>
+<meta name="twitter:site" content="@bgpanwar"/>
+
+        <meta property="og:title" content="Clustering Analysis" />
+<meta property="og:description" content="CLUSTERING ANALYSIS
+
+The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/clustering-analysis/" />
+
+
+
+<meta property="article:published_time" content="2017-07-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Clustering Analysis">
+<meta itemprop="description" content="CLUSTERING ANALYSIS
+
+The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006.">
+
+
+<meta itemprop="dateModified" content="2017-07-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1727">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Data Pond</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/clustering-analysis/"><p>Clustering Analysis</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/ann-rmd/"><p>Artificial Neural Networks</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/scatter/"><p>Scatter</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/spam-filter/"><p>Spam Filter</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=%2fpost%2fclustering-analysis%2f&text=Clustering%20Analysis&via=bgpanwar" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=%2fpost%2fclustering-analysis%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fclustering-analysis%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=%2fpost%2fclustering-analysis%2f&title=Clustering%20Analysis" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2fclustering-analysis%2f&title=Clustering%20Analysis" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2fclustering-analysis%2f&title=Clustering%20Analysis" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=%2fpost%2fclustering-analysis%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="/post/clustering-analysis/">Clustering Analysis</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author"></span>
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+
+    <div id="content">
+        <div id="section" class="section level47">
+<p></p>
+<p>CLUSTERING ANALYSIS</p>
+</div>
+<div id="section-1" class="section level47">
+<p></p>
+<p>The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.</p>
+<p>SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006. To protect the users’ anonymity, the SNS will remain unnamed. However, at the time the data was collected, the SNS was a popular web destination for US teenagers. Therefore, it is reasonable to assume that the profiles represent a fairly wide cross section of American adolescents in 2006.</p>
+<p>The data was sampled evenly across four high school graduation years (2006 through 2009) representing the senior, junior, sophomore, and freshman classes at the time of data collection. Using an automated web crawler, the full text of the SNS profiles were downloaded, and each teen’s gender, age, and number of SNS friends was recorded.</p>
+<p>A text mining tool was used to divide the remaining SNS page content into words. From the top 500 words appearing across all the pages, 36 words were chosen to represent five categories of interests: namely extracurricular activities, fashion, religion, romance, and antisocial behavior. The 36 words include terms such as football, sexy, kissed, bible, shopping, death, and drugs. The final dataset indicates, for each person, how many times each word appeared in the person’s SNS profile.</p>
+<pre class="r"><code>##### Chapter 9: Clustering with k-means 
+
+## Example: Finding Teen Market Segments ----
+## Step 2: Exploring and preparing the data ----
+teens &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/snsdata.csv&quot;)
+str(teens)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    30000 obs. of  40 variables:
+##  $ gradyear    : int  2006 2006 2006 2006 2006 2006 2006 2006 2006 2006 ...
+##  $ gender      : Factor w/ 2 levels &quot;F&quot;,&quot;M&quot;: 2 1 2 1 NA 1 1 2 1 1 ...
+##  $ age         : num  19 18.8 18.3 18.9 19 ...
+##  $ friends     : int  7 0 69 0 10 142 72 17 52 39 ...
+##  $ basketball  : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ football    : int  0 1 1 0 0 0 0 0 0 0 ...
+##  $ soccer      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ softball    : int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ volleyball  : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ swimming    : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ cheerleading: int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ baseball    : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ tennis      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ sports      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ cute        : int  0 1 0 1 0 0 0 0 0 1 ...
+##  $ sex         : int  0 0 0 0 1 1 0 2 0 0 ...
+##  $ sexy        : int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ hot         : int  0 0 0 0 0 0 0 0 0 1 ...
+##  $ kissed      : int  0 0 0 0 5 0 0 0 0 0 ...
+##  $ dance       : int  1 0 0 0 1 0 0 0 0 0 ...
+##  $ band        : int  0 0 2 0 1 0 1 0 0 0 ...
+##  $ marching    : int  0 0 0 0 0 1 1 0 0 0 ...
+##  $ music       : int  0 2 1 0 3 2 0 1 0 1 ...
+##  $ rock        : int  0 2 0 1 0 0 0 1 0 1 ...
+##  $ god         : int  0 1 0 0 1 0 0 0 0 6 ...
+##  $ church      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ jesus       : int  0 0 0 0 0 0 0 0 0 2 ...
+##  $ bible       : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ hair        : int  0 6 0 0 1 0 0 0 0 1 ...
+##  $ dress       : int  0 4 0 0 0 1 0 0 0 0 ...
+##  $ blonde      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ mall        : int  0 1 0 0 0 0 2 0 0 0 ...
+##  $ shopping    : int  0 0 0 0 2 1 0 0 0 1 ...
+##  $ clothes     : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ hollister   : int  0 0 0 0 0 0 2 0 0 0 ...
+##  $ abercrombie : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ die         : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ death       : int  0 0 1 0 0 0 0 0 0 0 ...
+##  $ drunk       : int  0 0 0 0 1 1 0 0 0 0 ...
+##  $ drugs       : int  0 0 0 0 1 0 0 0 0 0 ...</code></pre>
+<pre class="r"><code># look at missing data for female variable
+table(teens$gender)</code></pre>
+<pre><code>## 
+##     F     M 
+## 22054  5222</code></pre>
+<pre class="r"><code>table(teens$gender, useNA = &quot;ifany&quot;)</code></pre>
+<pre><code>## 
+##     F     M  &lt;NA&gt; 
+## 22054  5222  2724</code></pre>
+<pre class="r"><code># look at missing data for age variable
+summary(teens$age)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   3.086  16.310  17.290  17.990  18.260 106.900    5086</code></pre>
+<pre class="r"><code># eliminate age outliers
+teens$age &lt;- ifelse(teens$age &gt;= 13 &amp; teens$age &lt; 20,
+                     teens$age, NA)
+
+summary(teens$age)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   13.03   16.30   17.26   17.25   18.22   20.00    5523</code></pre>
+<pre class="r"><code># reassign missing gender values to &quot;unknown&quot;
+teens$female &lt;- ifelse(teens$gender == &quot;F&quot; &amp;
+                         !is.na(teens$gender), 1, 0)
+teens$no_gender &lt;- ifelse(is.na(teens$gender), 1, 0)
+
+# check our recoding work
+table(teens$gender, useNA = &quot;ifany&quot;)</code></pre>
+<pre><code>## 
+##     F     M  &lt;NA&gt; 
+## 22054  5222  2724</code></pre>
+<pre class="r"><code>table(teens$female, useNA = &quot;ifany&quot;)</code></pre>
+<pre><code>## 
+##     0     1 
+##  7946 22054</code></pre>
+<pre class="r"><code>table(teens$no_gender, useNA = &quot;ifany&quot;)</code></pre>
+<pre><code>## 
+##     0     1 
+## 27276  2724</code></pre>
+<pre class="r"><code># finding the mean age by cohort
+mean(teens$age) # doesn&#39;t work</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(teens$age, na.rm = TRUE) # works</code></pre>
+<pre><code>## [1] 17.25243</code></pre>
+<pre class="r"><code># age by cohort
+aggregate(data = teens, age ~ gradyear, mean, na.rm = TRUE)</code></pre>
+<pre><code>##   gradyear      age
+## 1     2006 18.65586
+## 2     2007 17.70617
+## 3     2008 16.76770
+## 4     2009 15.81957</code></pre>
+<pre class="r"><code># create a vector with the average age for each gradyear, repeated by person
+ave_age &lt;- ave(teens$age, teens$gradyear,
+                 FUN = function(x) mean(x, na.rm = TRUE))
+
+
+teens$age &lt;- ifelse(is.na(teens$age), ave_age, teens$age)
+
+# check the summary results to ensure missing values are eliminated
+summary(teens$age)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   13.03   16.28   17.24   17.24   18.21   20.00</code></pre>
+<pre class="r"><code>## Step 3: Training a model on the data ----
+interests &lt;- teens[5:40]
+interests_z &lt;- as.data.frame(lapply(interests, scale))
+
+set.seed(2345)
+teen_clusters &lt;- kmeans(interests_z, 5)</code></pre>
+<pre class="r"><code>## Step 4: Evaluating model performance ----
+# look at the size of the clusters
+teen_clusters$size</code></pre>
+<pre><code>## [1]   871   600  5981  1034 21514</code></pre>
+<pre class="r"><code># look at the cluster centers
+teen_clusters$centers</code></pre>
+<pre><code>##    basketball   football      soccer    softball  volleyball    swimming
+## 1  0.16001227  0.2364174  0.10385512  0.07232021  0.18897158  0.23970234
+## 2 -0.09195886  0.0652625 -0.09932124 -0.01739428 -0.06219308  0.03339844
+## 3  0.52755083  0.4873480  0.29778605  0.37178877  0.37986175  0.29628671
+## 4  0.34081039  0.3593965  0.12722250  0.16384661  0.11032200  0.26943332
+## 5 -0.16695523 -0.1641499 -0.09033520 -0.11367669 -0.11682181 -0.10595448
+##   cheerleading    baseball      tennis      sports        cute
+## 1    0.3931445  0.02993479  0.13532387  0.10257837  0.37884271
+## 2   -0.1101103 -0.11487510  0.04062204 -0.09899231 -0.03265037
+## 3    0.3303485  0.35231971  0.14057808  0.32967130  0.54442929
+## 4    0.1856664  0.27527088  0.10980958  0.79711920  0.47866008
+## 5   -0.1136077 -0.10918483 -0.05097057 -0.13135334 -0.18878627
+##            sex        sexy         hot      kissed       dance        band
+## 1  0.020042068  0.11740551  0.41389104  0.06787768  0.22780899 -0.10257102
+## 2 -0.042486141 -0.04329091 -0.03812345 -0.04554933  0.04573186  4.06726666
+## 3  0.002913623  0.24040196  0.38551819 -0.03356121  0.45662534 -0.02120728
+## 4  2.028471066  0.51266080  0.31708549  2.97973077  0.45535061  0.38053621
+## 5 -0.097928345 -0.09501817 -0.13810894 -0.13535855 -0.15932739 -0.12167214
+##      marching      music        rock         god      church       jesus
+## 1 -0.10942590  0.1378306  0.05905951  0.03651755 -0.00709374  0.01458533
+## 2  5.25757242  0.4981238  0.15963917  0.09283620  0.06414651  0.04801941
+## 3 -0.10880541  0.2844999  0.21436936  0.35014919  0.53739806  0.27843424
+## 4 -0.02014608  1.1367885  1.21013948  0.41679142  0.16627797  0.12988313
+## 5 -0.11098063 -0.1532006 -0.12460034 -0.12144246 -0.15889274 -0.08557822
+##         bible        hair       dress      blonde        mall    shopping
+## 1 -0.03692278  0.43807926  0.14905267  0.06137340  0.60368108  0.79806891
+## 2  0.05863810 -0.04484083  0.07201611 -0.01146396 -0.08724304 -0.03865318
+## 3  0.22990963  0.23612853  0.39407628  0.03471458  0.48318495  0.66327838
+## 4  0.08478769  2.55623737  0.53852195  0.36134138  0.62256686  0.27101815
+## 5 -0.06813159 -0.20498730 -0.14348036 -0.02918252 -0.18625656 -0.22865236
+##         clothes  hollister abercrombie          die       death
+## 1  0.5651537331  4.1521844  3.96493810  0.043475966  0.09857501
+## 2 -0.0003526292 -0.1678300 -0.14129577  0.009447317  0.05135888
+## 3  0.3759725120 -0.0553846 -0.07417839  0.037989066  0.11972190
+## 4  1.2306917174  0.1610784  0.26324494  1.712181870  0.93631312
+## 5 -0.1865419798 -0.1557662 -0.14861104 -0.094875180 -0.08370729
+##          drunk       drugs
+## 1  0.035614771  0.03443294
+## 2 -0.086773220 -0.06878491
+## 3 -0.009688746 -0.05973769
+## 4  1.897388200  2.73326605
+## 5 -0.087520105 -0.11423381</code></pre>
+<pre class="r"><code>## Step 5: Improving model performance ----
+# apply the cluster IDs to the original data frame
+teens$cluster &lt;- teen_clusters$cluster
+
+# look at the first five records
+teens[1:5, c(&quot;cluster&quot;, &quot;gender&quot;, &quot;age&quot;, &quot;friends&quot;)]</code></pre>
+<pre><code>##   cluster gender    age friends
+## 1       5      M 18.982       7
+## 2       3      F 18.801       0
+## 3       5      M 18.335      69
+## 4       5      F 18.875       0
+## 5       4   &lt;NA&gt; 18.995      10</code></pre>
+<pre class="r"><code># mean age by cluster
+aggregate(data = teens, age ~ cluster, mean)</code></pre>
+<pre><code>##   cluster      age
+## 1       1 16.86497
+## 2       2 17.39037
+## 3       3 17.07656
+## 4       4 17.11957
+## 5       5 17.29849</code></pre>
+<pre class="r"><code># proportion of females by cluster
+aggregate(data = teens, female ~ cluster, mean)</code></pre>
+<pre><code>##   cluster    female
+## 1       1 0.8381171
+## 2       2 0.7250000
+## 3       3 0.8378198
+## 4       4 0.8027079
+## 5       5 0.6994515</code></pre>
+<pre class="r"><code># mean number of friends by cluster
+aggregate(data = teens, friends ~ cluster, mean)</code></pre>
+<pre><code>##   cluster  friends
+## 1       1 41.43054
+## 2       2 32.57333
+## 3       3 37.16185
+## 4       4 30.50290
+## 5       5 27.70052</code></pre>
+<p>Reference: Machine Learning with R - Second Edition - Jul 31, 2015 by Brett Lantz</p>
+</div>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="/post/ann-rmd/"
+                class="button big previous">Artificial Neural Networks</a></li>
+    
+
+    
+        <li><a href="/post/association-rules-rmd/"
+                class="button big next">Association Rules</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = '\/post\/clustering-analysis\/';
+    var disqus_title = 'Clustering Analysis';
+    var disqus_url = '\/post\/clustering-analysis\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo.jpg" class="intro-circle" width="" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>Data Pond</h2>
+                    <p>Bhawna G. Panwar</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/bgpanwar" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/bgpanwar" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/bgpanwar" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:bgpanwar@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/clustering-analysis/">Clustering Analysis</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/ann-rmd/">Artificial Neural Networks</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-01'>
+                                    July 1, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/scatter/">Scatter</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-01'>
+                                    July 1, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/spam-filter/">Spam Filter</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-01'>
+                                    July 1, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /post/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Hi, Welcome to my blog.</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+            </ul>
+
+            <p class="copyright">&copy; Data Pond. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
+        
+
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
