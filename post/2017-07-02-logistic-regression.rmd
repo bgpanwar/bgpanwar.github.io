@@ -1,0 +1,120 @@
+---
+title: Logistic Regression
+author: Bhawna G. Panwar
+date: '2017-07-02'
+slug: logistic-regression
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+Following is the Logistic Regression analysis of the Challenger data. 
+```{r}
+## Example: Space Shuttle Launch Data ----
+launch <- read.csv("C:/Users/Bhawna/Documents/blog/data/challenger.csv")
+
+# examine the launch data
+str(launch)
+
+# logisitic regression
+
+# First recode the distress_ct variable into 0 and 1, making 1 to represent at least
+# one failure during a launch.
+
+launch$distress_ct = ifelse(launch$distress_ct<1,0,1)
+launch$distress_ct
+
+# set up trainning and test data sets
+
+indx = sample(1:nrow(launch), as.integer(0.9*nrow(launch)))
+indx
+
+launch_train = launch[indx,]
+launch_test = launch[-indx,]
+
+launch_train_labels = launch[indx,1]
+launch_test_labels = launch[-indx,1]   
+
+
+
+
+```
+
+```{r}
+# Check if there are any missing values
+
+library(Amelia)
+missmap(launch, main = "Missing values vs observed")
+
+# number of missing values in each column
+
+sapply(launch,function(x) sum(is.na(x)))
+
+# number of unique values in each column
+
+sapply(launch, function(x) length(unique(x)))
+
+```
+
+
+
+```{r}
+# fit the logistic regression model, with all predictor variables
+
+model <- glm(distress_ct ~.,family=binomial(link='logit'),data=launch_train)
+model
+
+summary(model)
+```
+
+```{r}
+anova(model, test="Chisq")
+
+# drop the insignificant predictors, alpha = 0.10
+
+model <- glm(distress_ct ~ temperature,family=binomial(link='logit'),data=launch_train)
+model
+
+summary(model)
+
+anova(model, test="Chisq")
+
+
+
+```
+
+```{r}
+# check Accuracy
+
+fitted.results <- predict(model,newdata=launch_test,type='response')
+fitted.results <- ifelse(fitted.results > 0.5,1,0)
+
+misClasificError <- mean(fitted.results != launch_test$distress_ct)
+print(paste('Accuracy',1-misClasificError))
+
+
+
+
+```
+
+```{r}
+# ROC
+# Because this data set is so small, it is possible that the test data set
+# does not contain both 0 and 1 values.  If this happens the code will not
+# run.  And since the test data set is so small the ROC is not useful here
+# but the code is provided.
+
+library(ROCR)
+p <- predict(model, newdata=launch_test, type="response")
+pr <- prediction(p, launch_test$distress_ct)
+prf <- performance(pr, measure = "tpr", x.measure = "fpr")
+plot(prf)
+
+auc <- performance(pr, measure = "auc")
+auc <- auc@y.values[[1]]
+
+```
+

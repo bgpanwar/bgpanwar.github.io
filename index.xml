@@ -32,6 +32,16 @@ SNS dataset representing a random sample of 30,000 U.S. high school students who
     </item>
     
     <item>
+      <title>Logistic Regression</title>
+      <link>/post/logistic-regression/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/logistic-regression/</guid>
+      <description>Following is the Logistic Regression analysis of the Challenger data.
+## Example: Space Shuttle Launch Data ----launch &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/challenger.csv&amp;quot;)# examine the launch datastr(launch)## &amp;#39;data.frame&amp;#39;: 23 obs. of 4 variables:## $ distress_ct : int 0 1 0 0 0 0 0 0 1 1 ...## $ temperature : int 66 70 69 68 67 72 73 70 57 63 ...## $ field_check_pressure: int 50 50 50 50 50 50 100 100 200 200 .</description>
+    </item>
+    
+    <item>
       <title>Naive Bayes</title>
       <link>/post/naive-bayes/</link>
       <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
