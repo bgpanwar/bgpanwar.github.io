@@ -84,12 +84,10 @@ concrete_model <- neuralnet(formula = strength ~ cement + slag +
                               data = concrete_train)
 
 # visualize the network topology
-plot(concrete_model)
-
-# Reference: http://www.r-bloggers.com/neuralnettools-1-0-0-now-on-cran/
-
+a<- plot(concrete_model)
 
 ```
+# Reference: http://www.r-bloggers.com/neuralnettools-1-0-0-now-on-cran/
 
 ```{r}
 # alternative plot
