@@ -46,5 +46,14 @@ set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sa
 hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
     </item>
     
+    <item>
+      <title>Spam Filter</title>
+      <link>https://bgpanwar.github.io/post/spam-filter/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://bgpanwar.github.io/post/spam-filter/</guid>
+      <description>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &amp;lt;- read.</description>
+    </item>
+    
   </channel>
 </rss>
