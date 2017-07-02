@@ -1,0 +1,89 @@
+---
+title: logistic Regression2
+author: Bhawna G. Panwar
+date: '2017-07-02'
+slug: logistic-regression2
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+Logistic Regression was used to run the Credit dataset.
+
+```{r}
+credit <- read.csv("C:/Users/Bhawna/Documents/blog/data/credit.csv")
+
+# examine the launch data
+str(credit)
+
+# logisitic regression
+
+# set up trainning and test data sets
+
+indx = sample(1:nrow(credit), as.integer(0.9*nrow(credit)))
+indx
+
+credit_train = credit[indx,]
+credit_test = credit[-indx,]
+
+credit_train_labels = credit[indx,17]
+credit_test_labels = credit[-indx,17]   
+
+# Check if there are any missing values
+
+library(Amelia)
+missmap(credit, main = "Missing values vs observed")
+
+# number of missing values in each column
+
+sapply(credit,function(x) sum(is.na(x)))
+
+# number of unique values in each column
+
+sapply(credit, function(x) length(unique(x)))
+
+# fit the logistic regression model, with all predictor variables
+
+model <- glm(default ~.,family=binomial(link='logit'),data=credit_train)
+model
+
+summary(model)
+
+anova(model, test="Chisq")
+
+# drop the insignificant predictors, alpha = 0.10
+
+model <- glm(default ~ checking_balance + months_loan_duration + credit_history +  percent_of_income + age,family=binomial(link='logit'),data=credit_train)
+model
+
+summary(model)
+
+anova(model, test="Chisq")
+
+# check Accuracy
+
+fitted.results <- predict(model,newdata=credit_test,type='response')
+fitted.results <- ifelse(fitted.results > 0.5,1,0)
+
+misClasificError <- mean(fitted.results != credit_test$default)
+print(paste('Accuracy',1-misClasificError))
+
+# ROC
+# Because this data set is so small, it is possible that the test data set
+# does not contain both 0 and 1 values.  If this happens the code will not
+# run.  And since the test data set is so small the ROC is not useful here
+# but the code is provided.
+
+library(ROCR)
+p <- predict(model, newdata=credit_test, type="response")
+pr <- prediction(p, credit_test$default)
+prf <- performance(pr, measure = "tpr", x.measure = "fpr")
+plot(prf)
+
+auc <- performance(pr, measure = "auc")
+auc <- auc@y.values[[1]]
+auc
+```

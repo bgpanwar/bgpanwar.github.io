@@ -73,6 +73,16 @@ library (ISLR)## Warning: package &amp;#39;ISLR&amp;#39; was built under R vers
     </item>
     
     <item>
+      <title>logistic Regression2</title>
+      <link>/post/logistic-regression2/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/logistic-regression2/</guid>
+      <description>Logistic Regression was used to run the Credit dataset.
+credit &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&amp;quot;)# examine the launch datastr(credit)## &amp;#39;data.frame&amp;#39;: 1000 obs. of 17 variables:## $ checking_balance : Factor w/ 4 levels &amp;quot;&amp;lt; 0 DM&amp;quot;,&amp;quot;&amp;gt; 200 DM&amp;quot;,..: 1 3 4 1 1 4 4 3 4 3 ...## $ months_loan_duration: int 6 48 12 42 24 36 24 36 12 30 ...## $ credit_history : Factor w/ 5 levels &amp;quot;critical&amp;quot;,&amp;quot;good&amp;quot;,.</description>
+    </item>
+    
+    <item>
       <title>Artificial Neural Networks</title>
       <link>/post/ann-rmd/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>

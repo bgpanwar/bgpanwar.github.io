@@ -1,0 +1,998 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>logistic Regression2</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.21" />
+        
+
+
+        
+            <meta name="author" content="Bhawna G. Panwar">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="logistic Regression2"/>
+<meta name="twitter:title" content="logistic Regression2"/>
+<meta name="twitter:description" content="Logistic Regression was used to run the Credit dataset.
+credit &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&quot;)# examine the launch datastr(credit)## &#39;data.frame&#39;: 1000 obs. of 17 variables:## $ checking_balance : Factor w/ 4 levels &quot;&lt; 0 DM&quot;,&quot;&gt; 200 DM&quot;,..: 1 3 4 1 1 4 4 3 4 3 ...## $ months_loan_duration: int 6 48 12 42 24 36 24 36 12 30 ...## $ credit_history : Factor w/ 5 levels &quot;critical&quot;,&quot;good&quot;,."/>
+<meta name="twitter:site" content="@bgpanwar"/>
+
+        <meta property="og:title" content="logistic Regression2" />
+<meta property="og:description" content="Logistic Regression was used to run the Credit dataset.
+credit &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&quot;)# examine the launch datastr(credit)## &#39;data.frame&#39;: 1000 obs. of 17 variables:## $ checking_balance : Factor w/ 4 levels &quot;&lt; 0 DM&quot;,&quot;&gt; 200 DM&quot;,..: 1 3 4 1 1 4 4 3 4 3 ...## $ months_loan_duration: int 6 48 12 42 24 36 24 36 12 30 ...## $ credit_history : Factor w/ 5 levels &quot;critical&quot;,&quot;good&quot;,." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/logistic-regression2/" />
+
+
+
+<meta property="article:published_time" content="2017-07-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="logistic Regression2">
+<meta itemprop="description" content="Logistic Regression was used to run the Credit dataset.
+credit &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&quot;)# examine the launch datastr(credit)## &#39;data.frame&#39;: 1000 obs. of 17 variables:## $ checking_balance : Factor w/ 4 levels &quot;&lt; 0 DM&quot;,&quot;&gt; 200 DM&quot;,..: 1 3 4 1 1 4 4 3 4 3 ...## $ months_loan_duration: int 6 48 12 42 24 36 24 36 12 30 ...## $ credit_history : Factor w/ 5 levels &quot;critical&quot;,&quot;good&quot;,.">
+
+
+<meta itemprop="dateModified" content="2017-07-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2833">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Data Pond</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/clustering-analysis/"><p>Clustering Analysis</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/random-forest-analysis/"><p>Random Forest Analysis</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=%2fpost%2flogistic-regression2%2f&text=logistic%20Regression2&via=bgpanwar" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=%2fpost%2flogistic-regression2%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2flogistic-regression2%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=%2fpost%2flogistic-regression2%2f&title=logistic%20Regression2" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2flogistic-regression2%2f&title=logistic%20Regression2" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2flogistic-regression2%2f&title=logistic%20Regression2" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=%2fpost%2flogistic-regression2%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="/post/logistic-regression2/">logistic Regression2</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>14 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+
+    <div id="content">
+        <p>Logistic Regression was used to run the Credit dataset.</p>
+<pre class="r"><code>credit &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&quot;)
+
+# examine the launch data
+str(credit)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    1000 obs. of  17 variables:
+##  $ checking_balance    : Factor w/ 4 levels &quot;&lt; 0 DM&quot;,&quot;&gt; 200 DM&quot;,..: 1 3 4 1 1 4 4 3 4 3 ...
+##  $ months_loan_duration: int  6 48 12 42 24 36 24 36 12 30 ...
+##  $ credit_history      : Factor w/ 5 levels &quot;critical&quot;,&quot;good&quot;,..: 1 2 1 2 4 2 2 2 2 1 ...
+##  $ purpose             : Factor w/ 6 levels &quot;business&quot;,&quot;car&quot;,..: 5 5 4 5 2 4 5 2 5 2 ...
+##  $ amount              : int  1169 5951 2096 7882 4870 9055 2835 6948 3059 5234 ...
+##  $ savings_balance     : Factor w/ 5 levels &quot;&lt; 100 DM&quot;,&quot;&gt; 1000 DM&quot;,..: 5 1 1 1 1 5 4 1 2 1 ...
+##  $ employment_duration : Factor w/ 5 levels &quot;&lt; 1 year&quot;,&quot;&gt; 7 years&quot;,..: 2 3 4 4 3 3 2 3 4 5 ...
+##  $ percent_of_income   : int  4 2 2 2 3 2 3 2 2 4 ...
+##  $ years_at_residence  : int  4 2 3 4 4 4 4 2 4 2 ...
+##  $ age                 : int  67 22 49 45 53 35 53 35 61 28 ...
+##  $ other_credit        : Factor w/ 3 levels &quot;bank&quot;,&quot;none&quot;,..: 2 2 2 2 2 2 2 2 2 2 ...
+##  $ housing             : Factor w/ 3 levels &quot;other&quot;,&quot;own&quot;,..: 2 2 2 1 1 1 2 3 2 2 ...
+##  $ existing_loans_count: int  2 1 1 1 2 1 1 1 1 2 ...
+##  $ job                 : Factor w/ 4 levels &quot;management&quot;,&quot;skilled&quot;,..: 2 2 4 2 2 4 2 1 4 1 ...
+##  $ dependents          : int  1 1 2 2 2 2 1 1 1 1 ...
+##  $ phone               : Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 2 1 1 1 1 2 1 2 1 1 ...
+##  $ default             : Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 1 2 1 1 2 1 1 1 1 2 ...</code></pre>
+<pre class="r"><code># logisitic regression
+
+# set up trainning and test data sets
+
+indx = sample(1:nrow(credit), as.integer(0.9*nrow(credit)))
+indx</code></pre>
+<pre><code>##   [1] 504 183 769  61 668 182 950 227 404 823 423 454 236 865 294 174 567
+##  [18] 473 317 681  74 200 840 274 365 770 420 509 781 953 137 122 562 462
+##  [35] 828 923 470 997 341 705 369 872 777 418  53 927 499 168 607 457  41
+##  [52] 129 827 584 640 738 482 976 304 390  36 796 816 356 517 968 242 971
+##  [69] 123 754 870 275 563 896 752 717 271 750 815 511 407 530 118  18 841
+##  [86] 735  50 734 992 930 684 161 195 965 290  13 106 709 925 600 737 916
+## [103] 487 783 329   5 175 895  60 797 500 519 393 701 389 415  49 891 384
+## [120] 426  68 219 434 638 111   1  38 879 372 807 198 260  10 821 883 644
+## [137] 202 825 715 836 272 616 598  16 830 309 412 749 177 497 375 417 676
+## [154] 253 498 296 671 951 114 432 746 824 811 871 978 335 438 894 707 545
+## [171] 962 608 100 154 990 104 289   8 906 491 117 138 784 868 131 909  48
+## [188] 408  40 905 987 522 189 747 993 793  85 712   2 277 218  15 698 613
+## [205] 446 647 708 246 897 843 151 333 533 458 226 964 919 901 995  46 360
+## [222] 262 295   7 981 570 286 568 213  17 666  97 192 635 521 342 772 669
+## [239] 955 143 541 938 231 364 459 520 952 303  70 791 116 193 866 630 822
+## [256] 383 264 849 914 611 693 973 970  80 212 658  59 551 771  14 685 648
+## [273] 232 575 234 523 476 947 853 903 744 656 931 645 205 299 406 526 651
+## [290] 667 624 889 524 851 633 996 537 478 940 721 306 539 867 199 848  81
+## [307] 697 786 256 826 578 979 543 683 141 318 959 326 437 918 216 839  33
+## [324] 402 689 653 661 321 655 261 224 954 856   9 577 547 163 729  30 753
+## [341] 603 818 363 494 751  71  35 222 431 327 546 732 590 109 101 251 490
+## [358] 829 700  34 394 642 727 348 595 719 316  69 994 240 880 377 801 486
+## [375] 665 312 276 723 165 844 890  90  72 283 493 265 359 774 270 803 720
+## [392] 714 305 552 741  78 433 850  92  94 975 411  91 191 832 946 350 589
+## [409] 153  65 606  86 452 706 502 550 366 235 787 929  87 542 776 986 255
+## [426] 508 810 269 802 349 439 785 913 120 532 673 601 634 538 492 453  79
+## [443] 999 400 217 725 833 331 926 949 391 139 157 663 599 559 513 179 942
+## [460] 659 489  95 481 628 380 627 768  37 960 325  67 298 576 512 128 430
+## [477] 180 760 657 795  21 581 688 892 444 789 156 267 900 686 501 147 819
+## [494] 620 586 631 605 352 654  96  51  75 980 814 249  12 579  63 188 536
+## [511] 112 718 281 748 293 780 549 215 842 711 302 190 531 873  89 382 310
+## [528] 140 121 702 376 728 319 845 875 445 572 378 113  32 817 887 130 127
+## [545] 580 710 775 166 247 535 912 695 862 761 429 440 558 311 337 220 928
+## [562] 413 922 300 328 985 878 483 677 238 495 409 831 258 564 435 804 888
+## [579] 794 282 660   4 991 171  55 790 904 185 196 778 756 228 664 416 726
+## [596] 874 397 460 301 733 618 554 911 641 902 908 557 221 755 503 110 496
+## [613] 982 164 983  39 211 465 410 948 347 362 798 716 932 134  76  73 560
+## [630] 809 571 379 373 428 604 150 399 678 449  11 480 933 988 924 675 854
+## [647] 468 625 820 268 155 582  93 471 967 469 966 323 338 119 263 257 133
+## [664] 528 427 507 687 680 588 650 353 886 561 813 448 812 956 340 834 455
+## [681] 422 574 569 743 479 386 178  20 893 203 773 167 764 989 210  83 145
+## [698] 132 103 233  24 184 898 421 740 884 285 672 921 254 766 244 652 292
+## [715] 403 172 506  22  88 591 125 186  25 736 371 297 343 339 425  31 800
+## [732] 555 475 361 204 344 881 649  26 860  54 699 529 885 450 313 152 162
+## [749] 692 593 385 225 730 612 682 206 910 724 284 534 354 969 696 320 280
+## [766] 149 108 441 243 587 527 187 855 442 351 632  27 863 565 939 915 525
+## [783] 488 876 907 516  52  43 957 583 273 518 170 181 573 358 370 160 679
+## [800] 451 806 690 194 463 346  57 241 759 436 107 158 614 670 485 621 443
+## [817]  64 484 920 597 374 124 674  82 899 398 250 937 622  44  77 115 388
+## [834]  19  58 722 548   6 917 592 639 742 126 544 148 159 345 945 757 307
+## [851] 984 858 935 136 972 368 877 314 864 239 619 882 694 835 623 315 102
+## [868] 477 788 419 424 703 357 958 936 401 223 805 731  98 763 229 941 808
+## [885] 782  99 259 308 846 713 792 602   3 566 847 779 266 629 556 230</code></pre>
+<pre class="r"><code>credit_train = credit[indx,]
+credit_test = credit[-indx,]
+
+credit_train_labels = credit[indx,17]
+credit_test_labels = credit[-indx,17]   
+
+# Check if there are any missing values
+
+library(Amelia)</code></pre>
+<pre><code>## Warning: package &#39;Amelia&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: Rcpp</code></pre>
+<pre><code>## ## 
+## ## Amelia II: Multiple Imputation
+## ## (Version 1.7.4, built: 2015-12-05)
+## ## Copyright (C) 2005-2017 James Honaker, Gary King and Matthew Blackwell
+## ## Refer to http://gking.harvard.edu/amelia/ for more information
+## ##</code></pre>
+<pre class="r"><code>missmap(credit, main = &quot;Missing values vs observed&quot;)</code></pre>
+<p><img src="/post/2017-07-02-logistic-regression2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code># number of missing values in each column
+
+sapply(credit,function(x) sum(is.na(x)))</code></pre>
+<pre><code>##     checking_balance months_loan_duration       credit_history 
+##                    0                    0                    0 
+##              purpose               amount      savings_balance 
+##                    0                    0                    0 
+##  employment_duration    percent_of_income   years_at_residence 
+##                    0                    0                    0 
+##                  age         other_credit              housing 
+##                    0                    0                    0 
+## existing_loans_count                  job           dependents 
+##                    0                    0                    0 
+##                phone              default 
+##                    0                    0</code></pre>
+<pre class="r"><code># number of unique values in each column
+
+sapply(credit, function(x) length(unique(x)))</code></pre>
+<pre><code>##     checking_balance months_loan_duration       credit_history 
+##                    4                   33                    5 
+##              purpose               amount      savings_balance 
+##                    6                  921                    5 
+##  employment_duration    percent_of_income   years_at_residence 
+##                    5                    4                    4 
+##                  age         other_credit              housing 
+##                   53                    3                    3 
+## existing_loans_count                  job           dependents 
+##                    4                    4                    2 
+##                phone              default 
+##                    2                    2</code></pre>
+<pre class="r"><code># fit the logistic regression model, with all predictor variables
+
+model &lt;- glm(default ~.,family=binomial(link=&#39;logit&#39;),data=credit_train)
+model</code></pre>
+<pre><code>## 
+## Call:  glm(formula = default ~ ., family = binomial(link = &quot;logit&quot;), 
+##     data = credit_train)
+## 
+## Coefficients:
+##                    (Intercept)        checking_balance&gt; 200 DM  
+##                     -2.328e+00                      -9.605e-01  
+##     checking_balance1 - 200 DM         checking_balanceunknown  
+##                     -2.609e-01                      -1.719e+00  
+##           months_loan_duration              credit_historygood  
+##                      3.438e-02                       1.037e+00  
+##          credit_historyperfect              credit_historypoor  
+##                      1.493e+00                       6.539e-01  
+##        credit_historyvery good                      purposecar  
+##                      1.590e+00                       2.389e-01  
+##                    purposecar0                purposeeducation  
+##                     -2.067e-01                       6.630e-01  
+##    purposefurniture/appliances              purposerenovations  
+##                     -2.109e-01                       4.148e-01  
+##                         amount        savings_balance&gt; 1000 DM  
+##                      8.711e-05                      -1.025e+00  
+##    savings_balance100 - 500 DM    savings_balance500 - 1000 DM  
+##                     -1.707e-01                      -1.808e-01  
+##         savings_balanceunknown    employment_duration&gt; 7 years  
+##                     -9.805e-01                      -2.460e-01  
+## employment_duration1 - 4 years  employment_duration4 - 7 years  
+##                     -2.602e-01                      -8.296e-01  
+##  employment_durationunemployed               percent_of_income  
+##                      5.115e-03                       3.160e-01  
+##             years_at_residence                             age  
+##                     -1.293e-02                      -1.288e-02  
+##               other_creditnone               other_creditstore  
+##                     -5.519e-01                      -8.932e-03  
+##                     housingown                     housingrent  
+##                     -6.249e-02                       3.896e-01  
+##           existing_loans_count                      jobskilled  
+##                      3.542e-01                       1.388e-01  
+##                  jobunemployed                    jobunskilled  
+##                     -4.270e-01                      -3.646e-02  
+##                     dependents                        phoneyes  
+##                      2.380e-01                      -3.638e-01  
+## 
+## Degrees of Freedom: 899 Total (i.e. Null);  864 Residual
+## Null Deviance:       1105 
+## Residual Deviance: 848.8     AIC: 920.8</code></pre>
+<pre class="r"><code>summary(model)</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = default ~ ., family = binomial(link = &quot;logit&quot;), 
+##     data = credit_train)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.9447  -0.7793  -0.4034   0.7916   2.6465  
+## 
+## Coefficients:
+##                                  Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)                    -2.328e+00  9.573e-01  -2.432 0.015016 *  
+## checking_balance&gt; 200 DM       -9.605e-01  3.833e-01  -2.506 0.012214 *  
+## checking_balance1 - 200 DM     -2.609e-01  2.129e-01  -1.226 0.220380    
+## checking_balanceunknown        -1.719e+00  2.384e-01  -7.211 5.56e-13 ***
+## months_loan_duration            3.438e-02  9.682e-03   3.551 0.000384 ***
+## credit_historygood              1.037e+00  2.718e-01   3.815 0.000136 ***
+## credit_historyperfect           1.493e+00  4.393e-01   3.397 0.000681 ***
+## credit_historypoor              6.539e-01  3.485e-01   1.876 0.060630 .  
+## credit_historyvery good         1.590e+00  4.385e-01   3.625 0.000289 ***
+## purposecar                      2.389e-01  3.276e-01   0.729 0.465827    
+## purposecar0                    -2.067e-01  8.204e-01  -0.252 0.801123    
+## purposeeducation                6.630e-01  4.644e-01   1.428 0.153406    
+## purposefurniture/appliances    -2.109e-01  3.218e-01  -0.655 0.512227    
+## purposerenovations              4.148e-01  5.873e-01   0.706 0.480046    
+## amount                          8.711e-05  4.532e-05   1.922 0.054591 .  
+## savings_balance&gt; 1000 DM       -1.025e+00  5.218e-01  -1.965 0.049430 *  
+## savings_balance100 - 500 DM    -1.707e-01  2.916e-01  -0.585 0.558331    
+## savings_balance500 - 1000 DM   -1.808e-01  4.100e-01  -0.441 0.659146    
+## savings_balanceunknown         -9.805e-01  2.718e-01  -3.607 0.000310 ***
+## employment_duration&gt; 7 years   -2.460e-01  2.945e-01  -0.835 0.403563    
+## employment_duration1 - 4 years -2.602e-01  2.434e-01  -1.069 0.285122    
+## employment_duration4 - 7 years -8.296e-01  3.029e-01  -2.739 0.006161 ** 
+## employment_durationunemployed   5.115e-03  4.365e-01   0.012 0.990650    
+## percent_of_income               3.160e-01  8.956e-02   3.528 0.000418 ***
+## years_at_residence             -1.293e-02  8.785e-02  -0.147 0.883007    
+## age                            -1.288e-02  9.309e-03  -1.383 0.166531    
+## other_creditnone               -5.519e-01  2.394e-01  -2.306 0.021126 *  
+## other_creditstore              -8.932e-03  4.319e-01  -0.021 0.983499    
+## housingown                     -6.249e-02  3.024e-01  -0.207 0.836277    
+## housingrent                     3.896e-01  3.459e-01   1.127 0.259936    
+## existing_loans_count            3.542e-01  2.008e-01   1.764 0.077705 .  
+## jobskilled                      1.388e-01  2.906e-01   0.478 0.632853    
+## jobunemployed                  -4.270e-01  6.610e-01  -0.646 0.518238    
+## jobunskilled                   -3.646e-02  3.532e-01  -0.103 0.917775    
+## dependents                      2.380e-01  2.435e-01   0.978 0.328304    
+## phoneyes                       -3.638e-01  2.058e-01  -1.767 0.077193 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1104.59  on 899  degrees of freedom
+## Residual deviance:  848.83  on 864  degrees of freedom
+## AIC: 920.83
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<pre class="r"><code>anova(model, test=&quot;Chisq&quot;)</code></pre>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model: binomial, link: logit
+## 
+## Response: default
+## 
+## Terms added sequentially (first to last)
+## 
+## 
+##                      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    
+## NULL                                   899    1104.59              
+## checking_balance      3  121.790       896     982.80 &lt; 2.2e-16 ***
+## months_loan_duration  1   40.938       895     941.86 1.571e-10 ***
+## credit_history        4   29.624       891     912.24 5.837e-06 ***
+## purpose               5    5.555       886     906.68  0.351953    
+## amount                1    0.001       885     906.68  0.979092    
+## savings_balance       4   17.427       881     889.26  0.001597 ** 
+## employment_duration   4    8.392       877     880.87  0.078215 .  
+## percent_of_income     1   10.176       876     870.69  0.001422 ** 
+## years_at_residence    1    0.007       875     870.68  0.931580    
+## age                   1    3.303       874     867.38  0.069163 .  
+## other_credit          2    6.226       872     861.15  0.044477 *  
+## housing               2    3.669       870     857.48  0.159663    
+## existing_loans_count  1    2.926       869     854.56  0.087181 .  
+## job                   3    1.623       866     852.93  0.654123    
+## dependents            1    0.937       865     852.00  0.333011    
+## phone                 1    3.163       864     848.83  0.075311 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code># drop the insignificant predictors, alpha = 0.10
+
+model &lt;- glm(default ~ checking_balance + months_loan_duration + credit_history +  percent_of_income + age,family=binomial(link=&#39;logit&#39;),data=credit_train)
+model</code></pre>
+<pre><code>## 
+## Call:  glm(formula = default ~ checking_balance + months_loan_duration + 
+##     credit_history + percent_of_income + age, family = binomial(link = &quot;logit&quot;), 
+##     data = credit_train)
+## 
+## Coefficients:
+##                (Intercept)    checking_balance&gt; 200 DM  
+##                   -1.70840                    -1.12915  
+## checking_balance1 - 200 DM     checking_balanceunknown  
+##                   -0.39299                    -1.90221  
+##       months_loan_duration          credit_historygood  
+##                    0.03799                     0.68929  
+##      credit_historyperfect          credit_historypoor  
+##                    1.66167                     0.62875  
+##    credit_historyvery good           percent_of_income  
+##                    1.49958                     0.20899  
+##                        age  
+##                   -0.01213  
+## 
+## Degrees of Freedom: 899 Total (i.e. Null);  889 Residual
+## Null Deviance:       1105 
+## Residual Deviance: 902.3     AIC: 924.3</code></pre>
+<pre class="r"><code>summary(model)</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = default ~ checking_balance + months_loan_duration + 
+##     credit_history + percent_of_income + age, family = binomial(link = &quot;logit&quot;), 
+##     data = credit_train)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.8981  -0.8016  -0.4600   0.8738   2.4245  
+## 
+## Coefficients:
+##                             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)                -1.708395   0.443545  -3.852 0.000117 ***
+## checking_balance&gt; 200 DM   -1.129147   0.363849  -3.103 0.001914 ** 
+## checking_balance1 - 200 DM -0.392991   0.195108  -2.014 0.043986 *  
+## checking_balanceunknown    -1.902211   0.223999  -8.492  &lt; 2e-16 ***
+## months_loan_duration        0.037992   0.006934   5.479 4.27e-08 ***
+## credit_historygood          0.689289   0.209315   3.293 0.000991 ***
+## credit_historyperfect       1.661675   0.407930   4.073 4.63e-05 ***
+## credit_historypoor          0.628748   0.329187   1.910 0.056133 .  
+## credit_historyvery good     1.499582   0.382487   3.921 8.83e-05 ***
+## percent_of_income           0.208988   0.075562   2.766 0.005679 ** 
+## age                        -0.012131   0.007591  -1.598 0.110026    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1104.59  on 899  degrees of freedom
+## Residual deviance:  902.31  on 889  degrees of freedom
+## AIC: 924.31
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<pre class="r"><code>anova(model, test=&quot;Chisq&quot;)</code></pre>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model: binomial, link: logit
+## 
+## Response: default
+## 
+## Terms added sequentially (first to last)
+## 
+## 
+##                      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    
+## NULL                                   899    1104.59              
+## checking_balance      3  121.790       896     982.80 &lt; 2.2e-16 ***
+## months_loan_duration  1   40.938       895     941.86 1.571e-10 ***
+## credit_history        4   29.624       891     912.24 5.837e-06 ***
+## percent_of_income     1    7.327       890     904.91  0.006793 ** 
+## age                   1    2.606       889     902.31  0.106489    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code># check Accuracy
+
+fitted.results &lt;- predict(model,newdata=credit_test,type=&#39;response&#39;)
+fitted.results &lt;- ifelse(fitted.results &gt; 0.5,1,0)
+
+misClasificError &lt;- mean(fitted.results != credit_test$default)
+print(paste(&#39;Accuracy&#39;,1-misClasificError))</code></pre>
+<pre><code>## [1] &quot;Accuracy 0&quot;</code></pre>
+<pre class="r"><code># ROC
+# Because this data set is so small, it is possible that the test data set
+# does not contain both 0 and 1 values.  If this happens the code will not
+# run.  And since the test data set is so small the ROC is not useful here
+# but the code is provided.
+
+library(ROCR)</code></pre>
+<pre><code>## Warning: package &#39;ROCR&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: gplots</code></pre>
+<pre><code>## 
+## Attaching package: &#39;gplots&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     lowess</code></pre>
+<pre><code>## Loading required package: methods</code></pre>
+<pre class="r"><code>p &lt;- predict(model, newdata=credit_test, type=&quot;response&quot;)
+pr &lt;- prediction(p, credit_test$default)
+prf &lt;- performance(pr, measure = &quot;tpr&quot;, x.measure = &quot;fpr&quot;)
+plot(prf)</code></pre>
+<p><img src="/post/2017-07-02-logistic-regression2_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre class="r"><code>auc &lt;- performance(pr, measure = &quot;auc&quot;)
+auc &lt;- auc@y.values[[1]]
+auc</code></pre>
+<pre><code>## [1] 0.688483</code></pre>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="/post/ann-rmd/"
+                class="button big previous">Artificial Neural Networks</a></li>
+    
+
+    
+        <li><a href="/post/statistical-analysis-examples/"
+                class="button big next">Statistical Analysis-Examples</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = '\/post\/logistic-regression2\/';
+    var disqus_title = 'logistic Regression2';
+    var disqus_url = '\/post\/logistic-regression2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/logo.jpg" class="intro-circle" width="" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>Data Pond</h2>
+                    <p>Bhawna G. Panwar</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/bgpanwar" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/bgpanwar" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/bgpanwar" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:bgpanwar@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/clustering-analysis/">Clustering Analysis</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/random-forest-analysis/">Random Forest Analysis</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /post/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Hi, Welcome to my blog.</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+            </ul>
+
+            <p class="copyright">&copy; Data Pond. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
+        
+
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
