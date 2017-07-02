@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Pond</title>
-    <link>https://bgpanwar.github.io/</link>
+    <link>/</link>
     <description>Recent content on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://bgpanwar.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ANN</title>
-      <link>https://bgpanwar.github.io/post/ann-rmd/</link>
+      <link>/post/ann-rmd/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/ann-rmd/</guid>
+      <guid>/post/ann-rmd/</guid>
       <description>Neural Networks Algorithm is used on Concrete dataset. Neural Networks are considered a black box process. ANNs are based on complex mathematical systems. But not a zero node NN is an alternative representation of the simimple linear regression model.
 ANNs are versatile learners that can be applied to nearly any learning task: classification, numeric prediction, and even unsupervised pattern recognition.
 ANNs are best applied to problems where the input data and the output data are well-understood or at least fairly simple, yet the process that relates the input to the output is extremely complex.</description>
@@ -24,20 +24,20 @@ ANNs are best applied to problems where the input data and the output data are w
     
     <item>
       <title>About Data Pond</title>
-      <link>https://bgpanwar.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>My past experience composed of system design and developing complex systems. In the process of reproducing failure and finding root cause, I fell in love with analyzing the data. That was the start of my love for applied statistics.
 Thanks for reading!</description>
     </item>
     
     <item>
       <title>Scatter</title>
-      <link>https://bgpanwar.github.io/post/scatter/</link>
+      <link>/post/scatter/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/scatter/</guid>
+      <guid>/post/scatter/</guid>
       <description>Load the data.
 subscribers &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&amp;quot;, sep=&amp;quot;,&amp;quot;, header=TRUE)View(subscribers)Default plot with points.
 plot(subscribers$Subscribers)Default plot with type explicity specified.
@@ -49,38 +49,38 @@ plot(subscribers$Subscribers, type=&amp;quot;h&amp;quot;, ylim=c(0, 30000), xlab
     
     <item>
       <title>Spam Filter</title>
-      <link>https://bgpanwar.github.io/post/spam-filter/</link>
+      <link>/post/spam-filter/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/spam-filter/</guid>
+      <guid>/post/spam-filter/</guid>
       <description>Perform the SMS spam filtering analysis. Produce a report explaining the data, the analysis, and the findings. Organize you report using the Five Steps. Show the prediction that the algorithm produced. Give the Accuracy of the predictions. Include the confusion matrix.Find an interesting dataset that is appropriate for applying the naive Bayes algorithm, try to load the data into R, and proceed to classify the data using naive Bayes.Problem#1: Filtering spam SMS messagesStep 2: Exploring and preparing the data —-# read the sms data into the sms data framesms_raw &amp;lt;- read.</description>
     </item>
     
     <item>
       <title>Support Vector Machine</title>
-      <link>https://bgpanwar.github.io/post/support-vector-machine/</link>
+      <link>/post/support-vector-machine/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/support-vector-machine/</guid>
+      <guid>/post/support-vector-machine/</guid>
       <description>SVM- The main purpose of this method is to identify a hyperplane which separates the samples. This technique can be used for both classification and numerical prediction. Usually used for only binary classification. Benefits include high scalability, but drawbacks, as for neural nets, include models which are very difficult to interpret.
 Plot below help visualize overall way to visualize SVM technques.The hyperplane is a multidimensional surface, but it’s easiest to think of it as a straight line between two linearly separable groups of examples.</description>
     </item>
     
     <item>
       <title>Times Series</title>
-      <link>https://bgpanwar.github.io/post/times-series/</link>
+      <link>/post/times-series/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/times-series/</guid>
+      <guid>/post/times-series/</guid>
       <description># Load datapopulation &amp;lt;- read.csv(&amp;quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&amp;quot;, sep=&amp;quot;,&amp;quot;, header=TRUE)# Default plotplot(population$Year, population$Population, type=&amp;quot;l&amp;quot;)# Adjust axisplot(population$Year, population$Population, type=&amp;quot;l&amp;quot;, ylim=c(0, 7000000000), xlab=&amp;quot;Year&amp;quot;, ylab=&amp;quot;Population&amp;quot;)Reference: world_population.csv was obtained from Flowdata.com</description>
     </item>
     
     <item>
       <title>How does the Bootstrap method work?</title>
-      <link>https://bgpanwar.github.io/post/bootstrap/</link>
+      <link>/post/bootstrap/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://bgpanwar.github.io/post/bootstrap/</guid>
+      <guid>/post/bootstrap/</guid>
       <description>Question of the day?Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
 set.seed(1)srs &amp;lt;- rnorm(25, mean=3)resamps &amp;lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)x_bar_star &amp;lt;- sapply(resamps, mean, simplify =TRUE)Let’s create a histogram here and fit normal curve.
 hist(x_bar_star, breaks = 40, prob = TRUE)curve(dnorm(x, 3, 0.2), add = TRUE) We can calculate the difference now.</description>
