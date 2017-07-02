@@ -1,5 +1,5 @@
 ---
-title: ANN
+title: Artificial Neural Networks
 author: Bhawna G. Panwar
 date: '2017-07-01'
 slug: ann-rmd
@@ -12,9 +12,9 @@ featuredpath: ''
 linktitle: ''
 ---
 
-Neural Networks Algorithm is used on Concrete dataset.
+Artificial Neural Networks(ANN) Algorithm is used on Concrete dataset.
 Neural Networks are considered a black box process. ANNs are based on complex mathematical systems.
-But not a zero node NN is an alternative representation of the simimple linear regression model.
+But not a zero node NN is an alternative representation of the simple linear regression model.
 
 ANNs are versatile learners that can be applied to nearly any learning task: classification, numeric prediction, and even unsupervised pattern recognition.
 
@@ -28,7 +28,7 @@ multiple input signals, each with its own weight (the x's)
 an activation function which (typically) sums all inputs * their respective weight
 a single output signal (the y)
 
-So y(x)=f(???ni=1wixi)
+So y(x)=f(sum(ni=wi*xi)
 
 The activation function
 
@@ -179,3 +179,5 @@ cor(predicted_strength2, concrete_test$strength)
 ```
 
 We noticed that by changing the activation function didn't help the performance(~57%).
+
+Reference: Machine Learning in R
