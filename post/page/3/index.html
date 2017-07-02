@@ -185,11 +185,11 @@
                     </li>
                 
                     <li>
-                        <a href="/post/ann-rmd/"><p>Artificial Neural Networks</p></a>
+                        <a href="/post/random-forest-analysis/"><p>Random Forest Analysis</p></a>
                     </li>
                 
                     <li>
-                        <a href="/post/scatter/"><p>Scatter</p></a>
+                        <a href="/post/ann-rmd/"><p>Artificial Neural Networks</p></a>
                     </li>
                 
             </ul>
@@ -205,6 +205,72 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/spam-filter/">Spam Filter</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-01'>
+            July 1, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>15 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Perform the SMS spam filtering analysis.
+Step 1: Load data</p>
+
+<p>Step 2: Exploring and preparing the data</p>
+
+<h1 id="read-the-sms-data-into-the-sms-data-frame">read the sms data into the sms data frame</h1>
+
+<p>sms_raw &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/sms_spam.csv&quot;, stringsAsFactors = FALSE)</p>
+
+<h1 id="examine-the-structure-of-the-sms-data">examine the structure of the sms data</h1>
+
+<p>str(sms_raw)</p>
+
+<h2 id="39-data-frame-39-5559-obs-of-2-variables">&#39;data.frame&#39;: 5559 obs. of 2 variables:</h2>
+
+<h2 id="type-chr-quot-ham-quot-quot-ham-quot-quot-ham-quot-quot-spam-quot">$ type: chr &quot;ham&quot; &quot;ham&quot; &quot;ham&quot; &quot;spam&quot; &hellip;</h2>
+
+<h2 id="text-chr-quot-hope-you-are-having-a-good-week-just-checking-in-quot-quot-k">$ text: chr &quot;Hope you are having a good week. Just checking in&quot; &quot;K.</h2>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/spam-filter/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -298,63 +364,6 @@ Reference: world_population.csv was obtained from Flowdata.com</p>
     <footer>
         <ul class="actions">
             <li><a href="/post/times-series/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/bootstrap/">How does the Bootstrap method work?</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-06-11'>
-            June 11, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Question of the day?
-Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
-set.seed(1)
-srs &lt;- rnorm(25, mean=3)
-resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)
-x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)
-Let’s create a histogram here and fit normal curve.
-hist(x_bar_star, breaks = 40, prob = TRUE)
-curve(dnorm(x, 3, 0.2), add = TRUE)
-We can calculate the difference now.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/bootstrap/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -534,13 +543,13 @@ We can calculate the difference now.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/ann-rmd/">Artificial Neural Networks</a></h3>
+                                <h3><a href="/post/random-forest-analysis/">Random Forest Analysis</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-07-01'>
-                                    July 1, 2017</time>
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -548,7 +557,7 @@ We can calculate the difference now.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/scatter/">Scatter</a></h3>
+                                <h3><a href="/post/ann-rmd/">Artificial Neural Networks</a></h3>
                                 
                                     
                                 

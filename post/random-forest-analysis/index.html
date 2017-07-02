@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>Naive Bayes</title>
+                <title>Random Forest Analysis</title>
             
         
 
@@ -29,17 +29,19 @@
 
 
 
-<meta name="twitter:text:title" content="Naive Bayes"/>
-<meta name="twitter:title" content="Naive Bayes"/>
-<meta name="twitter:description" content="The HouseVotes84 dataset was used for applying the naive Bayes algorithm.
-library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984# Note refusals to vote have been treated as missing values!data (HouseVotes84, package=&quot;mlbench&quot;) model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) head(HouseVotes84)## Class V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15## 1 republican n y n y y y n n n y &lt;NA&gt; y y y n## 2 republican n y n y y y n n n n n y y y n## 3 democrat &lt;NA&gt; y y &lt;NA&gt; y y n n n n y n y y n## 4 democrat n y y n &lt;NA&gt; y n n n n y n y n n## 5 democrat y y y n y y n n n n y &lt;NA&gt; y y y## 6 democrat n y y n y y n n n n n n y y y## V16## 1 y## 2 &lt;NA&gt;## 3 n## 4 y## 5 y## 6 y# predict the outcome of the first 20 recordspredict(model, HouseVotes84[1:20,-1]) ## [1] republican republican republican democrat democrat democrat ## [7] republican republican republican democrat republican republican## [13] democrat democrat republican republican democrat democrat ## [19] republican democrat ## Levels: democrat republican# same but displaying posteriorspredict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;) ## democrat republican## [1,] 1."/>
+<meta name="twitter:text:title" content="Random Forest Analysis"/>
+<meta name="twitter:title" content="Random Forest Analysis"/>
+<meta name="twitter:description" content="The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
+The dataset is found:
+url=&quot;http://freakonometrics.free.fr/german_credit.csv&quot;credit=read.csv(url, header = TRUE, sep = &quot;,&quot;)str(credit)## &#39;data.frame&#39;: 1000 obs. of 21 variables:## $ Creditability : int 1 1 1 1 1 1 1 1 1 1 ...## $ Account.Balance : int 1 1 2 1 1 1 1 1 4 2 ...## $ Duration.of.Credit..month. : int 18 9 12 12 12 10 8 6 18 24 ."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
-        <meta property="og:title" content="Naive Bayes" />
-<meta property="og:description" content="The HouseVotes84 dataset was used for applying the naive Bayes algorithm.
-library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984# Note refusals to vote have been treated as missing values!data (HouseVotes84, package=&quot;mlbench&quot;) model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) head(HouseVotes84)## Class V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15## 1 republican n y n y y y n n n y &lt;NA&gt; y y y n## 2 republican n y n y y y n n n n n y y y n## 3 democrat &lt;NA&gt; y y &lt;NA&gt; y y n n n n y n y y n## 4 democrat n y y n &lt;NA&gt; y n n n n y n y n n## 5 democrat y y y n y y n n n n y &lt;NA&gt; y y y## 6 democrat n y y n y y n n n n n n y y y## V16## 1 y## 2 &lt;NA&gt;## 3 n## 4 y## 5 y## 6 y# predict the outcome of the first 20 recordspredict(model, HouseVotes84[1:20,-1]) ## [1] republican republican republican democrat democrat democrat ## [7] republican republican republican democrat republican republican## [13] democrat democrat republican republican democrat democrat ## [19] republican democrat ## Levels: democrat republican# same but displaying posteriorspredict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;) ## democrat republican## [1,] 1." />
+        <meta property="og:title" content="Random Forest Analysis" />
+<meta property="og:description" content="The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
+The dataset is found:
+url=&quot;http://freakonometrics.free.fr/german_credit.csv&quot;credit=read.csv(url, header = TRUE, sep = &quot;,&quot;)str(credit)## &#39;data.frame&#39;: 1000 obs. of 21 variables:## $ Creditability : int 1 1 1 1 1 1 1 1 1 1 ...## $ Account.Balance : int 1 1 2 1 1 1 1 1 4 2 ...## $ Duration.of.Credit..month. : int 18 9 12 12 12 10 8 6 18 24 ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/naive-bayes/" />
+<meta property="og:url" content="/post/random-forest-analysis/" />
 
 
 
@@ -57,13 +59,14 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
 
 
         
-<meta itemprop="name" content="Naive Bayes">
-<meta itemprop="description" content="The HouseVotes84 dataset was used for applying the naive Bayes algorithm.
-library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984# Note refusals to vote have been treated as missing values!data (HouseVotes84, package=&quot;mlbench&quot;) model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) head(HouseVotes84)## Class V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15## 1 republican n y n y y y n n n y &lt;NA&gt; y y y n## 2 republican n y n y y y n n n n n y y y n## 3 democrat &lt;NA&gt; y y &lt;NA&gt; y y n n n n y n y y n## 4 democrat n y y n &lt;NA&gt; y n n n n y n y n n## 5 democrat y y y n y y n n n n y &lt;NA&gt; y y y## 6 democrat n y y n y y n n n n n n y y y## V16## 1 y## 2 &lt;NA&gt;## 3 n## 4 y## 5 y## 6 y# predict the outcome of the first 20 recordspredict(model, HouseVotes84[1:20,-1]) ## [1] republican republican republican democrat democrat democrat ## [7] republican republican republican democrat republican republican## [13] democrat democrat republican republican democrat democrat ## [19] republican democrat ## Levels: democrat republican# same but displaying posteriorspredict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;) ## democrat republican## [1,] 1.">
+<meta itemprop="name" content="Random Forest Analysis">
+<meta itemprop="description" content="The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
+The dataset is found:
+url=&quot;http://freakonometrics.free.fr/german_credit.csv&quot;credit=read.csv(url, header = TRUE, sep = &quot;,&quot;)str(credit)## &#39;data.frame&#39;: 1000 obs. of 21 variables:## $ Creditability : int 1 1 1 1 1 1 1 1 1 1 ...## $ Account.Balance : int 1 1 2 1 1 1 1 1 4 2 ...## $ Duration.of.Credit..month. : int 18 9 12 12 12 10 8 6 18 24 .">
 
 
 <meta itemprop="dateModified" content="2017-07-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="405">
+<meta itemprop="wordCount" content="619">
 
 
 
@@ -231,43 +234,43 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
             
 
 
-<li><a href="//twitter.com/share?url=%2fpost%2fnaive-bayes%2f&text=Naive%20Bayes&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=%2fpost%2frandom-forest-analysis%2f&text=Random%20Forest%20Analysis&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=%2fpost%2fnaive-bayes%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=%2fpost%2frandom-forest-analysis%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fnaive-bayes%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2frandom-forest-analysis%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=%2fpost%2fnaive-bayes%2f&title=Naive%20Bayes" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=%2fpost%2frandom-forest-analysis%2f&title=Random%20Forest%20Analysis" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2fnaive-bayes%2f&title=Naive%20Bayes" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2frandom-forest-analysis%2f&title=Random%20Forest%20Analysis" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2fnaive-bayes%2f&title=Naive%20Bayes" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2frandom-forest-analysis%2f&title=Random%20Forest%20Analysis" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=%2fpost%2fnaive-bayes%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=%2fpost%2frandom-forest-analysis%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -284,7 +287,7 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
     <header>
     <div class="title">
         
-            <h1><a href="/post/naive-bayes/">Naive Bayes</a></h1>
+            <h1><a href="/post/random-forest-analysis/">Random Forest Analysis</a></h1>
             
         
         
@@ -299,7 +302,7 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
             July 2, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>2 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -309,77 +312,99 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
     
 
     <div id="content">
-        <p>The HouseVotes84 dataset was used for applying the naive Bayes algorithm.</p>
-<pre class="r"><code>library (e1071)
-
-## Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984
-# Note refusals to vote have been treated as missing values!
-
-data (HouseVotes84, package=&quot;mlbench&quot;) 
-model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) 
-head(HouseVotes84)</code></pre>
-<pre><code>##        Class   V1 V2 V3   V4   V5 V6 V7 V8 V9 V10  V11  V12 V13 V14 V15
-## 1 republican    n  y  n    y    y  y  n  n  n   y &lt;NA&gt;    y   y   y   n
-## 2 republican    n  y  n    y    y  y  n  n  n   n    n    y   y   y   n
-## 3   democrat &lt;NA&gt;  y  y &lt;NA&gt;    y  y  n  n  n   n    y    n   y   y   n
-## 4   democrat    n  y  y    n &lt;NA&gt;  y  n  n  n   n    y    n   y   n   n
-## 5   democrat    y  y  y    n    y  y  n  n  n   n    y &lt;NA&gt;   y   y   y
-## 6   democrat    n  y  y    n    y  y  n  n  n   n    n    n   y   y   y
-##    V16
-## 1    y
-## 2 &lt;NA&gt;
-## 3    n
-## 4    y
-## 5    y
-## 6    y</code></pre>
-<pre class="r"><code># predict the outcome of the first 20 records
-predict(model, HouseVotes84[1:20,-1]) </code></pre>
-<pre><code>##  [1] republican republican republican democrat   democrat   democrat  
-##  [7] republican republican republican democrat   republican republican
-## [13] democrat   democrat   republican republican democrat   democrat  
-## [19] republican democrat  
-## Levels: democrat republican</code></pre>
-<pre class="r"><code># same but displaying posteriors
-predict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;) </code></pre>
-<pre><code>##           democrat   republican
-##  [1,] 1.029209e-07 9.999999e-01
-##  [2,] 5.820415e-08 9.999999e-01
-##  [3,] 5.684937e-03 9.943151e-01
-##  [4,] 9.985798e-01 1.420152e-03
-##  [5,] 9.666720e-01 3.332802e-02
-##  [6,] 8.121430e-01 1.878570e-01
-##  [7,] 1.751512e-04 9.998248e-01
-##  [8,] 8.300100e-06 9.999917e-01
-##  [9,] 8.277705e-08 9.999999e-01
-## [10,] 1.000000e+00 5.029425e-11
-## [11,] 1.122180e-06 9.999989e-01
-## [12,] 5.922777e-06 9.999941e-01
-## [13,] 1.000000e+00 5.040020e-09
-## [14,] 1.000000e+00 6.242221e-10
-## [15,] 4.846577e-07 9.999995e-01
-## [16,] 1.154563e-07 9.999999e-01
-## [17,] 9.999975e-01 2.524185e-06
-## [18,] 1.000000e+00 7.477385e-11
-## [19,] 6.641180e-08 9.999999e-01
-## [20,] 1.000000e+00 7.400151e-13</code></pre>
-<pre class="r"><code># now all of them: this is the resubstituion error
-pred &lt;- predict(model, HouseVotes84[,-1])
-
-# form and display confusion matrix &amp; overall accuracy
-tab &lt;- table(pred, HouseVotes84$Class) 
-tab</code></pre>
-<pre><code>##             
-## pred         democrat republican
-##   democrat        238         13
-##   republican       29        155</code></pre>
-<pre class="r"><code>sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
-<pre><code>## [1] 0.9034483</code></pre>
-<pre class="r"><code>## using Laplace smoothing: 
-model &lt;- naiveBayes(Class ~ ., data = HouseVotes84, laplace = 3)
-pred &lt;- predict(model, HouseVotes84[,-1]) 
-tab &lt;- table(pred, HouseVotes84$Class) 
-sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
-<pre><code>## [1] 0.9034483</code></pre>
+        <p>The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.</p>
+<p>The dataset is found:</p>
+<pre class="r"><code>url=&quot;http://freakonometrics.free.fr/german_credit.csv&quot;
+credit=read.csv(url, header = TRUE, sep = &quot;,&quot;)</code></pre>
+<pre class="r"><code>str(credit)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    1000 obs. of  21 variables:
+##  $ Creditability                    : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Account.Balance                  : int  1 1 2 1 1 1 1 1 4 2 ...
+##  $ Duration.of.Credit..month.       : int  18 9 12 12 12 10 8 6 18 24 ...
+##  $ Payment.Status.of.Previous.Credit: int  4 4 2 4 4 4 4 4 4 2 ...
+##  $ Purpose                          : int  2 0 9 0 0 0 0 0 3 3 ...
+##  $ Credit.Amount                    : int  1049 2799 841 2122 2171 2241 3398 1361 1098 3758 ...
+##  $ Value.Savings.Stocks             : int  1 1 2 1 1 1 1 1 1 3 ...
+##  $ Length.of.current.employment     : int  2 3 4 3 3 2 4 2 1 1 ...
+##  $ Instalment.per.cent              : int  4 2 2 3 4 1 1 2 4 1 ...
+##  $ Sex...Marital.Status             : int  2 3 2 3 3 3 3 3 2 2 ...
+##  $ Guarantors                       : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Duration.in.Current.address      : int  4 2 4 2 4 3 4 4 4 4 ...
+##  $ Most.valuable.available.asset    : int  2 1 1 1 2 1 1 1 3 4 ...
+##  $ Age..years.                      : int  21 36 23 39 38 48 39 40 65 23 ...
+##  $ Concurrent.Credits               : int  3 3 3 3 1 3 3 3 3 3 ...
+##  $ Type.of.apartment                : int  1 1 1 1 2 1 2 2 2 1 ...
+##  $ No.of.Credits.at.this.Bank       : int  1 2 1 2 2 2 2 1 2 1 ...
+##  $ Occupation                       : int  3 3 2 2 2 2 2 2 1 1 ...
+##  $ No.of.dependents                 : int  1 2 1 2 1 2 1 2 1 1 ...
+##  $ Telephone                        : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Foreign.Worker                   : int  1 1 1 2 2 2 2 2 1 1 ...</code></pre>
+<p>convert categorical variables as factors,</p>
+<pre class="r"><code>F=c(1,2,4,5,7,8,9,10,11,12,13,15,16,17,18,19,20)
+for(i in F) credit[,i]=as.factor(credit[,i])</code></pre>
+<p>create our training/calibration and validation/testing datasets, with proportion 1/3-2/3</p>
+<pre class="r"><code>i_test=sample(1:nrow(credit),size=333)
+i_calibration=(1:nrow(credit))[-i_test]</code></pre>
+<pre class="r"><code>LogisticModel &lt;- glm(Creditability ~ Account.Balance + Payment.Status.of.Previous.Credit + Purpose + 
+Length.of.current.employment + 
+Sex...Marital.Status, family=binomial, 
+data = credit[i_calibration,])</code></pre>
+<pre class="r"><code>fitLog &lt;- predict(LogisticModel,type=&quot;response&quot;, newdata=credit[i_test,])</code></pre>
+<pre class="r"><code>library(ROCR)</code></pre>
+<pre><code>## Warning: package &#39;ROCR&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: gplots</code></pre>
+<pre><code>## 
+## Attaching package: &#39;gplots&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     lowess</code></pre>
+<pre><code>## Loading required package: methods</code></pre>
+<pre class="r"><code>pred = prediction( fitLog, credit$Creditability[i_test])
+perf &lt;- performance(pred, &quot;tpr&quot;, &quot;fpr&quot;)
+plot(perf)</code></pre>
+<p><img src="/post/2017-07-02-random-forest-analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>AUCLog1=performance(pred, measure = &quot;auc&quot;)@y.values[[1]]
+cat(&quot;AUC: &quot;,AUCLog1,&quot;n&quot;)</code></pre>
+<pre><code>## AUC:  0.7340226 n</code></pre>
+<p>Alternative is to consider a logistic regression on all explanatory variables</p>
+<pre class="r"><code>LogisticModel &lt;- glm(Creditability ~ ., family=binomial, data = credit[i_calibration,])
+fitLog &lt;- predict(LogisticModel,type=&quot;response&quot;,newdata=credit[i_test,])
+pred = prediction( fitLog, credit$Creditability[i_test])
+perf &lt;- performance(pred, &quot;tpr&quot;, &quot;fpr&quot;)
+plot(perf)</code></pre>
+<p><img src="/post/2017-07-02-random-forest-analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>AUCLog2=performance(pred, measure = &quot;auc&quot;)@y.values[[1]]
+cat(&quot;AUC: &quot;,AUCLog2,&quot;n&quot;)</code></pre>
+<pre><code>## AUC:  0.7532581 n</code></pre>
+<p>Regression tree method</p>
+<pre class="r"><code>library(rpart)
+ArbreModel &lt;- rpart(Creditability ~ ., data = credit[i_calibration,])</code></pre>
+<pre class="r"><code>library(rpart.plot)</code></pre>
+<pre><code>## Warning: package &#39;rpart.plot&#39; was built under R version 3.3.3</code></pre>
+<pre class="r"><code>prp(ArbreModel,type=2,extra=1)</code></pre>
+<p><img src="/post/2017-07-02-random-forest-analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>fitArbre &lt;- predict(ArbreModel, newdata=credit[i_test,],type=&quot;prob&quot;)[,2]
+pred = prediction( fitArbre, credit$Creditability[i_test])
+perf &lt;- performance(pred, &quot;tpr&quot;, &quot;fpr&quot;)
+plot(perf)</code></pre>
+<p><img src="/post/2017-07-02-random-forest-analysis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>AUCArbre=performance(pred, measure = &quot;auc&quot;)@y.values[[1]]
+cat(&quot;AUC: &quot;,AUCArbre,&quot;n&quot;)</code></pre>
+<pre><code>## AUC:  0.719152 n</code></pre>
+<p>Random Forest analysis</p>
+<pre class="r"><code>library(randomForest)</code></pre>
+<pre><code>## Warning: package &#39;randomForest&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## randomForest 4.6-12</code></pre>
+<pre><code>## Type rfNews() to see new features/changes/bug fixes.</code></pre>
+<pre class="r"><code>RF &lt;- randomForest(Creditability ~ .,data = credit[i_calibration,])
+fitForet &lt;- predict(RF,newdata=credit[i_test,],type=&quot;prob&quot;)[,2]
+pred = prediction( fitForet, credit$Creditability[i_test])
+perf &lt;- performance(pred, &quot;tpr&quot;, &quot;fpr&quot;)
+plot(perf)</code></pre>
+<p><img src="/post/2017-07-02-random-forest-analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>AUCRF=performance(pred, measure = &quot;auc&quot;)@y.values[[1]]
+cat(&quot;AUC: &quot;,AUCRF,&quot;n&quot;)</code></pre>
+<pre><code>## AUC:  0.7892439 n</code></pre>
 
     </div>
 
@@ -400,13 +425,13 @@ sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
 </article>
 <ul class="actions pagination">
     
-        <li><a href="/post/random-forest-analysis/"
-                class="button big previous">Random Forest Analysis</a></li>
+        <li><a href="/post/ann-rmd/"
+                class="button big previous">Artificial Neural Networks</a></li>
     
 
     
-        <li><a href="/post/clustering-analysis/"
-                class="button big next">Clustering Analysis</a></li>
+        <li><a href="/post/naive-bayes/"
+                class="button big next">Naive Bayes</a></li>
     
 </ul>
 
@@ -417,9 +442,9 @@ sum(tab[row(tab)==col(tab)])/sum(tab)</code></pre>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = '\/post\/naive-bayes\/';
-    var disqus_title = 'Naive Bayes';
-    var disqus_url = '\/post\/naive-bayes\/';
+    var disqus_identifier = '\/post\/random-forest-analysis\/';
+    var disqus_title = 'Random Forest Analysis';
+    var disqus_url = '\/post\/random-forest-analysis\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

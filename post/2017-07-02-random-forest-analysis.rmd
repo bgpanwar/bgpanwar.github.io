@@ -1,0 +1,95 @@
+---
+title: Random Forest Analysis
+author: Bhawna G. Panwar
+date: '2017-07-02'
+slug: random-forest-analysis
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
+
+The dataset is found:
+```{r}
+url="http://freakonometrics.free.fr/german_credit.csv"
+credit=read.csv(url, header = TRUE, sep = ",")
+```
+
+```{r}
+str(credit)
+```
+convert categorical variables as factors,
+```{r}
+F=c(1,2,4,5,7,8,9,10,11,12,13,15,16,17,18,19,20)
+for(i in F) credit[,i]=as.factor(credit[,i])
+```
+
+create our training/calibration and validation/testing datasets, with proportion 1/3-2/3
+```{r}
+i_test=sample(1:nrow(credit),size=333)
+i_calibration=(1:nrow(credit))[-i_test]
+```
+
+```{r}
+LogisticModel <- glm(Creditability ~ Account.Balance + Payment.Status.of.Previous.Credit + Purpose + 
+Length.of.current.employment + 
+Sex...Marital.Status, family=binomial, 
+data = credit[i_calibration,])
+```
+
+```{r}
+fitLog <- predict(LogisticModel,type="response", newdata=credit[i_test,])
+```
+
+```{r}
+library(ROCR)
+pred = prediction( fitLog, credit$Creditability[i_test])
+perf <- performance(pred, "tpr", "fpr")
+plot(perf)
+AUCLog1=performance(pred, measure = "auc")@y.values[[1]]
+cat("AUC: ",AUCLog1,"n")
+```
+
+Alternative is to consider a logistic regression on all explanatory variables
+```{r}
+LogisticModel <- glm(Creditability ~ ., family=binomial, data = credit[i_calibration,])
+fitLog <- predict(LogisticModel,type="response",newdata=credit[i_test,])
+pred = prediction( fitLog, credit$Creditability[i_test])
+perf <- performance(pred, "tpr", "fpr")
+plot(perf)
+AUCLog2=performance(pred, measure = "auc")@y.values[[1]]
+cat("AUC: ",AUCLog2,"n")
+```
+
+Regression tree method
+```{r}
+library(rpart)
+ArbreModel <- rpart(Creditability ~ ., data = credit[i_calibration,])
+```
+```{r}
+library(rpart.plot)
+prp(ArbreModel,type=2,extra=1)
+```
+```{r}
+fitArbre <- predict(ArbreModel, newdata=credit[i_test,],type="prob")[,2]
+pred = prediction( fitArbre, credit$Creditability[i_test])
+perf <- performance(pred, "tpr", "fpr")
+plot(perf)
+AUCArbre=performance(pred, measure = "auc")@y.values[[1]]
+cat("AUC: ",AUCArbre,"n")
+```
+Random Forest analysis
+```{r}
+library(randomForest)
+RF <- randomForest(Creditability ~ .,data = credit[i_calibration,])
+fitForet <- predict(RF,newdata=credit[i_test,],type="prob")[,2]
+pred = prediction( fitForet, credit$Creditability[i_test])
+perf <- performance(pred, "tpr", "fpr")
+plot(perf)
+AUCRF=performance(pred, measure = "auc")@y.values[[1]]
+cat("AUC: ",AUCRF,"n")
+```

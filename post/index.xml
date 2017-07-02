@@ -42,6 +42,17 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
     </item>
     
     <item>
+      <title>Random Forest Analysis</title>
+      <link>/post/random-forest-analysis/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/random-forest-analysis/</guid>
+      <description>The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
+The dataset is found:
+url=&amp;quot;http://freakonometrics.free.fr/german_credit.csv&amp;quot;credit=read.csv(url, header = TRUE, sep = &amp;quot;,&amp;quot;)str(credit)## &amp;#39;data.frame&amp;#39;: 1000 obs. of 21 variables:## $ Creditability : int 1 1 1 1 1 1 1 1 1 1 ...## $ Account.Balance : int 1 1 2 1 1 1 1 1 4 2 ...## $ Duration.of.Credit..month. : int 18 9 12 12 12 10 8 6 18 24 .</description>
+    </item>
+    
+    <item>
       <title>Artificial Neural Networks</title>
       <link>/post/ann-rmd/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
