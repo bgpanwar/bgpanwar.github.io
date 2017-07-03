@@ -173,6 +173,14 @@
 
                 
                     <li>
+                        <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
                     </li>
                 
@@ -182,14 +190,6 @@
                 
                     <li>
                         <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/principle-component-analysis/"><p>Principle Component Analysis</p></a>
                     </li>
                 
             </ul>
@@ -205,6 +205,120 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/clustering-analysis/">Clustering Analysis</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author"></span>
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
+SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/clustering-analysis/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/logistic-regression/">Logistic Regression</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Following is the Logistic Regression analysis of the Challenger data.</p>
+
+<h2 id="example-space-shuttle-launch-data">Example: Space Shuttle Launch Data &mdash;-</h2>
+
+<p>launch &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/challenger.csv&quot;)</p>
+
+<h1 id="examine-the-launch-data">examine the launch data</h1>
+
+<p>str(launch)</p>
+
+<h2 id="39-data-frame-39-23-obs-of-4-variables">&#39;data.frame&#39;: 23 obs. of 4 variables:</h2>
+
+<h2 id="distress-ct-int-0-1-0-0-0-0-0-0-1-1">$ distress_ct : int 0 1 0 0 0 0 0 0 1 1 &hellip;</h2>
+
+<h2 id="temperature-int-66-70-69-68-67-72-73-70-57-63">$ temperature : int 66 70 69 68 67 72 73 70 57 63 &hellip;</h2>
+
+<h2 id="field-check-pressure-int-50-50-50-50-50-50-100-100-200-200">$ field_check_pressure: int 50 50 50 50 50 50 100 100 200 200 .</h2>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/logistic-regression/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -290,122 +404,6 @@ library (e1071)</p>
     <footer>
         <ul class="actions">
             <li><a href="/post/naive-bayes/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-02'>
-            July 2, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Principle Component Analysis was performed using the Iris dataset.</p>
-
-<h1 id="load-data">Load data</h1>
-
-<p>data(iris)
-head(iris, 3)</p>
-
-<h2 id="sepal-length-sepal-width-petal-length-petal-width-species">Sepal.Length Sepal.Width Petal.Length Petal.Width Species</h2>
-
-<h2 id="1-5-1-3-5-1-4-0-2-setosa">1 5.1 3.5 1.4 0.2 setosa</h2>
-
-<h2 id="2-4-9-3-0-1-4-0-2-setosa">2 4.9 3.0 1.4 0.2 setosa</h2>
-
-<h2 id="3-4-7-3-2-1-3-0-2-setosa">3 4.7 3.2 1.3 0.2 setosa</h2>
-
-<h1 id="log-transform-log-ir-lt-log-iris-1-4">log transform log.ir &lt;- log(iris[, 1:4])</h1>
-
-<p>ir.species &lt;- iris[, 5]</p>
-
-<h1 id="apply-pca-scale-true-is-highly-advisable-but-default-is-false-ir-pca-lt-prcomp-log">apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log.</h1>
-</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/principle-component-analysis/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-02'>
-            July 2, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>0 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p></p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/principle-component-analysis/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -543,6 +541,34 @@ head(iris, 3)</p>
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-03'>
+                                    July 3, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-03'>
+                                    July 3, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
                                 
                                     
@@ -572,34 +598,6 @@ head(iris, 3)</p>
                         <article>
                             <header>
                                 <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-02'>
-                                    July 2, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-02'>
-                                    July 2, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h3>
                                 
                                     
                                 

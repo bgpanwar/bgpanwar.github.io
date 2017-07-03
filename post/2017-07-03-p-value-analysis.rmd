@@ -1,0 +1,30 @@
+---
+title: p-value Analysis
+author: Bhawna G. Panwar
+date: '2017-07-03'
+slug: p-value-analysis
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+```{r}
+#if(!require(devtools)) install.packages("devtools")
+#devtools::install_github("kassambara/ggpubr")
+```
+
+
+```{r}
+#install.packages("ggpubr")
+#install.packages("dplyr")
+
+```
+```{r}
+library(dplyr)
+library(ggpubr)
+#data("ToothGrowth")
+#head(ToothGrowth)
+```

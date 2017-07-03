@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>p-value Analysis</title>
+      <link>/post/p-value-analysis/</link>
+      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/p-value-analysis/</guid>
+      <description>#if(!require(devtools)) install.packages(&amp;quot;devtools&amp;quot;)#devtools::install_github(&amp;quot;kassambara/ggpubr&amp;quot;)#install.packages(&amp;quot;ggpubr&amp;quot;)#install.packages(&amp;quot;dplyr&amp;quot;)library(dplyr)## Warning: package &amp;#39;dplyr&amp;#39; was built under R version 3.3.3## Warning: Installed Rcpp (0.12.9) different from Rcpp used to build dplyr (0.12.11).## Please reinstall dplyr to avoid random crashes or undefined behavior.## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggpubr)## Warning: package &amp;#39;ggpubr&amp;#39; was built under R version 3.</description>
+    </item>
+    
+    <item>
+      <title>p-value Analysis</title>
+      <link>/post/p-value-analysis/</link>
+      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/p-value-analysis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Association Rules</title>
@@ -59,15 +77,6 @@ library (e1071)## Naive Bayes Classifier for Discrete Predictors: we use again 
       <guid>/post/principle-component-analysis/</guid>
       <description>Principle Component Analysis was performed using the Iris dataset.
 # Load datadata(iris)head(iris, 3)## Sepal.Length Sepal.Width Petal.Length Petal.Width Species## 1 5.1 3.5 1.4 0.2 setosa## 2 4.9 3.0 1.4 0.2 setosa## 3 4.7 3.2 1.3 0.2 setosa# log transform log.ir &amp;lt;- log(iris[, 1:4])ir.species &amp;lt;- iris[, 5]# apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &amp;lt;- prcomp(log.</description>
-    </item>
-    
-    <item>
-      <title>Principle Component Analysis</title>
-      <link>/post/principle-component-analysis/</link>
-      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/principle-component-analysis/</guid>
-      <description></description>
     </item>
     
     <item>
