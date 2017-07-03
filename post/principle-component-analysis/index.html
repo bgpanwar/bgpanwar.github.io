@@ -31,11 +31,13 @@
 
 <meta name="twitter:text:title" content="Principle Component Analysis"/>
 <meta name="twitter:title" content="Principle Component Analysis"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Principle Component Analysis was performed using the Iris dataset.
+# Load datadata(iris)head(iris, 3)## Sepal.Length Sepal.Width Petal.Length Petal.Width Species## 1 5.1 3.5 1.4 0.2 setosa## 2 4.9 3.0 1.4 0.2 setosa## 3 4.7 3.2 1.3 0.2 setosa# log transform log.ir &lt;- log(iris[, 1:4])ir.species &lt;- iris[, 5]# apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
         <meta property="og:title" content="Principle Component Analysis" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Principle Component Analysis was performed using the Iris dataset.
+# Load datadata(iris)head(iris, 3)## Sepal.Length Sepal.Width Petal.Length Petal.Width Species## 1 5.1 3.5 1.4 0.2 setosa## 2 4.9 3.0 1.4 0.2 setosa## 3 4.7 3.2 1.3 0.2 setosa# log transform log.ir &lt;- log(iris[, 1:4])ir.species &lt;- iris[, 5]# apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/principle-component-analysis/" />
 
@@ -56,11 +58,12 @@
 
         
 <meta itemprop="name" content="Principle Component Analysis">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="Principle Component Analysis was performed using the Iris dataset.
+# Load datadata(iris)head(iris, 3)## Sepal.Length Sepal.Width Petal.Length Petal.Width Species## 1 5.1 3.5 1.4 0.2 setosa## 2 4.9 3.0 1.4 0.2 setosa## 3 4.7 3.2 1.3 0.2 setosa# log transform log.ir &lt;- log(iris[, 1:4])ir.species &lt;- iris[, 5]# apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log.">
 
 
 <meta itemprop="dateModified" content="2017-07-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="279">
 
 
 
@@ -296,7 +299,7 @@
             July 2, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>0 minute read</p>
+            <p>2 minute read</p>
         
         
     </div>
@@ -306,7 +309,71 @@
     
 
     <div id="content">
-        
+        <p>Principle Component Analysis was performed using the Iris dataset.</p>
+<pre class="r"><code># Load data
+data(iris)
+head(iris, 3)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa</code></pre>
+<pre class="r"><code># log transform 
+log.ir &lt;- log(iris[, 1:4])
+ir.species &lt;- iris[, 5]
+
+# apply PCA - scale. = TRUE is highly 
+# advisable, but default is FALSE. 
+ir.pca &lt;- prcomp(log.ir,
+                 center = TRUE,
+                 scale. = TRUE)</code></pre>
+<pre class="r"><code># print method
+print(ir.pca)</code></pre>
+<pre><code>## Standard deviations:
+## [1] 1.7124583 0.9523797 0.3647029 0.1656840
+## 
+## Rotation:
+##                     PC1         PC2        PC3         PC4
+## Sepal.Length  0.5038236 -0.45499872  0.7088547  0.19147575
+## Sepal.Width  -0.3023682 -0.88914419 -0.3311628 -0.09125405
+## Petal.Length  0.5767881 -0.03378802 -0.2192793 -0.78618732
+## Petal.Width   0.5674952 -0.03545628 -0.5829003  0.58044745</code></pre>
+<pre class="r"><code># plot method
+plot(ir.pca, type = &quot;l&quot;)</code></pre>
+<p><img src="/post/2017-07-02-principle-component-analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code># summary method
+summary(ir.pca)</code></pre>
+<pre><code>## Importance of components:
+##                           PC1    PC2     PC3     PC4
+## Standard deviation     1.7125 0.9524 0.36470 0.16568
+## Proportion of Variance 0.7331 0.2268 0.03325 0.00686
+## Cumulative Proportion  0.7331 0.9599 0.99314 1.00000</code></pre>
+<pre class="r"><code># Predict PCs
+predict(ir.pca, 
+        newdata=tail(log.ir, 2))</code></pre>
+<pre><code>##           PC1         PC2        PC3         PC4
+## 149 1.0809930 -1.01155751 -0.7082289 -0.06811063
+## 150 0.9712116 -0.06158655 -0.5008674 -0.12411524</code></pre>
+<pre class="r"><code>#if (!require(devtools)) install.packages(&quot;devtools&quot;)
+if (!require(ggbiplot)) install_github(&quot;ggbiplot&quot;, &quot;vqv&quot;)</code></pre>
+<pre><code>## Loading required package: ggbiplot</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: plyr</code></pre>
+<pre><code>## Loading required package: scales</code></pre>
+<pre><code>## Loading required package: grid</code></pre>
+<pre class="r"><code>library(devtools)</code></pre>
+<pre><code>## Warning: package &#39;devtools&#39; was built under R version 3.3.3</code></pre>
+<pre class="r"><code>library(ggbiplot)
+g &lt;- ggbiplot(ir.pca, obs.scale = 1, var.scale = 1, 
+              groups = ir.species, ellipse = TRUE, 
+              circle = TRUE)
+g &lt;- g + scale_color_discrete(name = &#39;&#39;)
+g &lt;- g + theme(legend.direction = &#39;horizontal&#39;, 
+               legend.position = &#39;top&#39;)
+print(g)</code></pre>
+<p><img src="/post/2017-07-02-principle-component-analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Reference: <a href="https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/" class="uri">https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/</a></p>
+
     </div>
 
     <footer>
@@ -326,13 +393,13 @@
 </article>
 <ul class="actions pagination">
     
-        <li><a href="/post/random-forest-analysis/"
-                class="button big previous">Random Forest Analysis</a></li>
+        <li><a href="/post/principle-component-analysis/"
+                class="button big previous">Principle Component Analysis</a></li>
     
 
     
-        <li><a href="/post/principle-component-analysis/"
-                class="button big next">Principle Component Analysis</a></li>
+        <li><a href="/post/naive-bayes/"
+                class="button big next">Naive Bayes</a></li>
     
 </ul>
 
