@@ -176,10 +176,6 @@
                     </li>
                 
                     <li>
-                        <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
-                    </li>
-                
-                    <li>
                         <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
                     </li>
                 
@@ -189,6 +185,10 @@
                 
                     <li>
                         <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
                     </li>
                 
             </ul>
@@ -219,7 +219,7 @@
             July 3, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>1 minute read</p>
+            <p>2 minute read</p>
         
         
     </div>
@@ -229,14 +229,31 @@
     
 
     <div id="content">
-        <pre class="r"><code>#if(!require(devtools)) install.packages(&quot;devtools&quot;)
-#devtools::install_github(&quot;kassambara/ggpubr&quot;)</code></pre>
+        <pre class="r"><code>if(!require(devtools)) install.packages(&quot;devtools&quot;)</code></pre>
+<pre><code>## Loading required package: devtools</code></pre>
+<pre><code>## Warning: package &#39;devtools&#39; was built under R version 3.3.3</code></pre>
+<pre class="r"><code>devtools::install_github(&quot;kassambara/ggpubr&quot;)</code></pre>
+<pre><code>## Skipping install of &#39;ggpubr&#39; from a github remote, the SHA1 (cb0f308d) has not changed since last install.
+##   Use `force = TRUE` to force installation</code></pre>
 <pre class="r"><code>#install.packages(&quot;ggpubr&quot;)
-#install.packages(&quot;dplyr&quot;)</code></pre>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.3.3</code></pre>
+#install.packages(&quot;dplyr&quot;)
+
+if (!require(&quot;ggpubr&quot;)) {
+  install.packages(&quot;ggpubr&quot;, repos=&quot;http://cran.rstudio.com/&quot;) 
+  library(&quot;ggpubr&quot;)
+}</code></pre>
+<pre><code>## Loading required package: ggpubr</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## Loading required package: magrittr</code></pre>
 <pre><code>## Warning: Installed Rcpp (0.12.9) different from Rcpp used to build dplyr (0.12.11).
 ## Please reinstall dplyr to avoid random crashes or undefined behavior.</code></pre>
+<pre class="r"><code>if (!require(&quot;dplyr&quot;)) {
+  install.packages(&quot;dplyr&quot;, repos=&quot;http://cran.rstudio.com/&quot;) 
+  library(&quot;dplyr&quot;)
+}</code></pre>
+<pre><code>## Loading required package: dplyr</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.3.3</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -245,13 +262,28 @@
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(ggpubr)</code></pre>
-<pre><code>## Warning: package &#39;ggpubr&#39; was built under R version 3.3.3</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.3</code></pre>
-<pre><code>## Loading required package: magrittr</code></pre>
-<pre class="r"><code>#data(&quot;ToothGrowth&quot;)
-#head(ToothGrowth)</code></pre>
+<pre class="r"><code>#library(dplyr)
+#library(ggpubr)
+#library(ggplot2)
+data(&quot;ToothGrowth&quot;)
+head(ToothGrowth)</code></pre>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<pre class="r"><code>p &lt;- ggboxplot(ToothGrowth, x = &quot;supp&quot;, y = &quot;len&quot;,
+      color = &quot;supp&quot;, palette = &quot;jco&quot;,
+      add = &quot;jitter&quot;)
+#  Add p-value
+p + stat_compare_means()</code></pre>
+<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.3.3</code></pre>
+<p><img src="/post/2017-07-03-p-value-analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code># Change method
+p + stat_compare_means(method = &quot;t.test&quot;)</code></pre>
+<p><img src="/post/2017-07-03-p-value-analysis_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
 
     </div>
 
@@ -272,8 +304,8 @@
 </article>
 <ul class="actions pagination">
     
-        <li><a href="/post/p-value-analysis/"
-                class="button big previous">p-value Analysis</a></li>
+        <li><a href="/post/association-rules-rmd/"
+                class="button big previous">Association Rules</a></li>
     
 
     
@@ -478,20 +510,6 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-03'>
-                                    July 3, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
                                 
                                     
@@ -521,6 +539,20 @@
                         <article>
                             <header>
                                 <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
                                 
                                     
                                 

@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-06-11T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-07-03T00:00:00&#43;00:00"/>
 
 
 
@@ -177,10 +177,6 @@
                     </li>
                 
                     <li>
-                        <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
-                    </li>
-                
-                    <li>
                         <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
                     </li>
                 
@@ -190,6 +186,10 @@
                 
                     <li>
                         <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
                     </li>
                 
             </ul>
@@ -205,63 +205,6 @@
         
             
         
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/bootstrap/">How does the Bootstrap method work?</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-06-11'>
-            June 11, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Question of the day?
-Suppose we have a normal population with a mean of 3 and a standard deviation of 1, how would we illustrate the bootstrap method here?
-set.seed(1)
-srs &lt;- rnorm(25, mean=3)
-resamps &lt;- replicate(1000, sample(srs, 25, TRUE), simplify = FALSE)
-x_bar_star &lt;- sapply(resamps, mean, simplify =TRUE)
-Let’s create a histogram here and fit normal curve.
-hist(x_bar_star, breaks = 40, prob = TRUE)
-curve(dnorm(x, 3, 0.2), add = TRUE)
-We can calculate the difference now.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/bootstrap/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
 
         
             
@@ -399,20 +342,6 @@ We can calculate the difference now.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-03'>
-                                    July 3, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
                                 
                                     
@@ -442,6 +371,20 @@ We can calculate the difference now.</p>
                         <article>
                             <header>
                                 <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
                                 
                                     
                                 

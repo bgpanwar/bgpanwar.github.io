@@ -17,16 +17,7 @@
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/p-value-analysis/</guid>
-      <description>#if(!require(devtools)) install.packages(&amp;quot;devtools&amp;quot;)#devtools::install_github(&amp;quot;kassambara/ggpubr&amp;quot;)#install.packages(&amp;quot;ggpubr&amp;quot;)#install.packages(&amp;quot;dplyr&amp;quot;)library(dplyr)## Warning: package &amp;#39;dplyr&amp;#39; was built under R version 3.3.3## Warning: Installed Rcpp (0.12.9) different from Rcpp used to build dplyr (0.12.11).## Please reinstall dplyr to avoid random crashes or undefined behavior.## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggpubr)## Warning: package &amp;#39;ggpubr&amp;#39; was built under R version 3.</description>
-    </item>
-    
-    <item>
-      <title>p-value Analysis</title>
-      <link>/post/p-value-analysis/</link>
-      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/p-value-analysis/</guid>
-      <description></description>
+      <description>if(!require(devtools)) install.packages(&amp;quot;devtools&amp;quot;)## Loading required package: devtools## Warning: package &amp;#39;devtools&amp;#39; was built under R version 3.3.3devtools::install_github(&amp;quot;kassambara/ggpubr&amp;quot;)## Skipping install of &amp;#39;ggpubr&amp;#39; from a github remote, the SHA1 (cb0f308d) has not changed since last install.## Use `force = TRUE` to force installation#install.packages(&amp;quot;ggpubr&amp;quot;)#install.packages(&amp;quot;dplyr&amp;quot;)if (!require(&amp;quot;ggpubr&amp;quot;)) {install.packages(&amp;quot;ggpubr&amp;quot;, repos=&amp;quot;http://cran.rstudio.com/&amp;quot;) library(&amp;quot;ggpubr&amp;quot;)}## Loading required package: ggpubr## Loading required package: ggplot2## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.</description>
     </item>
     
     <item>

@@ -177,10 +177,6 @@
                     </li>
                 
                     <li>
-                        <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
-                    </li>
-                
-                    <li>
                         <a href="/post/association-rules-rmd/"><p>Association Rules</p></a>
                     </li>
                 
@@ -190,6 +186,10 @@
                 
                     <li>
                         <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
                     </li>
                 
             </ul>
@@ -205,74 +205,6 @@
         
             
         
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-02'>
-            July 2, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Principle Component Analysis was performed using the Iris dataset.</p>
-
-<h1 id="load-data">Load data</h1>
-
-<p>data(iris)
-head(iris, 3)</p>
-
-<h2 id="sepal-length-sepal-width-petal-length-petal-width-species">Sepal.Length Sepal.Width Petal.Length Petal.Width Species</h2>
-
-<h2 id="1-5-1-3-5-1-4-0-2-setosa">1 5.1 3.5 1.4 0.2 setosa</h2>
-
-<h2 id="2-4-9-3-0-1-4-0-2-setosa">2 4.9 3.0 1.4 0.2 setosa</h2>
-
-<h2 id="3-4-7-3-2-1-3-0-2-setosa">3 4.7 3.2 1.3 0.2 setosa</h2>
-
-<h1 id="log-transform-log-ir-lt-log-iris-1-4">log transform log.ir &lt;- log(iris[, 1:4])</h1>
-
-<p>ir.species &lt;- iris[, 5]</p>
-
-<h1 id="apply-pca-scale-true-is-highly-advisable-but-default-is-false-ir-pca-lt-prcomp-log">apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log.</h1>
-</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/principle-component-analysis/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
 
         
             <article class="post">
@@ -383,6 +315,68 @@ library (ISLR)</p>
     <footer>
         <ul class="actions">
             <li><a href="/post/statistical-analysis-examples/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/logistic-regression2/">logistic Regression2</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>14 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Logistic Regression was used to run the Credit dataset.
+credit &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/credit.csv&quot;)</p>
+
+<h1 id="examine-the-launch-data">examine the launch data</h1>
+
+<p>str(credit)</p>
+
+<h2 id="39-data-frame-39-1000-obs-of-17-variables">&#39;data.frame&#39;: 1000 obs. of 17 variables:</h2>
+
+<h2 id="checking-balance-factor-w-4-levels-quot-lt-0-dm-quot-quot-gt-200-dm-quot-1-3-4-1-1-4-4-3-4-3">$ checking_balance : Factor w/ 4 levels &quot;&lt; 0 DM&quot;,&quot;&gt; 200 DM&quot;,..: 1 3 4 1 1 4 4 3 4 3 &hellip;</h2>
+
+<h2 id="months-loan-duration-int-6-48-12-42-24-36-24-36-12-30">$ months_loan_duration: int 6 48 12 42 24 36 24 36 12 30 &hellip;</h2>
+
+<h2 id="credit-history-factor-w-5-levels-quot-critical-quot-quot-good-quot">$ credit_history : Factor w/ 5 levels &quot;critical&quot;,&quot;good&quot;,.</h2>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/logistic-regression2/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -534,20 +528,6 @@ library (ISLR)</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-03'>
-                                    July 3, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <h3><a href="/post/association-rules-rmd/">Association Rules</a></h3>
                                 
                                     
@@ -577,6 +557,20 @@ library (ISLR)</p>
                         <article>
                             <header>
                                 <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-02'>
+                                    July 2, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
                                 
                                     
                                 
