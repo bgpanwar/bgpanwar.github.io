@@ -189,7 +189,7 @@
                     </li>
                 
                     <li>
-                        <a href="/post/random-forest-analysis/"><p>Random Forest Analysis</p></a>
+                        <a href="/post/principle-component-analysis/"><p>Principle Component Analysis</p></a>
                     </li>
                 
             </ul>
@@ -311,7 +311,7 @@ library (e1071)</p>
     <header>
     <div class="title">
         
-            <h2><a href="/post/random-forest-analysis/">Random Forest Analysis</a></h2>
+            <h2><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h2>
         
         
     </div>
@@ -325,7 +325,7 @@ library (e1071)</p>
             July 2, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>3 minute read</p>
+            <p>2 minute read</p>
         
         
     </div>
@@ -333,24 +333,31 @@ library (e1071)</p>
 
     
 
-    <p>The Random Forest analysis techniques was used to improve prediction on the German Credit Dataset.
-The dataset is found:
-url=&quot;<a href="http://freakonometrics.free.fr/german_credit.csv&quot;">http://freakonometrics.free.fr/german_credit.csv&quot;</a>
-credit=read.csv(url, header = TRUE, sep = &quot;,&quot;)
-str(credit)</p>
+    <p>Principle Component Analysis was performed using the Iris dataset.</p>
 
-<h2 id="39-data-frame-39-1000-obs-of-21-variables">&#39;data.frame&#39;: 1000 obs. of 21 variables:</h2>
+<h1 id="load-data">Load data</h1>
 
-<h2 id="creditability-int-1-1-1-1-1-1-1-1-1-1">$ Creditability : int 1 1 1 1 1 1 1 1 1 1 &hellip;</h2>
+<p>data(iris)
+head(iris, 3)</p>
 
-<h2 id="account-balance-int-1-1-2-1-1-1-1-1-4-2">$ Account.Balance : int 1 1 2 1 1 1 1 1 4 2 &hellip;</h2>
+<h2 id="sepal-length-sepal-width-petal-length-petal-width-species">Sepal.Length Sepal.Width Petal.Length Petal.Width Species</h2>
 
-<h2 id="duration-of-credit-month-int-18-9-12-12-12-10-8-6-18-24">$ Duration.of.Credit..month. : int 18 9 12 12 12 10 8 6 18 24 .</h2>
+<h2 id="1-5-1-3-5-1-4-0-2-setosa">1 5.1 3.5 1.4 0.2 setosa</h2>
+
+<h2 id="2-4-9-3-0-1-4-0-2-setosa">2 4.9 3.0 1.4 0.2 setosa</h2>
+
+<h2 id="3-4-7-3-2-1-3-0-2-setosa">3 4.7 3.2 1.3 0.2 setosa</h2>
+
+<h1 id="log-transform-log-ir-lt-log-iris-1-4">log transform log.ir &lt;- log(iris[, 1:4])</h1>
+
+<p>ir.species &lt;- iris[, 5]</p>
+
+<h1 id="apply-pca-scale-true-is-highly-advisable-but-default-is-false-ir-pca-lt-prcomp-log">apply PCA - scale. = TRUE is highly # advisable, but default is FALSE. ir.pca &lt;- prcomp(log.</h1>
 </p>
 
     <footer>
         <ul class="actions">
-            <li><a href="/post/random-forest-analysis/" class="button big">Continue Reading</a></li>
+            <li><a href="/post/principle-component-analysis/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -372,7 +379,7 @@ str(credit)</p>
     <header>
     <div class="title">
         
-            <h2><a href="/post/statistical-analysis-examples/">Statistical Analysis-Examples</a></h2>
+            <h2><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h2>
         
         
     </div>
@@ -386,7 +393,7 @@ str(credit)</p>
             July 2, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>4 minute read</p>
+            <p>0 minute read</p>
         
         
     </div>
@@ -394,27 +401,11 @@ str(credit)</p>
 
     
 
-    <p>Statistical Analysis consists of code from the Chapter Lab Sections 4.6.1 and 4.6.2(Induction to Statitical book)
-library (ISLR)</p>
-
-<h2 id="warning-package-39-islr-39-was-built-under-r-version-3-3-3">Warning: package &#39;ISLR&#39; was built under R version 3.3.3</h2>
-
-<p>names(Smarket )</p>
-
-<h2 id="1-quot-year-quot-quot-lag1-quot-quot-lag2-quot-quot-lag3-quot-quot-lag4-quot-quot-lag5-quot-7-quot-volume-quot-quot-today-quot-quot-direction-quot">[1] &quot;Year&quot; &quot;Lag1&quot; &quot;Lag2&quot; &quot;Lag3&quot; &quot;Lag4&quot; &quot;Lag5&quot; ## [7] &quot;Volume&quot; &quot;Today&quot; &quot;Direction&quot;</h2>
-
-<p>dim(Smarket )</p>
-
-<h2 id="1-1250-9">[1] 1250 9</h2>
-
-<p>summary (Smarket )</p>
-
-<h2 id="year-lag1-lag2-min-2001-min-4-922000-min-4-922000-1st-qu-2002-1st-qu-0-639500-1st-qu-0-639500-median-2003-median-0">Year Lag1 Lag2 ## Min. :2001 Min. :-4.922000 Min. :-4.922000 ## 1st Qu.:2002 1st Qu.:-0.639500 1st Qu.:-0.639500 ## Median :2003 Median : 0.</h2>
-</p>
+    <p></p>
 
     <footer>
         <ul class="actions">
-            <li><a href="/post/statistical-analysis-examples/" class="button big">Continue Reading</a></li>
+            <li><a href="/post/principle-component-analysis/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -608,7 +599,7 @@ library (ISLR)</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/random-forest-analysis/">Random Forest Analysis</a></h3>
+                                <h3><a href="/post/principle-component-analysis/">Principle Component Analysis</a></h3>
                                 
                                     
                                 

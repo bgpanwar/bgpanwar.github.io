@@ -1,0 +1,79 @@
+---
+title: Principle Component Analysis
+author: Bhawna G. Panwar
+date: '2017-07-02'
+slug: principle-component-analysis
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+Principle Component Analysis was performed using the Iris dataset.
+
+```{r}
+# Load data
+data(iris)
+head(iris, 3)
+
+```
+
+```{r}
+# log transform 
+log.ir <- log(iris[, 1:4])
+ir.species <- iris[, 5]
+
+# apply PCA - scale. = TRUE is highly 
+# advisable, but default is FALSE. 
+ir.pca <- prcomp(log.ir,
+                 center = TRUE,
+                 scale. = TRUE)
+```
+
+
+```{r}
+# print method
+print(ir.pca)
+
+```
+
+
+```{r}
+# plot method
+plot(ir.pca, type = "l")
+```
+
+```{r}
+# summary method
+summary(ir.pca)
+
+```
+```{r}
+# Predict PCs
+predict(ir.pca, 
+        newdata=tail(log.ir, 2))
+
+```
+
+```{r}
+#if (!require(devtools)) install.packages("devtools")
+if (!require(ggbiplot)) install_github("ggbiplot", "vqv")
+
+library(devtools)
+library(ggbiplot)
+g <- ggbiplot(ir.pca, obs.scale = 1, var.scale = 1, 
+              groups = ir.species, ellipse = TRUE, 
+              circle = TRUE)
+g <- g + scale_color_discrete(name = '')
+g <- g + theme(legend.direction = 'horizontal', 
+               legend.position = 'top')
+print(g)
+```
+
+
+Reference: https://www.r-bloggers.com/computing-and-visualizing-pca-in-r/
+
+
+
