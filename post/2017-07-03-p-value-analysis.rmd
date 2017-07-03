@@ -1,16 +1,17 @@
 ---
-title: p-value Analysis
-author: Bhawna G. Panwar
+title: "p-value Analysis"
+author: "Bhawna G. Panwar"
 date: '2017-07-03'
-slug: p-value-analysis
-categories: []
-tags: []
 description: ''
 featured: ''
 featuredalt: ''
 featuredpath: ''
 linktitle: ''
+slug: p-value-analysis
+tags: []
+categories: []
 ---
+The main purpose of P-value Analysis was to use the Tooth Growth dataset. I wanted to showcase various R packages such as ggpubr and dplyr that use default methods such "wilcos.test","t.test"" etc. I intend to add more details of this analysis later. I wanted to demonstrate the working code here first.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -56,3 +57,204 @@ p + stat_compare_means()
 # Change method
 p + stat_compare_means(method = "t.test")
 ```
+
+```{r}
+# Global test
+compare_means(len ~ dose,  data = ToothGrowth, method = "anova")
+```
+
+
+```{r}
+# # Default method = "kruskal.test" for multiple groups
+ ggboxplot(ToothGrowth, x = "dose", y = "len",
+           color = "dose", palette = "jco")+
+   stat_compare_means()
+# 
+# # Change method to anova
+ ggboxplot(ToothGrowth, x = "dose", y = "len",
+           color = "dose", palette = "jco")+
+   stat_compare_means(method = "anova")
+```
+
+```{r}
+# Perorm pairwise comparisons
+compare_means(len ~ dose,  data = ToothGrowth)
+```
+
+
+```{r}
+# Visualize: Specify the comparisons you want
+ my_comparisons <- list( c("0.5", "1"), c("1", "2"), c("0.5", "2") )
+ ggboxplot(ToothGrowth, x = "dose", y = "len",
+           color = "dose", palette = "jco")+ 
+#   stat_compare_means(comparisons = my_comparisons)+ # Add pairwise comparisons p-value
+   stat_compare_means(label.y = 50)     # Add global 
+```
+
+```{r}
+ ggboxplot(ToothGrowth, x = "dose", y = "len",
+           color = "dose", palette = "jco")+ 
+   stat_compare_means(comparisons = my_comparisons, label.y = c(29, 35, 40))+
+   stat_compare_means(label.y = 45)
+```
+
+```{r}
+# Pairwise comparison against reference
+compare_means(len ~ dose,  data = ToothGrowth, ref.group = "0.5",
+              method = "t.test")
+```
+```{r}
+# Visualize
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          color = "dose", palette = "jco")+
+  stat_compare_means(method = "anova", label.y = 40)+      # Add global p-value
+  stat_compare_means(label = "p.signif", method = "t.test",
+                     ref.group = "0.5")                    # Pairwise comparison against reference
+```
+```{r}
+# Comparison of each group against base-mean
+compare_means(len ~ dose,  data = ToothGrowth, ref.group = ".all.",
+              method = "t.test")
+```
+```{r}
+# Visualize
+p + stat_compare_means( aes(label = ..p.signif..), 
+                        label.x = 1.5, label.y = 40)
+```
+
+```{r}
+p + stat_compare_means( label = "p.signif", label.x = 1.5, label.y = 40)
+```
+```{r}
+compare_means(len ~ supp, data = ToothGrowth, paired = TRUE)
+```
+
+Compare two paired samples
+```{r}
+ggpaired(ToothGrowth, x = "supp", y = "len",
+         color = "supp", line.color = "gray", line.size = 0.4,
+         palette = "jco")+
+  stat_compare_means(paired = TRUE)
+```
+
+
+```{r}
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          color = "dose", palette = "jco")+
+  stat_compare_means(method = "anova", label.y = 40)+      # Add global p-value
+  stat_compare_means(label = "p.signif", method = "t.test",
+                     ref.group = ".all.")                  # Pairwise comparison against all
+```
+
+
+```{r}
+# Load myeloma data from survminer package
+if(!require(survminer)) install.packages("survminer")
+data("myeloma", package = "survminer")
+
+# Perform the test
+compare_means(DEPDC1 ~ molecular_group,  data = myeloma,
+              ref.group = ".all.", method = "t.test")
+```
+
+```{r}
+# Visualize the expression profile
+ggboxplot(myeloma, x = "molecular_group", y = "DEPDC1", color = "molecular_group", 
+          add = "jitter", legend = "none") +
+  rotate_x_text(angle = 45)+
+  geom_hline(yintercept = mean(myeloma$DEPDC1), linetype = 2)+ # Add horizontal line at base mean
+  stat_compare_means(method = "anova", label.y = 1600)+        # Add global annova p-value
+  stat_compare_means(label = "p.signif", method = "t.test",
+                     ref.group = ".all.")                      # Pairwise comparison against all
+```
+
+```{r}
+# Visualize the expression profile
+ggboxplot(myeloma, x = "molecular_group", y = "DEPDC1", color = "molecular_group", 
+          add = "jitter", legend = "none") +
+  rotate_x_text(angle = 45)+
+  geom_hline(yintercept = mean(myeloma$DEPDC1), linetype = 2)+ # Add horizontal line at base mean
+  stat_compare_means(method = "anova", label.y = 1600)+        # Add global annova p-value
+  stat_compare_means(label = "p.signif", method = "t.test",
+                     ref.group = ".all.", hide.ns = TRUE)      # Pairwise comparison against all
+```
+
+```{r}
+compare_means(len ~ supp, data = ToothGrowth, 
+              group.by = "dose")
+```
+
+```{r}
+# Box plot facetted by "dose"
+ p <- ggboxplot(ToothGrowth, x = "supp", y = "len",
+           color = "supp", palette = "jco",
+           add = "jitter",
+           facet.by = "dose", short.panel.labs = FALSE)
+ # Use only p.format as label. Remove method name.
+ p + stat_compare_means(label = "p.format")
+```
+
+```{r}
+# Or use significance symbol as label
+p + stat_compare_means(label =  "p.signif", label.x = 1.5)
+```
+
+```{r}
+p <- ggboxplot(ToothGrowth, x = "dose", y = "len",
+          color = "supp", palette = "jco",
+          add = "jitter")
+p + stat_compare_means(aes(group = supp))
+```
+
+```{r}
+# Show only p-value
+p + stat_compare_means(aes(group = supp), label = "p.format")
+```
+
+```{r}
+# Use significance symbol as label
+p + stat_compare_means(aes(group = supp), label = "p.signif")
+```
+
+```{r}
+compare_means(len ~ supp, data = ToothGrowth, 
+              group.by = "dose", paired = TRUE)
+```
+
+```{r}
+# Box plot facetted by "dose"
+p <- ggpaired(ToothGrowth, x = "supp", y = "len",
+           color = "supp", palette = "jco", 
+           line.color = "gray", line.size = 0.4,
+           facet.by = "dose", short.panel.labs = FALSE)
+# Use only p.format as label. Remove method name.
+p + stat_compare_means(label = "p.format", paired = TRUE)
+```
+
+```{r}
+# Bar plot of mean +/-se
+ ggbarplot(ToothGrowth, x = "dose", y = "len", add = "mean_se")+
+   stat_compare_means() +                                         # Global p-value
+   stat_compare_means(ref.group = "0.5", label = "p.signif",
+                      label.y = c(22, 29))                   # compare to ref.group
+
+# Line plot of mean +/-se
+ ggline(ToothGrowth, x = "dose", y = "len", add = "mean_se")+
+   stat_compare_means() +                                         # Global p-value
+   stat_compare_means(ref.group = "0.5", label = "p.signif",
+                      label.y = c(22, 29)) 
+```
+
+```{r}
+ ggbarplot(ToothGrowth, x = "dose", y = "len", add = "mean_se",
+           color = "supp", palette = "jco", 
+           position = position_dodge(0.8))+
+   stat_compare_means(aes(group = supp), label = "p.signif", label.y = 29)
+# 
+ ggline(ToothGrowth, x = "dose", y = "len", add = "mean_se",
+           color = "supp", palette = "jco")+
+   stat_compare_means(aes(group = supp), label = "p.signif", 
+                      label.y = c(16, 25, 29))
+```
+
+Reference: https://www.r-bloggers.com/add-p-values-and-significance-levels-to-ggplots/
