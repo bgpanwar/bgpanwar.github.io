@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/tidyverse-example/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tidyverse-example/</guid>
+      <description>Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.
+Load the data set notice Class is labeled “ts”-indicating a time series format
+data(&amp;quot;AirPassengers&amp;quot;)class(AirPassengers)## [1] &amp;quot;ts&amp;quot;end(AirPassengers)## [1] 1960 12We can define the cycle of this time series in years
+frequency(24)## [1] 1Summary
+summary(AirPassengers)## Min. 1st Qu. Median Mean 3rd Qu. Max. ## 104.0 180.0 265.5 280.3 360.5 622.0plot(AirPassengers)plot(AirPassengers)abline(reg= lm (AirPassengers~time(AirPassengers)))## pritn cycle across years, then aggregate cycles and display a year on year trendcycle(AirPassengers)## Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec## 1949 1 2 3 4 5 6 7 8 9 10 11 12## 1950 1 2 3 4 5 6 7 8 9 10 11 12## 1951 1 2 3 4 5 6 7 8 9 10 11 12## 1952 1 2 3 4 5 6 7 8 9 10 11 12## 1953 1 2 3 4 5 6 7 8 9 10 11 12## 1954 1 2 3 4 5 6 7 8 9 10 11 12## 1955 1 2 3 4 5 6 7 8 9 10 11 12## 1956 1 2 3 4 5 6 7 8 9 10 11 12## 1957 1 2 3 4 5 6 7 8 9 10 11 12## 1958 1 2 3 4 5 6 7 8 9 10 11 12## 1959 1 2 3 4 5 6 7 8 9 10 11 12## 1960 1 2 3 4 5 6 7 8 9 10 11 12plot(aggregate(AirPassengers,FUN = mean))## boxplot on seasonal databoxplot(AirPassengers~cycle(AirPassengers))## The variance and the mean value in July and August is much higher than rest of the months.</description>
+    </item>
     
     <item>
       <title>p-value Analysis</title>

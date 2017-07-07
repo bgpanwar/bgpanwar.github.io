@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>Scatter</title>
+                <title>Time Series</title>
             
         
 
@@ -29,32 +29,28 @@
 
 
 
-<meta name="twitter:text:title" content="Scatter"/>
-<meta name="twitter:title" content="Scatter"/>
-<meta name="twitter:description" content="Load the data.
-subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
-plot(subscribers$Subscribers)Default plot with type explicity specified.
-plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website."/>
+<meta name="twitter:text:title" content="Time Series"/>
+<meta name="twitter:title" content="Time Series"/>
+<meta name="twitter:description" content="Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.
+Load the data set notice Class is labeled “ts”-indicating a time series format
+data(&quot;AirPassengers&quot;)class(AirPassengers)## [1] &quot;ts&quot;end(AirPassengers)## [1] 1960 12We can define the cycle of this time series in years
+frequency(24)## [1] 1Summary
+summary(AirPassengers)## Min. 1st Qu. Median Mean 3rd Qu. Max. ## 104.0 180.0 265.5 280.3 360.5 622.0plot(AirPassengers)plot(AirPassengers)abline(reg= lm (AirPassengers~time(AirPassengers)))## pritn cycle across years, then aggregate cycles and display a year on year trendcycle(AirPassengers)## Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec## 1949 1 2 3 4 5 6 7 8 9 10 11 12## 1950 1 2 3 4 5 6 7 8 9 10 11 12## 1951 1 2 3 4 5 6 7 8 9 10 11 12## 1952 1 2 3 4 5 6 7 8 9 10 11 12## 1953 1 2 3 4 5 6 7 8 9 10 11 12## 1954 1 2 3 4 5 6 7 8 9 10 11 12## 1955 1 2 3 4 5 6 7 8 9 10 11 12## 1956 1 2 3 4 5 6 7 8 9 10 11 12## 1957 1 2 3 4 5 6 7 8 9 10 11 12## 1958 1 2 3 4 5 6 7 8 9 10 11 12## 1959 1 2 3 4 5 6 7 8 9 10 11 12## 1960 1 2 3 4 5 6 7 8 9 10 11 12plot(aggregate(AirPassengers,FUN = mean))## boxplot on seasonal databoxplot(AirPassengers~cycle(AirPassengers))## The variance and the mean value in July and August is much higher than rest of the months."/>
 <meta name="twitter:site" content="@bgpanwar"/>
 
-        <meta property="og:title" content="Scatter" />
-<meta property="og:description" content="Load the data.
-subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
-plot(subscribers$Subscribers)Default plot with type explicity specified.
-plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website." />
+        <meta property="og:title" content="Time Series" />
+<meta property="og:description" content="Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.
+Load the data set notice Class is labeled “ts”-indicating a time series format
+data(&quot;AirPassengers&quot;)class(AirPassengers)## [1] &quot;ts&quot;end(AirPassengers)## [1] 1960 12We can define the cycle of this time series in years
+frequency(24)## [1] 1Summary
+summary(AirPassengers)## Min. 1st Qu. Median Mean 3rd Qu. Max. ## 104.0 180.0 265.5 280.3 360.5 622.0plot(AirPassengers)plot(AirPassengers)abline(reg= lm (AirPassengers~time(AirPassengers)))## pritn cycle across years, then aggregate cycles and display a year on year trendcycle(AirPassengers)## Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec## 1949 1 2 3 4 5 6 7 8 9 10 11 12## 1950 1 2 3 4 5 6 7 8 9 10 11 12## 1951 1 2 3 4 5 6 7 8 9 10 11 12## 1952 1 2 3 4 5 6 7 8 9 10 11 12## 1953 1 2 3 4 5 6 7 8 9 10 11 12## 1954 1 2 3 4 5 6 7 8 9 10 11 12## 1955 1 2 3 4 5 6 7 8 9 10 11 12## 1956 1 2 3 4 5 6 7 8 9 10 11 12## 1957 1 2 3 4 5 6 7 8 9 10 11 12## 1958 1 2 3 4 5 6 7 8 9 10 11 12## 1959 1 2 3 4 5 6 7 8 9 10 11 12## 1960 1 2 3 4 5 6 7 8 9 10 11 12plot(aggregate(AirPassengers,FUN = mean))## boxplot on seasonal databoxplot(AirPassengers~cycle(AirPassengers))## The variance and the mean value in July and August is much higher than rest of the months." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/scatter/" />
+<meta property="og:url" content="/post/tidyverse-example/" />
 
 
 
-<meta property="article:published_time" content="2017-07-01T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-07-01T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2017-07-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-06T00:00:00&#43;00:00"/>
 
 
 
@@ -67,18 +63,16 @@ plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;D
 
 
         
-<meta itemprop="name" content="Scatter">
-<meta itemprop="description" content="Load the data.
-subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)View(subscribers)Default plot with points.
-plot(subscribers$Subscribers)Default plot with type explicity specified.
-plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))Draw vertical lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))Draw points with above lines.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))points(subscribers$Subscribers)Edits with colors and labels.
-plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) Reference:The data was downloaded from the following website website.">
+<meta itemprop="name" content="Time Series">
+<meta itemprop="description" content="Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.
+Load the data set notice Class is labeled “ts”-indicating a time series format
+data(&quot;AirPassengers&quot;)class(AirPassengers)## [1] &quot;ts&quot;end(AirPassengers)## [1] 1960 12We can define the cycle of this time series in years
+frequency(24)## [1] 1Summary
+summary(AirPassengers)## Min. 1st Qu. Median Mean 3rd Qu. Max. ## 104.0 180.0 265.5 280.3 360.5 622.0plot(AirPassengers)plot(AirPassengers)abline(reg= lm (AirPassengers~time(AirPassengers)))## pritn cycle across years, then aggregate cycles and display a year on year trendcycle(AirPassengers)## Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec## 1949 1 2 3 4 5 6 7 8 9 10 11 12## 1950 1 2 3 4 5 6 7 8 9 10 11 12## 1951 1 2 3 4 5 6 7 8 9 10 11 12## 1952 1 2 3 4 5 6 7 8 9 10 11 12## 1953 1 2 3 4 5 6 7 8 9 10 11 12## 1954 1 2 3 4 5 6 7 8 9 10 11 12## 1955 1 2 3 4 5 6 7 8 9 10 11 12## 1956 1 2 3 4 5 6 7 8 9 10 11 12## 1957 1 2 3 4 5 6 7 8 9 10 11 12## 1958 1 2 3 4 5 6 7 8 9 10 11 12## 1959 1 2 3 4 5 6 7 8 9 10 11 12## 1960 1 2 3 4 5 6 7 8 9 10 11 12plot(aggregate(AirPassengers,FUN = mean))## boxplot on seasonal databoxplot(AirPassengers~cycle(AirPassengers))## The variance and the mean value in July and August is much higher than rest of the months.">
 
 
-<meta itemprop="dateModified" content="2017-07-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="64">
+<meta itemprop="dateModified" content="2017-07-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="524">
 
 
 
@@ -246,43 +240,43 @@ plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;D
             
 
 
-<li><a href="//twitter.com/share?url=%2fpost%2fscatter%2f&text=Scatter&via=bgpanwar" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=%2fpost%2ftidyverse-example%2f&text=Time%20Series&via=bgpanwar" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=%2fpost%2fscatter%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=%2fpost%2ftidyverse-example%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fscatter%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2ftidyverse-example%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=%2fpost%2ftidyverse-example%2f&title=Time%20Series" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=%2fpost%2ftidyverse-example%2f&title=Time%20Series" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2fscatter%2f&title=Scatter" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=%2fpost%2ftidyverse-example%2f&title=Time%20Series" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=%2fpost%2fscatter%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Bhawna%20G.%20Panwar&body=%2fpost%2ftidyverse-example%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -299,7 +293,7 @@ plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;D
     <header>
     <div class="title">
         
-            <h1><a href="/post/scatter/">Scatter</a></h1>
+            <h1><a href="/post/tidyverse-example/">Time Series</a></h1>
             
         
         
@@ -310,11 +304,11 @@ plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;D
         
 
         <time class="published"
-            datetime='2017-07-01'>
-            July 1, 2017</time>
+            datetime='2017-07-06'>
+            July 6, 2017</time>
         <span class="author">Bhawna G. Panwar</span>
         
-            <p>1 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -324,28 +318,94 @@ plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;D
     
 
     <div id="content">
-        <p>Load the data.</p>
-<pre class="r"><code>subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+        <p>Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.</p>
+<p>Load the data set notice Class is labeled “ts”-indicating a time series format</p>
+<pre class="r"><code>data(&quot;AirPassengers&quot;)
+class(AirPassengers)</code></pre>
+<pre><code>## [1] &quot;ts&quot;</code></pre>
+<pre class="r"><code>end(AirPassengers)</code></pre>
+<pre><code>## [1] 1960   12</code></pre>
+<p>We can define the cycle of this time series in years</p>
+<pre class="r"><code>frequency(24)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>Summary</p>
+<pre class="r"><code>summary(AirPassengers)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   104.0   180.0   265.5   280.3   360.5   622.0</code></pre>
+<pre class="r"><code>plot(AirPassengers)</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>plot(AirPassengers)
+abline(reg= lm (AirPassengers~time(AirPassengers)))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>## pritn cycle across years, then aggregate cycles and display a year on year trend
+cycle(AirPassengers)</code></pre>
+<pre><code>##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+## 1949   1   2   3   4   5   6   7   8   9  10  11  12
+## 1950   1   2   3   4   5   6   7   8   9  10  11  12
+## 1951   1   2   3   4   5   6   7   8   9  10  11  12
+## 1952   1   2   3   4   5   6   7   8   9  10  11  12
+## 1953   1   2   3   4   5   6   7   8   9  10  11  12
+## 1954   1   2   3   4   5   6   7   8   9  10  11  12
+## 1955   1   2   3   4   5   6   7   8   9  10  11  12
+## 1956   1   2   3   4   5   6   7   8   9  10  11  12
+## 1957   1   2   3   4   5   6   7   8   9  10  11  12
+## 1958   1   2   3   4   5   6   7   8   9  10  11  12
+## 1959   1   2   3   4   5   6   7   8   9  10  11  12
+## 1960   1   2   3   4   5   6   7   8   9  10  11  12</code></pre>
+<pre class="r"><code>plot(aggregate(AirPassengers,FUN = mean))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>## boxplot on seasonal data
+boxplot(AirPassengers~cycle(AirPassengers))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>## The variance and the mean value in July and August is much higher than rest of the months.
+## Even though the mean value of each month is quite different their variance is small. 
+## Hence, we have strong seasonal effect with a cycle of 12 months or less.</code></pre>
+<div id="stationization" class="section level1">
+<h1>stationization</h1>
+<pre class="r"><code>## remove unequal variance and address trend component
+library(tseries)
+adf.test(diff(log(AirPassengers)), alternative = &quot;stationary&quot;, k = 0)</code></pre>
+<pre><code>## Warning in adf.test(diff(log(AirPassengers)), alternative = &quot;stationary&quot;, :
+## p-value smaller than printed p-value</code></pre>
+<pre><code>## 
+##  Augmented Dickey-Fuller Test
+## 
+## data:  diff(log(AirPassengers))
+## Dickey-Fuller = -9.6003, Lag order = 0, p-value = 0.01
+## alternative hypothesis: stationary</code></pre>
+<pre class="r"><code># find parms for ARIMA model
+## The ACF chart decays very slow, meaning the data is not stationary
+acf(log(AirPassengers))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code># Try diff
+acf(diff(log(AirPassengers)))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<pre class="r"><code>pacf(diff(log(AirPassengers)))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
+<pre class="r"><code># get param (p,d,q) values
+## The value of p should be 0 as the ACF is the curve getting a cut off
+## choose (p,d,q) that have both lowest AIC, BIC
+p &lt;- 0
+d &lt;- 1
+min_sum &lt;- 0
+final_q &lt;- 1
+for (q in c(1,2)) {
+  fit &lt;- arima(log(AirPassengers), c(p,d,q), seasonal = list(order = c(p,d,q), period = 12))
+  sum &lt;- AIC(fit) + BIC(fit)
+  if (sum &lt; min_sum) {
+    min_sum &lt;- sum
+    final_q &lt;- q
+  }
+}
 
-View(subscribers)</code></pre>
-<p>Default plot with points.</p>
-<pre class="r"><code>plot(subscribers$Subscribers)</code></pre>
-<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Default plot with type explicity specified.</p>
-<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))</code></pre>
-<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Draw vertical lines.</p>
-<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))</code></pre>
-<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Draw points with above lines.</p>
-<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))
-points(subscribers$Subscribers)</code></pre>
-<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Edits with colors and labels.</p>
-<pre class="r"><code>plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)
-points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) </code></pre>
-<p><img src="/post/2017-07-01-scatter_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Reference:The data was downloaded from the following website <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470944889.html">website</a>.</p>
+final_q</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code># make prediction, 2.718 is e
+fit &lt;- arima(log(AirPassengers), c(p,d,final_q), seasonal = list(order = c(p,d,final_q), period = 12))
+pred &lt;- predict(fit, n.ahead = 6*12)
+ts.plot(AirPassengers, 2.718^pred$pred, log = &quot;y&quot;, lty = c(1,3))</code></pre>
+<p><img src="/post/2017-07-06-tidyverse-example_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
 
     </div>
 
@@ -366,13 +426,10 @@ points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) </code></pre>
 </article>
 <ul class="actions pagination">
     
-        <li><a href="/post/spam-filter/"
-                class="button big previous">Spam Filter</a></li>
+        <li><a href="/post/p-value-analysis/"
+                class="button big previous">p-value Analysis</a></li>
     
 
-    
-        <li><a href="/post/ann-rmd/"
-                class="button big next">Artificial Neural Networks</a></li>
     
 </ul>
 
@@ -383,9 +440,9 @@ points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;) </code></pre>
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = '\/post\/scatter\/';
-    var disqus_title = 'Scatter';
-    var disqus_url = '\/post\/scatter\/';
+    var disqus_identifier = '\/post\/tidyverse-example\/';
+    var disqus_title = 'Time Series';
+    var disqus_url = '\/post\/tidyverse-example\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-07-03T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-07-06T00:00:00&#43;00:00"/>
 
 
 
@@ -173,6 +173,10 @@
 
                 
                     <li>
+                        <a href="/post/tidyverse-example/"><p>Time Series</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/p-value-analysis/"><p>p-value Analysis</p></a>
                     </li>
                 
@@ -188,10 +192,6 @@
                         <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
                     </li>
                 
-                    <li>
-                        <a href="/post/naive-bayes/"><p>Naive Bayes</p></a>
-                    </li>
-                
             </ul>
         </section>
 
@@ -205,6 +205,116 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/tidyverse-example/">Time Series</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-06'>
+            July 6, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Here we explore time series type dataset. Inbuilt Airpassenger dataset was used.
+Load the data set notice Class is labeled “ts”-indicating a time series format
+data(&quot;AirPassengers&quot;)
+class(AirPassengers)</p>
+
+<h2 id="1-quot-ts-quot">[1] &quot;ts&quot;</h2>
+
+<p>end(AirPassengers)</p>
+
+<h2 id="1-1960-12">[1] 1960 12</h2>
+
+<p>We can define the cycle of this time series in years
+frequency(24)</p>
+
+<h2 id="1-1">[1] 1</h2>
+
+<p>Summary
+summary(AirPassengers)</p>
+
+<h2 id="min-1st-qu-median-mean-3rd-qu-max-104-0-180-0-265-5-280-3-360-5-622-0">Min. 1st Qu. Median Mean 3rd Qu. Max. ## 104.0 180.0 265.5 280.3 360.5 622.0</h2>
+
+<p>plot(AirPassengers)
+plot(AirPassengers)
+abline(reg= lm (AirPassengers~time(AirPassengers)))</p>
+
+<h2 id="pritn-cycle-across-years-then-aggregate-cycles-and-display-a-year-on-year-trend">pritn cycle across years, then aggregate cycles and display a year on year trend</h2>
+
+<p>cycle(AirPassengers)</p>
+
+<h2 id="jan-feb-mar-apr-may-jun-jul-aug-sep-oct-nov-dec">Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</h2>
+
+<h2 id="1949-1-2-3-4-5-6-7-8-9-10-11-12">1949 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1950-1-2-3-4-5-6-7-8-9-10-11-12">1950 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1951-1-2-3-4-5-6-7-8-9-10-11-12">1951 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1952-1-2-3-4-5-6-7-8-9-10-11-12">1952 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1953-1-2-3-4-5-6-7-8-9-10-11-12">1953 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1954-1-2-3-4-5-6-7-8-9-10-11-12">1954 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1955-1-2-3-4-5-6-7-8-9-10-11-12">1955 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1956-1-2-3-4-5-6-7-8-9-10-11-12">1956 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1957-1-2-3-4-5-6-7-8-9-10-11-12">1957 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1958-1-2-3-4-5-6-7-8-9-10-11-12">1958 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1959-1-2-3-4-5-6-7-8-9-10-11-12">1959 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<h2 id="1960-1-2-3-4-5-6-7-8-9-10-11-12">1960 1 2 3 4 5 6 7 8 9 10 11 12</h2>
+
+<p>plot(aggregate(AirPassengers,FUN = mean))</p>
+
+<h2 id="boxplot-on-seasonal-data">boxplot on seasonal data</h2>
+
+<p>boxplot(AirPassengers~cycle(AirPassengers))</p>
+
+<h2 id="the-variance-and-the-mean-value-in-july-and-august-is-much-higher-than-rest-of-the-months">The variance and the mean value in July and August is much higher than rest of the months.</h2>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/tidyverse-example/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -297,55 +407,6 @@ The typical grocery store offers a huge variety of items.</p>
     <footer>
         <ul class="actions">
             <li><a href="/post/association-rules-rmd/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/clustering-analysis/">Clustering Analysis</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-02'>
-            July 2, 2017</time>
-        <span class="author"></span>
-        
-            <p>9 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>The cluster Analysis is performed on the SNS dataset.Clustering with k-means can be applied by identifying groups. Clustering can automate the process of discovering the natural segments in this population. However, it will be up to us to decide whether or not the clusters are interesting and how we can use them for advertising.
-SNS dataset representing a random sample of 30,000 U.S. high school students who had profiles on a well-known SNS in 2006.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/clustering-analysis/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -482,6 +543,20 @@ SNS dataset representing a random sample of 30,000 U.S. high school students who
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/tidyverse-example/">Time Series</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-06'>
+                                    July 6, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/p-value-analysis/">p-value Analysis</a></h3>
                                 
                                     
@@ -525,20 +600,6 @@ SNS dataset representing a random sample of 30,000 U.S. high school students who
                         <article>
                             <header>
                                 <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-02'>
-                                    July 2, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/naive-bayes/">Naive Bayes</a></h3>
                                 
                                     
                                 

@@ -1,0 +1,102 @@
+---
+title: Time Series
+author: Bhawna G. Panwar
+date: '2017-07-06'
+slug: tidyverse-example
+categories: []
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+Here we explore time series type dataset.  Inbuilt Airpassenger dataset was used.
+
+
+Load the data set 
+notice Class is labeled "ts"-indicating  a time series format
+```{r}
+data("AirPassengers")
+class(AirPassengers)
+```
+
+```{r}
+end(AirPassengers)
+```
+
+We can define the cycle of this time series in years
+```{r}
+frequency(24)
+```
+Summary 
+```{r}
+summary(AirPassengers)
+
+```
+
+```{r}
+plot(AirPassengers)
+```
+
+```{r}
+plot(AirPassengers)
+abline(reg= lm (AirPassengers~time(AirPassengers)))
+```
+```{r}
+## pritn cycle across years, then aggregate cycles and display a year on year trend
+cycle(AirPassengers)
+plot(aggregate(AirPassengers,FUN = mean))
+```
+
+```{r}
+## boxplot on seasonal data
+boxplot(AirPassengers~cycle(AirPassengers))
+## The variance and the mean value in July and August is much higher than rest of the months.
+## Even though the mean value of each month is quite different their variance is small. 
+## Hence, we have strong seasonal effect with a cycle of 12 months or less.
+
+```
+# stationization
+```{r}
+
+## remove unequal variance and address trend component
+library(tseries)
+adf.test(diff(log(AirPassengers)), alternative = "stationary", k = 0)
+```
+
+```{r}
+# find parms for ARIMA model
+## The ACF chart decays very slow, meaning the data is not stationary
+acf(log(AirPassengers))
+# Try diff
+acf(diff(log(AirPassengers)))
+pacf(diff(log(AirPassengers)))
+```
+```{r}
+# get param (p,d,q) values
+## The value of p should be 0 as the ACF is the curve getting a cut off
+## choose (p,d,q) that have both lowest AIC, BIC
+p <- 0
+d <- 1
+min_sum <- 0
+final_q <- 1
+for (q in c(1,2)) {
+  fit <- arima(log(AirPassengers), c(p,d,q), seasonal = list(order = c(p,d,q), period = 12))
+  sum <- AIC(fit) + BIC(fit)
+  if (sum < min_sum) {
+    min_sum <- sum
+    final_q <- q
+  }
+}
+
+final_q
+```
+```{r}
+# make prediction, 2.718 is e
+fit <- arima(log(AirPassengers), c(p,d,final_q), seasonal = list(order = c(p,d,final_q), period = 12))
+pred <- predict(fit, n.ahead = 6*12)
+ts.plot(AirPassengers, 2.718^pred$pred, log = "y", lty = c(1,3))
+```
+
