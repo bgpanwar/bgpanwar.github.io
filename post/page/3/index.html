@@ -173,6 +173,10 @@
 
                 
                     <li>
+                        <a href="/post/time-series-part-1/"><p>Time Series Part 1</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/tidyverse-example/"><p>Time Series</p></a>
                     </li>
                 
@@ -188,10 +192,6 @@
                         <a href="/post/clustering-analysis/"><p>Clustering Analysis</p></a>
                     </li>
                 
-                    <li>
-                        <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
-                    </li>
-                
             </ul>
         </section>
 
@@ -205,6 +205,106 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/naive-bayes/">Naive Bayes</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-02'>
+            July 2, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>The HouseVotes84 dataset was used for applying the naive Bayes algorithm.
+library (e1071)</p>
+
+<h2 id="naive-bayes-classifier-for-discrete-predictors-we-use-again-the-congressional-voting-records-of-1984">Naive Bayes Classifier for Discrete Predictors: we use again the Congressional Voting Records of 1984</h2>
+
+<h1 id="note-refusals-to-vote-have-been-treated-as-missing-values">Note refusals to vote have been treated as missing values!</h1>
+
+<p>data (HouseVotes84, package=&quot;mlbench&quot;) model &lt;- naiveBayes(Class ~ ., data = HouseVotes84) head(HouseVotes84)</p>
+
+<h2 id="class-v1-v2-v3-v4-v5-v6-v7-v8-v9-v10-v11-v12-v13-v14-v15">Class V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15</h2>
+
+<h2 id="1-republican-n-y-n-y-y-y-n-n-n-y-lt-na-gt-y-y-y-n">1 republican n y n y y y n n n y &lt;NA&gt; y y y n</h2>
+
+<h2 id="2-republican-n-y-n-y-y-y-n-n-n-n-n-y-y-y-n">2 republican n y n y y y n n n n n y y y n</h2>
+
+<h2 id="3-democrat-lt-na-gt-y-y-lt-na-gt-y-y-n-n-n-n-y-n-y-y-n">3 democrat &lt;NA&gt; y y &lt;NA&gt; y y n n n n y n y y n</h2>
+
+<h2 id="4-democrat-n-y-y-n-lt-na-gt-y-n-n-n-n-y-n-y-n-n">4 democrat n y y n &lt;NA&gt; y n n n n y n y n n</h2>
+
+<h2 id="5-democrat-y-y-y-n-y-y-n-n-n-n-y-lt-na-gt-y-y-y">5 democrat y y y n y y n n n n y &lt;NA&gt; y y y</h2>
+
+<h2 id="6-democrat-n-y-y-n-y-y-n-n-n-n-n-n-y-y-y">6 democrat n y y n y y n n n n n n y y y</h2>
+
+<h2 id="v16">V16</h2>
+
+<h2 id="1-y">1 y</h2>
+
+<h2 id="2-lt-na-gt">2 &lt;NA&gt;</h2>
+
+<h2 id="3-n">3 n</h2>
+
+<h2 id="4-y">4 y</h2>
+
+<h2 id="5-y">5 y</h2>
+
+<h2 id="6-y">6 y</h2>
+
+<h1 id="predict-the-outcome-of-the-first-20-records">predict the outcome of the first 20 records</h1>
+
+<p>predict(model, HouseVotes84[1:20,-1])</p>
+
+<h2 id="1-republican-republican-republican-democrat-democrat-democrat-7-republican-republican-republican-democrat-republican-republican">[1] republican republican republican democrat democrat democrat ## [7] republican republican republican democrat republican republican</h2>
+
+<h2 id="13-democrat-democrat-republican-republican-democrat-democrat-19-republican-democrat-levels-democrat-republican">[13] democrat democrat republican republican democrat democrat ## [19] republican democrat ## Levels: democrat republican</h2>
+
+<h1 id="same-but-displaying-posteriors">same but displaying posteriors</h1>
+
+<p>predict(model, HouseVotes84[1:20,-1], type = &quot;raw&quot;)</p>
+
+<h2 id="democrat-republican">democrat republican</h2>
+
+<h2 id="1-1">[1,] 1.</h2>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/naive-bayes/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -319,70 +419,6 @@ str(credit)</p>
     <footer>
         <ul class="actions">
             <li><a href="/post/random-forest-analysis/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/statistical-analysis-examples/">Statistical Analysis-Examples</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-02'>
-            July 2, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>4 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Statistical Analysis consists of code from the Chapter Lab Sections 4.6.1 and 4.6.2(Induction to Statitical book)
-library (ISLR)</p>
-
-<h2 id="warning-package-39-islr-39-was-built-under-r-version-3-3-3">Warning: package &#39;ISLR&#39; was built under R version 3.3.3</h2>
-
-<p>names(Smarket )</p>
-
-<h2 id="1-quot-year-quot-quot-lag1-quot-quot-lag2-quot-quot-lag3-quot-quot-lag4-quot-quot-lag5-quot-7-quot-volume-quot-quot-today-quot-quot-direction-quot">[1] &quot;Year&quot; &quot;Lag1&quot; &quot;Lag2&quot; &quot;Lag3&quot; &quot;Lag4&quot; &quot;Lag5&quot; ## [7] &quot;Volume&quot; &quot;Today&quot; &quot;Direction&quot;</h2>
-
-<p>dim(Smarket )</p>
-
-<h2 id="1-1250-9">[1] 1250 9</h2>
-
-<p>summary (Smarket )</p>
-
-<h2 id="year-lag1-lag2-min-2001-min-4-922000-min-4-922000-1st-qu-2002-1st-qu-0-639500-1st-qu-0-639500-median-2003-median-0">Year Lag1 Lag2 ## Min. :2001 Min. :-4.922000 Min. :-4.922000 ## 1st Qu.:2002 1st Qu.:-0.639500 1st Qu.:-0.639500 ## Median :2003 Median : 0.</h2>
-</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/statistical-analysis-examples/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -520,6 +556,20 @@ library (ISLR)</p>
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/time-series-part-1/">Time Series Part 1</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-07'>
+                                    July 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/tidyverse-example/">Time Series</a></h3>
                                 
                                     
@@ -563,20 +613,6 @@ library (ISLR)</p>
                         <article>
                             <header>
                                 <h3><a href="/post/clustering-analysis/">Clustering Analysis</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-02'>
-                                    July 2, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
                                 
                                     
                                 

@@ -1,0 +1,168 @@
+---
+title: "Time Series Part 1"
+author: "Bhawna G. Panwar"
+date: '2017-07-07'
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+slug: time-series-part-1
+tags: []
+categories: []
+---
+```{r}
+if(!require(devtools)) install.packages("devtools")
+  
+library(nltsa)
+```
+
+```{r}
+library(astsa)                  # load astsa package                                         
+sunspot = sqrt(sunspot.year)    # transform sunspot data                                     
+plot(sunspot, xlab="year")      # plot data                                                  
+acf2(sunspot)                   # not shown                                                  
+ar(sunspot)                     # uses AIC to find the best fit with Yule-Walker estimates   
+arima(sunspot, order=c(9,0,0))  # final model fit via MLE        
+```
+```{r}
+sunspot = sqrt(sunspot.year)    # if you didn't save it from previous example   
+sun.ar = spec.ar(sunspot, plot=FALSE)                 # parametric                                 
+sun.np = spectrum(sunspot, spans=c(5,5), plot=FALSE)  # nonparametric                 
+plot(sun.ar$freq, sun.ar$spec, type="l", log="y", ylab="spectrum", xlab="frequency")  
+lines(sun.np$freq, sun.np$spec, lty=2)                                                
+legend("topright", c("parametric","nonparametric"), lty=1:2)                          
+```
+
+
+Chapter 2 examples:
+```{r}
+library(astsa)
+
+# Generate data
+set.seed(1) 
+num = 10 
+w = rnorm(num+1)
+v = rnorm(num)
+mu = cumsum(w)      # states 
+y = mu[-1] + v      # observations
+
+# Smooth 
+mu0 = 0; sigma0 = 1; phi = 1; cQ = 1; cR = 1
+(ks = Ksmooth0(num, y, 1, mu0, sigma0, phi, cQ, cR))
+
+# Plot smoother
+plot.ts(mu[-1], type="p", ylim=c(-3,5), main="Smoother")
+lines(ks$xs)
+lines(ks$xs+2*sqrt(ks$Ps), lty=2, col=4)
+lines(ks$xs-2*sqrt(ks$Ps), lty=2, col=4)
+```
+```{r}
+library(astsa)
+
+# Generate Data
+set.seed(999); num = 100
+x = arima.sim(n=num+1, list(ar = .8, sd=1))
+y = ts(x[-1] + rnorm(num,0,1))
+init.par = c(phi=.1, sigw=1, sigv=1)  # initial parameters
+
+# Function to evaluate the likelihood
+Linn = function(para){
+  phi = para[1]; sigw = para[2]; sigv = para[3]
+  Sigma0 = (sigw^2)/(1-phi^2); Sigma0[Sigma0<0]=0
+  kf = Kfilter0(num, y, 1, mu0=0, Sigma0, phi, sigw, sigv)
+  return(kf$like)   
+}
+
+# Estimation 
+(est = optim(init.par,Linn,gr=NULL,method="BFGS",hessian=TRUE,control=list(trace=1,REPORT=1)))
+SE = sqrt(diag(solve(est$hessian)))
+cbind(estimate=c(est$par[1],est$par[2],est$par[3]), SE) 
+```
+```{r}
+library(astsa)
+library(nlme)
+
+# Generate data (same as previous example)
+set.seed(999); num = 100
+x = arima.sim(n=num+1, list(ar = .8, sd=1))
+y = ts(x[-1] + rnorm(num,0,1))
+
+# EM procedure - output not shown
+(em = EM0(num, y, 1, mu0=0, Sigma0=2, Phi=.1, cQ=1, cR=1, 75, .00001))
+
+# Standard Errors  (this uses nlme)
+mu0 = em$mu0; Sigma0 = em$Sigma0
+para = c(em$Phi, sqrt(em$Q), sqrt(em$R))
+
+# evaluate likelihood at estimates
+Linn = function(para){    
+ kf = Kfilter0(num, y, 1, mu0, Sigma0, para[1], para[2], para[3])
+ return(kf$like)  
+}
+
+# get SEs
+emhess = fdHess(para, function(para) Linn(para))
+SE = sqrt(diag(solve(emhess$Hessian)))
+
+# Display Summary of Estimation
+estimate = c(para, em$mu0, em$Sigma0); SE = c(SE, NA, NA)
+u = cbind(estimate, SE)
+rownames(u) = c("phi","sigw","sigv","mu0","Sigma0"); u
+```
+
+
+```{r}
+library(astsa)
+
+set.seed(123)
+num = 50
+w = rnorm(num,0,.1)
+x = cumsum(cumsum(w))    # states
+y = x + rnorm(num,0,1)   # observations
+
+plot.ts(x, ylab="", lwd=2, ylim=c(-1,8))
+lines(y, type='o', col='#808080')
+
+# the model (specified by the parameters)
+Phi = matrix(c(2,1,-1,0),2)
+A = matrix(c(1,0),1)
+mu0 = matrix(c(0,0),2)
+Sigma0 = diag(c(1,1))
+
+# innovations likelihood
+Linn = function(para){
+  sigw = para[1]; sigv = para[2]; cQ = diag(c(sigw,0))
+  kf = Kfilter0(num,y,A,mu0,Sigma0,Phi,cQ,sigv)
+  return(kf$like)    
+}
+
+# estimation  
+init.par = c(.1,1)  
+(est = optim(init.par, Linn, NULL, method="BFGS", hessian=TRUE)) 
+(SE = sqrt(diag(solve(est$hessian)))) 
+
+# smooth and add to plot 
+sigw = est$par[1]    # = 0.08 (se: 0.04)
+cQ = diag(c(sigw,0))
+sigv = est$par[2]    # = 0.94 (se: 0.11)
+ks = Ksmooth0(num,y,A,mu0,Sigma0,Phi,cQ,sigv)
+xsmoo = ts(ks$xs[1,1,]); psmoo = ts(ks$Ps[1,1,])
+ upp = xsmoo+2*sqrt(psmoo)
+ low = xsmoo-2*sqrt(psmoo)
+lines(xsmoo, col=4, lty=2, lwd=3)  
+lines(upp, col=4, lty=2) 
+lines(low, col=4, lty=2)
+
+# fit spline and add to plot
+lines(smooth.spline(y), lty=1, col=2)
+
+# add legends
+legend("topleft", c("Observations","State"), pch=c(1,-1), lty=1, lwd=1:2, col=c('#808080',1))
+legend("bottomright", c("Smoother", "GCV Spline"),  lty=c(2,1), lwd=c(3,1), col=c(4,2) )
+```
+
+
+
+Reference: Nonlinear Time Series Theory, Methods and Applications with R Examples: by Randal Douc, Eric Moulines
+

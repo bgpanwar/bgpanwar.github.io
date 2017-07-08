@@ -173,6 +173,10 @@
 
                 
                     <li>
+                        <a href="/post/time-series-part-1/"><p>Time Series Part 1</p></a>
+                    </li>
+                
+                    <li>
                         <a href="/post/tidyverse-example/"><p>Time Series</p></a>
                     </li>
                 
@@ -188,10 +192,6 @@
                         <a href="/post/clustering-analysis/"><p>Clustering Analysis</p></a>
                     </li>
                 
-                    <li>
-                        <a href="/post/logistic-regression/"><p>Logistic Regression</p></a>
-                    </li>
-                
             </ul>
         </section>
 
@@ -205,6 +205,69 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/scatter/">Scatter</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-01'>
+            July 1, 2017</time>
+        <span class="author">Bhawna G. Panwar</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Load the data.
+subscribers &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/flowingdata_subscribers.csv&quot;, sep=&quot;,&quot;, header=TRUE)
+View(subscribers)
+Default plot with points.
+plot(subscribers$Subscribers)
+Default plot with type explicity specified.
+plot(subscribers$Subscribers, type=&quot;p&quot;, ylim=c(0, 30000))
+Draw vertical lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))
+Draw points with above lines.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000))
+points(subscribers$Subscribers)
+Edits with colors and labels.
+plot(subscribers$Subscribers, type=&quot;h&quot;, ylim=c(0, 30000), xlab=&quot;Day&quot;, ylab=&quot;Subscribers&quot;)
+points(subscribers$Subscribers, pch=19, col=&quot;blue&quot;)
+Reference:The data was downloaded from the following website website.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/scatter/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -305,65 +368,6 @@ Plot below help visualize overall way to visualize SVM technques.The hyperplane 
     <footer>
         <ul class="actions">
             <li><a href="/post/support-vector-machine/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="/post/times-series/">Times Series</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-07-01'>
-            July 1, 2017</time>
-        <span class="author">Bhawna G. Panwar</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p><h1 id="load-data">Load data</h1>
-
-<p>population &lt;- read.csv(&quot;C:/Users/Bhawna/Documents/blog/data/world-population.csv&quot;, sep=&quot;,&quot;, header=TRUE)</p>
-
-<h1 id="default-plot">Default plot</h1>
-
-<p>plot(population$Year, population$Population, type=&quot;l&quot;)</p>
-
-<h1 id="adjust-axis">Adjust axis</h1>
-
-<p>plot(population$Year, population$Population, type=&quot;l&quot;, ylim=c(0, 7000000000), xlab=&quot;Year&quot;, ylab=&quot;Population&quot;)
-Reference: world_population.csv was obtained from Flowdata.com</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="/post/times-series/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -501,6 +505,20 @@ Reference: world_population.csv was obtained from Flowdata.com</p>
                     <li>
                         <article>
                             <header>
+                                <h3><a href="/post/time-series-part-1/">Time Series Part 1</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-07'>
+                                    July 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="/post/tidyverse-example/">Time Series</a></h3>
                                 
                                     
@@ -544,20 +562,6 @@ Reference: world_population.csv was obtained from Flowdata.com</p>
                         <article>
                             <header>
                                 <h3><a href="/post/clustering-analysis/">Clustering Analysis</a></h3>
-                                
-                                    
-                                
-                                <time class="published" datetime=
-                                    '2017-07-02'>
-                                    July 2, 2017</time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="/post/logistic-regression/">Logistic Regression</a></h3>
                                 
                                     
                                 

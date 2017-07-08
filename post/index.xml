@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Data Pond</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Time Series Part 1</title>
+      <link>/post/time-series-part-1/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series-part-1/</guid>
+      <description>if(!require(devtools)) install.packages(&amp;quot;devtools&amp;quot;)## Loading required package: devtools## Warning: package &amp;#39;devtools&amp;#39; was built under R version 3.3.3library(nltsa)library(astsa) # load astsa package sunspot = sqrt(sunspot.year) # transform sunspot data plot(sunspot, xlab=&amp;quot;year&amp;quot;) # plot data acf2(sunspot) # not shown ## ACF PACF## [1,] 0.82 0.82## [2,] 0.46 -0.65## [3,] 0.06 -0.15## [4,] -0.25 0.01## [5,] -0.42 -0.05## [6,] -0.40 0.20## [7,] -0.</description>
+    </item>
     
     <item>
       <title>Time Series</title>
